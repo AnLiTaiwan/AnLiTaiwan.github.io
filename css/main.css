@@ -857,6 +857,7 @@ input[type="button"].btn--primary:focus {
     background: transparent !important;
     border: 0.3rem solid #000000;
     color: #000000;
+	text-align: center ;
 }
 
 .btn--stroke:hover, button.btn--stroke:hover {
