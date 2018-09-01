@@ -2199,7 +2199,7 @@ html.no-csstransitions .home-content__main {
 
 .s-about {
     padding-top: 15rem;
-    padding-bottom: 9rem;
+    padding-bottom: 3rem;
     background-color: #FFFFFF;
     position: relative;
 }
@@ -2216,6 +2216,29 @@ html.no-csstransitions .home-content__main {
     padding-left: 40px;
 }
 
+/* ===================================================================
+ * # project - (_site-layout.scss)
+ *
+ * ------------------------------------------------------------------- */
+
+.s-projects {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.projects-content {
+    margin-bottom: 3rem;
+}
+
+.projects-content .left {
+    padding-right: 40px;
+}
+
+.projects-content .right {
+    padding-left: 40px;
+}
 
 /* ------------------------------------------------------------------- 
  * ## timeline - (_site-layout.scss) 
@@ -2860,8 +2883,8 @@ html.no-csstransitions .home-content__main {
  * ------------------------------------------------------------------- */
 
 .s-blog {
-    padding-top: 15rem;
-    padding-bottom: 9.6rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     background-color: #FFFFFF;
     position: relative;
 }
