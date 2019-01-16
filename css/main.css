@@ -2222,8 +2222,8 @@ html.no-csstransitions .home-content__main {
  * ------------------------------------------------------------------- */
 
 .s-projects {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     background-color: #FFFFFF;
     position: relative;
 }
@@ -2883,8 +2883,8 @@ html.no-csstransitions .home-content__main {
  * ------------------------------------------------------------------- */
 
 .s-blog {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     background-color: #FFFFFF;
     position: relative;
 }
