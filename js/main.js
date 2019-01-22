@@ -148,7 +148,7 @@
      * ----------------------------------------------------- */
     var ssPhotoswipe = function() {
         var items = [],
-            $pswp = $('.pswp')[0],
+			$pswp = $('.pswp')[0],
             $folioItems = $('.item-folio');
 
             // get items
