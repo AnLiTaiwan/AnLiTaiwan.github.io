@@ -459,6 +459,9 @@ over element that should close gallery
     background-position: -132px 0;
 }
 
+.pswp__button--des {
+    background-position: -176px 0;
+}
 
 /* no arrows on touch screens */
 
