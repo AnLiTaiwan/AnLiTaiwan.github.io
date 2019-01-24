@@ -1819,7 +1819,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .home-content__buttons .btn {
     display: block;
-    width: 210px;
+    width: 250px;
     border-color: #FFFFFF;
     color: #FFFFFF;
     margin: 1.5rem 0 0 0;
