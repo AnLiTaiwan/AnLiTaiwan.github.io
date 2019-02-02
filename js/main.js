@@ -159,7 +159,7 @@
 			var s = e(".submit-loader");
 			e.ajax({
 				type: "POST",
-				url: "https://formspree.io/b98705001@gmail.com",
+				url: "https://formspree.io/leo22669258@gmail.com",
 				data: e(t).serialize(),
 				beforeSend: function () {
 					s.slideDown("slow")
