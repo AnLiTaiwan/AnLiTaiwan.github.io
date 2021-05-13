@@ -26,8 +26,9 @@ body {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 84px;
-  left: 23%;
+  top: 50%;
+  left: 50%;
+  margin: -177.5px 0 0 -269px;
   overflow: hidden;
 }
 .v110_18 {
@@ -353,7 +354,7 @@ body {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 276px;
+  top: 53%;
   left: 0px;
   overflow: hidden;
 }
