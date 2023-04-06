@@ -2257,8 +2257,8 @@ html.no-csstransitions .home-content__main {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.1);
     position: absolute;
-    left: 2rem;
-    top: 0;
+    left: 1.95rem;
+    top: 2rem;
 }
 
 .timeline__block {
