@@ -2330,8 +2330,20 @@ html.no-csstransitions .home-content__main {
 .timeline__desc p {
     margin: 0;
     padding-bottom: 3rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
+.timeline__desc ul {
+    list-style: disc;
+    margin-left: 1em;
+    padding-left: 0.5em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.timeline__desc li {
+    margin-bottom: 0em;
+    font-family: 'Open Sans', sans-serif;
+}
 
 /* ------------------------------------------------------------------- 
  * responsive:
