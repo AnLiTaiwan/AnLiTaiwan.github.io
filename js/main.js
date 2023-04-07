@@ -164,8 +164,11 @@
 				beforeSend: function () {
 					s.slideDown("slow")
 				},
-				success: function (t) {
-					"OK" == t ? (s.slideUp("slow"), e(".message-warning").fadeOut(), e("#contactForm").fadeOut(), e(".message-success").fadeIn()) : (s.slideUp("slow"), e(".message-warning").html(t), e(".message-warning").slideDown("slow"))
+				success: function () {
+					//"OK" == t ? (s.slideUp("slow"), e(".message-warning").fadeOut(), e("#contactForm").fadeOut(), e(".message-success").fadeIn()) : (s.slideUp("slow"), e(".message-warning").html(t), e(".message-warning").slideDown("slow"))
+					s.slideUp("slow"),
+					e(".message-warning").html("Thanks"),
+					e(".message-warning").slideDown("slow")
 				},
 				error: function () {
 					s.slideUp("slow"),
