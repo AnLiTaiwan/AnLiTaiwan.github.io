@@ -1,3 +1,4 @@
+emailjs.init("FzivnNCaRKt7YjYiI");
 const btn = document.getElementById('submitEmail');
 
 document.getElementById('contactForm')
