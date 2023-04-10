@@ -1,4 +1,4 @@
-emailjs.init("FzivnNCaRKt7YjYiI");
+emailjs.init("FzivnNCaRKt7YjYiI"); // EmailJS API API keys
 const btn = document.getElementById('submitEmail');
 
 document.getElementById('contactForm')
@@ -19,11 +19,11 @@ document.getElementById('contactForm')
         messageWarning.fadeOut();
         contactForm.fadeOut();
         messageSuccess.fadeIn();
-        //alert('Sent!');
+        // alert('Sent!');
     }, (err) => {
         submitLoader.slideUp("slow") ;
         messageWarning.html("Something went wrong. Please try again later.") ;
         messageWarning.slideDown("slow") ;
-        //alert(JSON.stringify(err));
+        // alert(JSON.stringify(err));
     });
 });
