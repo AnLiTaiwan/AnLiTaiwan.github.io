@@ -154,29 +154,6 @@
 	e(".alert-box").on("click", ".alert-box__close", function () {
 		e(this).parent().fadeOut(500)
 	}),
-	e("#contactForm").validate({
-		submitHandler: function (t) {
-			var s = e(".submit-loader");
-			$.ajax({
-				type: "POST",
-				url: "https://formspree.io/f/mqkogzdd",
-				data: e(t).serialize(),
-				beforeSend: function () {
-					s.slideDown("slow")
-				},
-				success: function () {
-				  // Show success message
-				  "OK" == t ? (s.slideUp("slow"), e(".message-warning").fadeOut(), e("#contactForm").fadeOut(), e(".message-success").fadeIn()) : (s.slideUp("slow"), e(".message-warning").html(t), e(".message-warning").slideDown("slow"))
-				},
-				error: function () {
-				  // Show error message
-				  s.slideUp("slow"),
-					e(".message-warning").html("Something went wrong. Please try again."),
-					e(".message-warning").slideDown("slow")
-				}
-			});
-		}
-	}),
 	w = e(".go-top"),
 	e(window).on("scroll", function () {
 		e(window).scrollTop() >= 500 ? w.fadeIn(400) : w.fadeOut(400)

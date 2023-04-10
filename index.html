@@ -110,8 +110,8 @@
                     <h3>About</h3>
                     <h1>More About Me</h1>
                     <p class="lead">
-                    I enjoy learning the up-to-date software technology and working with a professional and international team.
-                    I hope to develop products the products that are useful to people around the world.
+                        I enjoy learning the up-to-date software technology and working with a professional and international team.
+                        I hope to develop products the products that are useful to people around the world.
                     </p>
                 </div>
             </div>
@@ -375,7 +375,7 @@
                                 <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
                             </div>
                             <div class="form-field">
-                                <button class="full-width btn--primary" type="submit" value="Submit" >Submit</button>
+                                <button class="full-width btn--primary" type="submit" value="Submit" id="submitEmail">Submit</button>
                                 <div class="submit-loader">
                                     <div class="text-loader">Sending...</div>
                                     <div class="s-loader">
@@ -494,6 +494,12 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/typer.js"></script>
+        <script src="js/sendEmail.js"></script>
 
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript"> 
+            emailjs.init("FzivnNCaRKt7YjYiI","1011133655930-kdp0na2eojll17ohuoveihl5tbledl5u.apps.googleusercontent.com","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");
+        </script>
     </body>
 </html>
