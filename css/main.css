@@ -3220,7 +3220,7 @@ html.no-csstransitions .home-content__main {
 
 .message-warning, .message-success {
     display: none;
-    background: #0D0A0B;
+    background: #0d0a0b30;
     font-size: 1.5rem;
     line-height: 2;
     padding: 3rem;
