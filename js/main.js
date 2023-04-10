@@ -157,7 +157,7 @@
 	e("#contactForm").validate({
 		submitHandler: function (t) {
 			var s = e(".submit-loader");
-			e.ajax({
+			$.ajax({
 				type: "POST",
 				url: "https://formspree.io/f/mqkogzdd",
 				data: e(t).serialize(),
@@ -165,17 +165,16 @@
 					s.slideDown("slow")
 				},
 				success: function () {
-					//"OK" == t ? (s.slideUp("slow"), e(".message-warning").fadeOut(), e("#contactForm").fadeOut(), e(".message-success").fadeIn()) : (s.slideUp("slow"), e(".message-warning").html(t), e(".message-warning").slideDown("slow"))
-					s.slideUp("slow"),
-					e(".message-warning").html("Thanks"),
-					e(".message-warning").slideDown("slow")
+				  // Show success message
+				  "OK" == t ? (s.slideUp("slow"), e(".message-warning").fadeOut(), e("#contactForm").fadeOut(), e(".message-success").fadeIn()) : (s.slideUp("slow"), e(".message-warning").html(t), e(".message-warning").slideDown("slow"))
 				},
 				error: function () {
-					s.slideUp("slow"),
+				  // Show error message
+				  s.slideUp("slow"),
 					e(".message-warning").html("Something went wrong. Please try again."),
 					e(".message-warning").slideDown("slow")
 				}
-			})
+			});
 		}
 	}),
 	w = e(".go-top"),
