@@ -2,19 +2,27 @@ const btn = document.getElementById('submitEmail');
 
 document.getElementById('contactForm')
  .addEventListener('submit', function(event) {
-   event.preventDefault();
+    event.preventDefault();
+    const serviceID = 'default_service';
+    const templateID = 'template_xlgdz68';
 
-   btn.value = 'Sending...';
+    const submitLoader = $('.submit-loader');
+    const messageWarning = $('.message-warning');
+    const messageSuccess = $('.message-success');
+    const contactForm = $('#contactForm');
+    submitLoader.slideDown("slow");
 
-   const serviceID = 'default_service';
-   const templateID = 'template_xlgdz68';
-
-   emailjs.sendForm(serviceID, templateID, this)
+    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
+        submitLoader.slideUp("slow") ;
+        messageWarning.fadeOut();
+        contactForm.fadeOut();
+        messageSuccess.fadeIn();
+        //alert('Sent!');
     }, (err) => {
-      btn.value = 'Send Email';
-      alert(JSON.stringify(err));
+        submitLoader.slideUp("slow") ;
+        messageWarning.html("Something went wrong. Please try again later.") ;
+        messageWarning.slideDown("slow") ;
+        //alert(JSON.stringify(err));
     });
 });
