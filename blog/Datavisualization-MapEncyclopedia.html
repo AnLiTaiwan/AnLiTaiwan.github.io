@@ -42,23 +42,20 @@
     <!-- header
     ================================================== -->
     <header class="s-header">
-            
         <div class="header-logo">
             <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="Homepage"></a>
         </div>
-
         <nav class="header-nav-wrap">
             <ul class="header-nav">
-                <li><a href="../index.html#home" title="home">Home</a></li>
-                <li><a href="../index.html#about" title="about">About</a></li>
-                <li class="current"><a href="../index.html#projects" title="works">Projects</a></li>
-                <li><a href="../blog.html" title="blog">Blog</a></li>
-                <li><a href="../index.html#contact" title="contact">Contact</a></li>	
+                <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+                <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
+                <li><a class="smoothscroll"  href="#works" title="works">Works</a></li>
+                <li><a class="smoothscroll"  href="#projects" title="projects">Projects</a></li>
+                <!--<li><a class="smoothscroll"  href="#blog" title="blog">Blog</a></li>-->
+                <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
             </ul>
         </nav>
-
         <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
-
     </header> <!-- end s-header -->
 
 
@@ -93,10 +90,10 @@
             <div class="col-full blog-content__main" style="font-family:Microsoft JhengHei;">
 
                 <p class="lead" >
-				資料視覺化主要旨在藉助於圖形化手段,清晰有效地傳達與溝通訊息。<br />
-				但是,這並不就意味著,資料視覺化就一定因為要實作其功能用途而令人感到枯燥乏味,或者是為了看上去絢麗多彩而顯得極端複雜。<br />
-				為了有效地傳達思想概念,美學形式與功能需要齊頭並進,通過直觀地傳達關鍵的方面與特徵。<br />"
-				地圖大百科"藉由建立平台由大眾提供資料的資料採集方式,地圖化的呈現資料分析與管理,傳達出位置上的溝通與聯繫。讓有地理上的資訊更直覺化與聯想性。
+                    資料視覺化主要旨在藉助於圖形化手段,清晰有效地傳達與溝通訊息。<br />
+                    但是,這並不就意味著,資料視覺化就一定因為要實作其功能用途而令人感到枯燥乏味,或者是為了看上去絢麗多彩而顯得極端複雜。<br />
+                    為了有效地傳達思想概念,美學形式與功能需要齊頭並進,通過直觀地傳達關鍵的方面與特徵。<br />"
+                    地圖大百科"藉由建立平台由大眾提供資料的資料採集方式,地圖化的呈現資料分析與管理,傳達出位置上的溝通與聯繫。讓有地理上的資訊更直覺化與聯想性。
 				</p>
                 
 				<h2>操作流程</h2>
@@ -116,7 +113,7 @@
 				<img src="../images/blog/DVM_mysql.PNG">
 				</center>
 				<a style="font-family:Microsoft JhengHei;" href="https://goo.gl/hVvXQp">
-				專題報告
+				    專題報告
 				</a>
 				
                 <p class="blog-content__tags">
@@ -127,30 +124,16 @@
                     </span>
 
                 </p>
-				<!-- facebook comments
-				================================================== -->
-				<div id="fb-root"></div>
-				<script>(function(d, s, id) {
-				  var js, fjs = d.getElementsByTagName(s)[0];
-				  if (d.getElementById(id)) return;
-				  js = d.createElement(s); js.id = id;
-				  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
-				  fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));</script>
-				
-				<div class="fb-comments" data-href="https://anlitaiwan.github.io/blog/Datavisualization-MapEncyclopedia.html" data-numposts="5" data-order-by="time" data-width="80%"></div>
-				<!-- facebook comments
-				================================================== -->
                 <div class="blog-content__pagenav">
                     <div class="blog-content__nav">
                         <div class="blog-content__prev">
-                            <a href="Citadels.html" rel="prev">
+                            <a href="../blog/Citadels.html" rel="prev">
                                 <span>Previous Post</span>
                                 Citadels
                             </a>
                         </div>
                         <div class="blog-content__next">
-                            <a href="CYCUEat.html" rel="next">
+                            <a href="../blog/CYCUEat.html" rel="next">
                                 <span>Next Project</span>
                                 CYCUEat
                             </a>
@@ -171,55 +154,54 @@
     <!-- footer
     ================================================== -->
     <footer>
-            <div class="row">
-                <div class="col-full">
-    
-                    <div class="footer-logo">
-                        <a class="footer-site-logo" href="#0"><img src="../images/logo.png" alt="Homepage"></a>
-                    </div>
-    
-                    <ul class="footer-social">
-                        <li><a href="#0">
+        <div class="row">
+            <div class="col-full">
+                <div class="footer-logo">
+                    <a class="footer-site-logo" href="#0"><img src="../images/logo.png" alt="Homepage"></a>
+                </div>
+                <ul class="footer-social">
+                    <li>
+                        <a href="https://www.facebook.com/AnLiTaiwan">
                             <i class="im im-facebook" aria-hidden="true"></i>
                             <span>Facebook</span>
-                        </a></li>
-                        <li><a href="#0">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/anli.tw2jp?igshid=ZDdkNTZiNTM=">
                             <i class="im im-instagram" aria-hidden="true"></i>
                             <span>Instagram</span>
-                        </a></li>
-                                            </ul>
-                        
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row footer-bottom">
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>© Copyright Hola 2017</span> 
+                    <span>Design by <a href="https://www.styleshout.com/">styleshout</a></span>	
+                </div>
+                <div class="go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top">
+                        <i class="im im-arrow-up" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
-    
-            <div class="row footer-bottom">
-    
-                <div class="col-twelve">
-                    <div class="copyright">
-                        <span>© Copyright Hola 2017</span> 
-                        <span>Design by <a href="https://www.styleshout.com/">styleshout</a></span>	
-                    </div>
-    
-                    <div class="go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="im im-arrow-up" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-    
-            </div> <!-- end footer-bottom -->
-    
-        </footer> <!-- end footer -->
-    
-    
-        <div id="preloader"> 
-            <div id="loader"></div>
-        </div>
-    
-    
-        <!-- Java Script
-        ================================================== -->
-        <script src="../js/jquery-3.2.1.min.js"></script>
-        <script src="../js/plugins.js"></script>
-        <script src="../js/main.js"></script>
+        </div> <!-- end footer-bottom -->
+    </footer> <!-- end footer -->
+
+
+    <div id="preloader"> 
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="../js/jquery-3.6.4.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
 
 </body>
 

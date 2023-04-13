@@ -42,25 +42,21 @@
     <!-- header
     ================================================== -->
     <header class="s-header">
-            
         <div class="header-logo">
             <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="Homepage"></a>
         </div>
-
         <nav class="header-nav-wrap">
             <ul class="header-nav">
-                <li><a href="../index.html#home" title="home">Home</a></li>
-                <li><a href="../index.html#about" title="about">About</a></li>
-                <li class="current"><a href="../index.html#projects" title="works">Projects</a></li>
-                <li><a href="../blog.html" title="blog">Blog</a></li>
-                <li><a href="../index.html#contact" title="contact">Contact</a></li>	
+                <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+                <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
+                <li><a class="smoothscroll"  href="#works" title="works">Works</a></li>
+                <li><a class="smoothscroll"  href="#projects" title="projects">Projects</a></li>
+                <!--<li><a class="smoothscroll"  href="#blog" title="blog">Blog</a></li>-->
+                <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
             </ul>
         </nav>
-
         <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
-
     </header> <!-- end s-header -->
-
 
     <article class="blog-single">
 
@@ -100,51 +96,37 @@
                 
 				<h2>功能介紹</h2>
                 <blockquote><p style="font-family:Microsoft JhengHei;" >
-				1. 當你決定吃什麼</br>
-					* 食物類型篩選</br>
-					* 距離篩選</br>
-				2. 手動新增餐館</br>
-				3. 紀錄食物清單</br>
-				4. 卡洛里計算
-				5. 運動量紀錄
+                    1. 當你決定吃什麼</br>
+                        * 食物類型篩選</br>
+                        * 距離篩選</br>
+                    2. 手動新增餐館</br>
+                    3. 紀錄食物清單</br>
+                    4. 卡洛里計算
+                    5. 運動量紀錄
 				</p></blockquote>
 
 				<a href="https://goo.gl/DJyFRu ">
-				試用版載點
+				    試用版載點
 				</a>
 				
                 <p class="blog-content__tags">
                     <span>Post Tags</span>
 
                     <span class="blog-content__tag-list">
-                        <a href="#0">APP</a>
+                        <a>APP</a>
                     </span>
 
                 </p>
-				<!-- facebook comments
-				================================================== -->
-				<div id="fb-root"></div>
-				<script>(function(d, s, id) {
-				  var js, fjs = d.getElementsByTagName(s)[0];
-				  if (d.getElementById(id)) return;
-				  js = d.createElement(s); js.id = id;
-				  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
-				  fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));</script>
-				
-				<div class="fb-comments" data-href="https://anlitaiwan.github.io/blog/CYCUEat.html" data-numposts="5" data-order-by="time" data-width="80%"></div>
-				<!-- facebook comments
-				================================================== -->
                 <div class="blog-content__pagenav">
                     <div class="blog-content__nav">
                         <div class="blog-content__prev">
-                            <a href="Data visualization-Map Encyclopedia.html" rel="prev">
+                            <a href="../blog/Data visualization-Map Encyclopedia.html" rel="prev">
                                 <span>Previous Post</span>
                                 Data visualization-Map Encyclopedia
                             </a>
                         </div>
                         <div class="blog-content__next">
-                            <a href="PersonalHealthEducationManagementSystem.html" rel="next">
+                            <a href="../blog/PersonalHealthEducationManagementSystem.html" rel="next">
                                 <span>Next Project</span>
                                 Personal Health Education Management System
                             </a>
@@ -165,55 +147,54 @@
     <!-- footer
     ================================================== -->
     <footer>
-            <div class="row">
-                <div class="col-full">
-    
-                    <div class="footer-logo">
-                        <a class="footer-site-logo" href="#0"><img src="../images/logo.png" alt="Homepage"></a>
-                    </div>
-    
-                    <ul class="footer-social">
-                        <li><a href="#0">
+        <div class="row">
+            <div class="col-full">
+                <div class="footer-logo">
+                    <a class="footer-site-logo" href="#0"><img src="../images/logo.png" alt="Homepage"></a>
+                </div>
+                <ul class="footer-social">
+                    <li>
+                        <a href="https://www.facebook.com/AnLiTaiwan">
                             <i class="im im-facebook" aria-hidden="true"></i>
                             <span>Facebook</span>
-                        </a></li>
-                        <li><a href="#0">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/anli.tw2jp?igshid=ZDdkNTZiNTM=">
                             <i class="im im-instagram" aria-hidden="true"></i>
                             <span>Instagram</span>
-                        </a></li>
-                                            </ul>
-                        
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row footer-bottom">
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>© Copyright Hola 2017</span> 
+                    <span>Design by <a href="https://www.styleshout.com/">styleshout</a></span>	
+                </div>
+                <div class="go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top">
+                        <i class="im im-arrow-up" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
-    
-            <div class="row footer-bottom">
-    
-                <div class="col-twelve">
-                    <div class="copyright">
-                        <span>© Copyright Hola 2017</span> 
-                        <span>Design by <a href="https://www.styleshout.com/">styleshout</a></span>	
-                    </div>
-    
-                    <div class="go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="im im-arrow-up" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-    
-            </div> <!-- end footer-bottom -->
-    
-        </footer> <!-- end footer -->
-    
-    
-        <div id="preloader"> 
-            <div id="loader"></div>
-        </div>
-    
-    
-        <!-- Java Script
-        ================================================== -->
-        <script src="../js/jquery-3.2.1.min.js"></script>
-        <script src="../js/plugins.js"></script>
-        <script src="../js/main.js"></script>
+        </div> <!-- end footer-bottom -->
+    </footer> <!-- end footer -->
+
+
+    <div id="preloader"> 
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="../js/jquery-3.6.4.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
 
 </body>
 
