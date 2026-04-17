@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--<![endif]-->
 <html class="no-js" lang="en">
 
     <head>
-        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <!-- Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116691132-3"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -15,351 +11,165 @@
             gtag('config', 'UA-116691132-3');
         </script>
 
-        <!--- basic page needs
-        ================================================== -->
         <meta charset="utf-8">
-        <title>An Li</title>
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <!-- mobile specific metas
-        ================================================== -->
+        <title>An Li — QA Lead &amp; Automation Engineer</title>
+        <meta name="description" content="QA Lead and Automation Engineer with 6+ years of experience across consumer electronics and SaaS.">
+        <meta name="author" content="An Li">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- CSS
-        ================================================== -->
         <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/vendor.css">
         <link rel="stylesheet" href="css/main.css">
 
-        <!-- script
-        ================================================== -->
+        <style>
+            .header-nav-wrap .lang-switch {
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+                padding: 4px;
+                border-radius: 999px;
+                background: rgba(255, 255, 255, 0.12);
+                vertical-align: middle;
+                margin-right: 16px;
+                line-height: normal;
+                letter-spacing: normal;
+            }
+            .lang-switch__btn {
+                all: unset;
+                cursor: pointer;
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                padding: 6px 10px;
+                border-radius: 999px;
+                color: #fff;
+                transition: all 0.2s ease;
+                font-family: "Montserrat", sans-serif;
+            }
+            .lang-switch__btn:hover { background: rgba(255, 255, 255, 0.15); }
+            .lang-switch__btn.is-active { background: #fff; color: #000; }
+
+            @media (max-width: 800px) {
+                .header-nav-wrap .lang-switch {
+                    display: flex;
+                    width: fit-content;
+                    margin: 0 auto 24px;
+                }
+            }
+        </style>
+
         <script src="js/modernizr.js"></script>
         <script src="js/pace.min.js"></script>
 
-        <!-- favicons
-        ================================================== -->
-        <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-        
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     </head>
 
     <body id="top">
-        <!-- header
-        ================================================== -->
+        <!-- header -->
         <header class="s-header">
             <div class="header-logo">
-                <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
+                <a class="site-logo" href="index.html"><img src="images/logo.png" alt="An Li"></a>
             </div>
             <nav class="header-nav-wrap">
+                <div class="lang-switch" role="group" aria-label="Language">
+                    <button class="lang-switch__btn" data-lang-btn="en" aria-pressed="true">EN</button>
+                    <button class="lang-switch__btn" data-lang-btn="ja" aria-pressed="false">JA</button>
+                    <button class="lang-switch__btn" data-lang-btn="zh" aria-pressed="false">ZH</button>
+                </div>
                 <ul class="header-nav">
-                    <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
-                    <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-                    <li><a class="smoothscroll"  href="#works" title="works">Works</a></li>
-                    <li><a class="smoothscroll"  href="#projects" title="projects">Projects</a></li>
-                    <!--<li><a class="smoothscroll"  href="#blog" title="blog">Blog</a></li>-->
-                    <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+                    <li class="current"><a class="smoothscroll" href="#home" data-i18n="nav.home">Home</a></li>
+                    <li><a class="smoothscroll" href="#about" data-i18n="nav.about">About</a></li>
+                    <li><a class="smoothscroll" href="#experience" data-i18n="nav.experience">Experience</a></li>
+                    <li><a class="smoothscroll" href="#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a class="smoothscroll" href="#contact" data-i18n="nav.contact">Contact</a></li>
                 </ul>
             </nav>
-            <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
-        </header> <!-- end s-header -->
 
-        <!-- home
-        ================================================== -->
-        <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/hero-bg.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+            <a class="header-menu-toggle" href="#0"><span data-i18n="nav.menu">Menu</span></a>
+        </header>
+
+        <!-- home -->
+        <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/hero-bg.jpg" data-natural-width="3000" data-natural-height="2000" data-position-y="center">
             <div class="overlay"></div>
             <div class="shadow-overlay"></div>
             <div class="home-content">
                 <div class="row home-content__main">
-                    <h3>Hello There</h3>
+                    <h3 data-i18n="hero.greeting">Hello There</h3>
+                    <h1 data-i18n="hero.name">I'm An Li.</h1>
                     <h1>
-                        I'm An Li.
+                        <span id="hero-typer" style="color: rgb(0, 40, 90);">a SWT</span><span data-i18n="hero.roleSuffix"> engineer</span>
                     </h1>
-                    <h1>
-                        <span class="typer" data-words="A software,A data,An automation" data-colors="#FFFFFF" data-delay="80" data-deletedelay="2400" style="color: rgb(0, 40, 90);">A software </span> engineer</br>
-                    </h1>
-                    <h1> 
-                        from Taiwan.
-                    </h1>
+                    <h1 data-i18n="hero.from">From Taiwan, based in Tokyo.</h1>
                     <div class="home-content__buttons">
-                        <a href="#projects" class="smoothscroll btn btn--stroke">
-                            Latest Projects
-                        </a>
-                        <a href="#about" class="smoothscroll btn btn--stroke">
-                            More About Me
-                        </a>
+                        <a href="#projects" class="smoothscroll btn btn--stroke" data-i18n="hero.ctaProjects">Latest Projects</a>
+                        <a href="#about" class="smoothscroll btn btn--stroke" data-i18n="hero.ctaAbout">More About Me</a>
                     </div>
                     <div class="home-content__scroll">
                         <a href="#about" class="scroll-link smoothscroll">
-                            <span>Scroll Down</span>
+                            <span data-i18n="hero.scroll">Scroll Down</span>
                         </a>
                     </div>
                 </div>
-            </div> <!-- end home-content -->
+            </div>
             <ul class="home-social">
-                <li>
-                    <a href="https://www.facebook.com/AnLiTaiwan"><i class="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a>
-                </li>
-                <li>
-                    <a href="https://instagram.com/anli.tw2jp?igshid=ZDdkNTZiNTM="><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a>
-                </li>
-            </ul> 
-            <!-- end home-social -->
-        </section> <!-- end s-home -->
-        
-        <!-- about
-        ================================================== -->
+                <li><a href="https://linkedin.com/in/anlitaiwan" target="_blank" rel="noopener"><i class="im im-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>
+                <li><a href="https://www.facebook.com/AnLiTaiwan" target="_blank" rel="noopener"><i class="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
+                <li><a href="https://instagram.com/anli.tw2jp" target="_blank" rel="noopener"><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
+            </ul>
+        </section>
+
+        <!-- about -->
         <section class="s-about target-section" id="about">
             <div class="row narrow section-intro has-bottom-sep">
                 <div class="col-full text-center">
-                    <h3>About</h3>
-                    <h1>More About Me</h1>
-                    <p class="lead">
-                        I enjoy learning the up-to-date software technology and working with a professional and international team.
-                        I hope to develop products the products that are useful to people around the world.
-                    </p>
+                    <h3 data-i18n="about.eyebrow">About</h3>
+                    <h1 data-i18n="about.title">More About Me</h1>
+                    <p class="lead" data-i18n="about.summary">QA Lead and Automation Engineer with 6+ years of experience...</p>
                 </div>
             </div>
+
             <div class="row about-content about-content--buttons">
                 <div class="col-six tab-full left">
-                    <a href="cv/Anli's Resume.pdf" class="btn btn--primary full-width">Download My CV</a>
+                    <a href="cv/Anli's Resume.pdf" class="btn btn--primary full-width" data-i18n="about.downloadCV">Download My CV</a>
                 </div>
                 <div class="col-six tab-full right">
-                    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=Hello@an-li.tw" class="btn full-width">Hire Me Now</a>
+                    <a href="mailto:hello@an-li.tw" class="btn full-width" data-i18n="about.hire">Hire Me Now</a>
                 </div>
-            </div> <!-- end about-content buttons -->
-        </section> <!-- end about -->
-        
-        <!-- works experience
-        ================================================== -->
-        <section class="s-projects target-section" id="works">
+            </div>
+        </section>
+
+        <!-- experience -->
+        <section class="s-projects target-section" id="experience">
             <div class="row about-content about-content--timeline">
                 <div class="col-full text-center">
-                    <h3>Work Experience</h3>
+                    <h3 data-i18n="experience.title">Work Experience</h3>
                 </div>
-                <div class="col-six tab-full left">
-                    <div class="timeline">
-                        <div class="timeline__block">
-                            <div class="timeline__bullet__pulsating"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">September 2022 - PRESENT</p>
-                                <h3>Apple Japan</h3>
-                                <h5>Triage Engineer (TVC) - AI/Machine Learning Platform</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <ul>
-                                    <li>Develop automated test plans for Apple products.</li>
-                                    <li>Design automated infrastructure maintenance playbook on Ansible service.</li>
-                                </ul>   
-                            </div>
-                        </div> <!-- end timeline__block -->
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">April 2020 - April 2022</p>
-                                <h3>Google Taiwan</h3>
-                                <h5>Quality Assurance Lead(TVC) - Mediashell</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <ul>
-                                    <li>Designed manual/automated test plan for Google Nest products.</li>
-                                    <li>Planned staff training for the Multiroom test of the product.</li>
-                                    <li>Coordinated human resources and project progress with PM/RD.</li>
-                                </ul>
-                            </div>
-                            <div class="timeline__header">
-                                <h5>Software testing Engineer(TVC) - Chromecast</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <ul>
-                                    <li>Executed the automated test (Compatibility, Google mobile service and Vendor suit )
-                                        for Chromecast 4rd.</li>
-                                    <li>Maintanced and built the automated test environment in Google laboratory.</li>
-                                    <li>Developed automated test script with shell script and Java.</li>
-                                    <li>Performed Multiroom, regression, remote, assistant and Talkback testing.</li>
-                                </ul>
-                            </div>
-                            <div class="timeline__header">
-                                <h5>Software testing Engineer(TVC) - Thermostat</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <ul>
-                                    <li>Performed sensor functional, performance, load, regression, stress,and sanity testing.</li>
-                                    <li>Planned staff training for the first off-line test of the product.</li>
-                                    <li>Collaborated with teams across Mountain View, CA, and Bangalore,India.</li>
-                                </ul>
-                            </div>
-                            
-                        </div> <!-- end timeline__block -->
-                    </div> <!-- end timeline -->
-                </div> <!-- end left -->
-                <div class="col-six tab-full right">
-                    <div class="timeline">
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">April 2020 - April 2022</p>
-                                <h3>Wipro</h3>
-                                <h5>Project Engineer</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <ul>
-                                    <li>Worked at Google Taipei Office as a software testing engineer.</li>
-                                </ul>
-                            </div>
-                        </div> <!-- end timeline__block -->
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">March 2019 - March 2020</p>
-                                <h3>Grandsys Technology Corporation</h3>
-                                <h5>Development Engineer</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <ul>
-                                    <li>Website back-end architecture design, programming, and directing the progress of the software development.</li>
-                                    <li>Database planning, management, data backup, and design of maintenance plans.</li>
-                                    <li>The client's system interfaces and explain the system process with the customer.</li>
-                                    <li>Design more than hundreds of millions of data transmission plans.</li>
-                                </ul>
-                            </div>
-                        </div> <!-- end timeline__block -->
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">September 2015 - June 2017</p>
-                                <h3>Chung Yuan Christian University</h3>
-                                <h5>System Engineering Deparment</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <ul>
-                                    <li>Built websites, including both front-end and back-end development.</li>
-                                    <li>Maintained various cloud service servers</li>
-                                    <li>Repaired and maintained both software and hardware systems.  </li>
-                                </ul>
-                            </div>
-                        </div> <!-- end timeline__block -->
-                    </div> <!-- end timeline -->
-                </div> <!-- end left -->
-            </div> <!-- end about-content timeline -->
-        </section> <!-- end works -->
-        
-        <!-- projects experience
-        ================================================== -->
+                <div class="col-full">
+                    <div id="experienceList" class="timeline"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- projects -->
         <section id="projects" class="s-projects target-section">
             <div class="row about-content about-content--timeline">
                 <div class="col-full text-center">
-                    <h3>Project Experience</h3>
+                    <h3 data-i18n="projects.title">Highlighted Projects</h3>
                 </div>
-                <div class="col-six tab-full left">
-                    <div class="timeline">
-                        <div class="timeline__block">
-                            <div class="timeline__bullet__pulsating"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">January 2023- PRESENT</p>
-                                <h3>TOP SECRET</h3>
-                            </div>
-                            <div class="timeline__desc">
-                                <p>
-                                    Coming soon...
-                                </p>
-                            </div>
-                        </div> <!-- end timeline__block -->
-                        <div class="timeline__block">
-                            <div class="timeline__bullet "></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">June 2016 - January 2017</p>
-                                <h3>
-                                    <a href="blog/Datavisualization-MapEncyclopedia.html" target="_blank">Map Encyclopedia</a>
-                                </h3>
-                                <h5>Backend/Data Engineer</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <p>
-                                    Map Encyclopedia utilizes a platform for crowd-sourced data collection, enabling the visualization, analysis, and management of geospatial data to facilitate communication and connections based on location. </br>
-                                    By providing a more intuitive and associative approach to geographic information, Map Encyclopedia makes it easier for users to access and understand geospatial data.
-                                </p>
-                            </div>
-                        </div> <!-- end timeline__block -->
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">July 2016 - December 2016</p>
-                                <h3>
-                                    <a href="blog/Citadels.html" target="_blank">Citadels</a>
-                                </h3>
-                                <h5>Personal Project - Full Stack Engineer</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <p>
-                                    Famous board game "Citadels" is now available online! </br>
-                                    Engage in real-time battles with your friends and experience the excitement and thrill of this classic game like never before.
-                                </p>
-                            </div>
-                        </div> <!-- end timeline__block -->
-                    </div> <!-- end timeline -->
-                </div> <!-- end left -->
-                <div class="col-six tab-full right">
-                    <div class="timeline">
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">November 2015 - June 2016</p>
-                                <h3>
-                                    <a href="blog/PersonalHealthEducationManagementSystem.html" target="_blank">Personal Health Education Management System</a>
-                                </h3>
-                                <h5>Data Engineer</h5>
-                            </div>
-                            <div class="timeline__desc">
-                                <p >
-                                    Take care of your health, starting with this web-based Personal Health Management System for clinic education. </br>
-                                    Easily manage every health education data point on our website, and check physician and health education teacher evaluations anytime to better understand your health condition.</br>  </br>
-                                    Don't let health management become difficult. 
-                                </p>
-                            </div>
-                        </div> <!-- end timeline__block -->
-                        <div class="timeline__block">
-                            <div class="timeline__bullet"></div>
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">January 2015 - June 2015</p>
-                                <h3>
-                                    <a href="blog/CYCUEat.html" target="_blank">CYCUEat</a>
-                                </h3>
-                                <h5>Software Engineer</h5>
-                            </div>		
-                            <div class="timeline__desc">
-                                <p>
-                                    Are you always thinking what to eat for your next meal?</br>
-                                    Let us help you!</br>
-                                    Our specially designed food app for Zhongyuan university students is here to assist.</br>
-                                    It carefully selects every meal and ensures the utmost attention is given to your health.</br>
-                                </p>
-                            </div>
-                        </div> <!-- end timeline__block -->
-                    </div> <!-- end timeline -->
-                </div> <!-- end right -->
-            </div> <!-- end about-content timeline -->
-        </section> <!-- end projects -->
-        
-        <!-- blog
-        <section id="blog" class="s-blog target-section">
-            <div class="row narrow section-intro has-bottom-sep">
                 <div class="col-full">
-                    <h3>Journal</h3>
-                    <h1>Latest From The Blog.</h1>
-                    <p class="lead"></p>
+                    <div id="projectsList" class="timeline"></div>
                 </div>
             </div>
-        </section> <!-- end s-blog -->
-        
-        <!-- s-contact 
-        ================================================== -->
+        </section>
+
+        <!-- contact -->
         <section id="contact" class="s-contact target-section">
             <div class="overlay"></div>
             <div class="row narrow section-intro">
                 <div class="col-full">
-                    <h3>Contact</h3>
-                    <h1>Say Hello.</h1>
-                    <p class="lead"></p>
+                    <h3 data-i18n="contact.eyebrow">Contact</h3>
+                    <h1 data-i18n="contact.title">Say Hello.</h1>
+                    <p class="lead" data-i18n="contact.lead"></p>
                 </div>
             </div>
 
@@ -368,139 +178,172 @@
                     <form name="contactForm" id="contactForm" method="post" action="">
                         <fieldset>
                             <div class="form-field">
-                                <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                                <input name="contactName" type="text" id="contactName" data-i18n-placeholder="contact.name" placeholder="Name" minlength="2" required class="full-width">
                             </div>
                             <div class="form-field">
-                                <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
+                                <input name="contactEmail" type="email" id="contactEmail" data-i18n-placeholder="contact.email" placeholder="Email" required class="full-width">
                             </div>
                             <div class="form-field">
-                                <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+                                <input name="contactSubject" type="text" id="contactSubject" data-i18n-placeholder="contact.subject" placeholder="Subject" class="full-width">
                             </div>
                             <div class="form-field">
-                                <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                                <textarea name="contactMessage" id="contactMessage" data-i18n-placeholder="contact.message" placeholder="Message" rows="10" cols="50" required class="full-width"></textarea>
                             </div>
                             <div class="form-field">
-                                <button class="full-width btn--primary" type="submit" value="Submit" id="submitEmail">Submit</button>
+                                <button class="full-width btn--primary" type="submit" id="submitEmail" data-i18n="contact.submit">Send Message</button>
                                 <div class="submit-loader">
-                                    <div class="text-loader">Sending...</div>
-                                    <div class="s-loader">
-                                        <div class="bounce1"></div>
-                                        <div class="bounce2"></div>
-                                        <div class="bounce3"></div>
-                                    </div>
+                                    <div class="text-loader" data-i18n="contact.sending">Sending...</div>
+                                    <div class="s-loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>
                                 </div>
                             </div>
                         </fieldset>
                     </form>
-
-                    <!-- contact-warning -->
-                    <div class="message-warning">
-                        Something went wrong. Please try again.
-                    </div> 
-                
-                    <!-- contact-success -->
-                    <div class="message-success">
-                        Your message was sent, thank you!<br>
-                    </div>  
+                    <div class="message-warning" data-i18n="contact.errorMsg">Something went wrong. Please try again.</div>
+                    <div class="message-success" data-i18n="contact.successMsg">Your message was sent, thank you!</div>
                 </div>
                 <div class="col-four tab-full contact__infos">
-                    <h4 class="h06">Email</h4>
-                    <p>Hello@an-li.tw</p>
+                    <h4 class="h06" data-i18n="contact.infoEmail">Email</h4>
+                    <p data-i18n="contact.emailAddr">hello@an-li.tw</p>
+                    <h4 class="h06" data-i18n="contact.infoLoc">Location</h4>
+                    <p data-i18n="contact.locAddr">Tokyo, Japan</p>
                 </div>
             </div>
-        </section> <!-- end s-contact -->
+        </section>
 
-        <!-- footer
-        ================================================== -->
+        <!-- footer -->
         <footer>
             <div class="row">
                 <div class="col-full">
                     <div class="footer-logo">
-                        <a class="footer-site-logo" href="#0"><img src="images/logo.png" alt="Homepage"></a>
+                        <a class="footer-site-logo" href="#0"><img src="images/logo.png" alt="An Li"></a>
                     </div>
                     <ul class="footer-social">
-                        <li>
-                            <a href="https://www.facebook.com/AnLiTaiwan">
-                                <i class="im im-facebook" aria-hidden="true"></i>
-                                <span>Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://instagram.com/anli.tw2jp?igshid=ZDdkNTZiNTM=">
-                                <i class="im im-instagram" aria-hidden="true"></i>
-                                <span>Instagram</span>
-                            </a>
-                        </li>
+                        <li><a href="https://linkedin.com/in/anlitaiwan" target="_blank" rel="noopener"><i class="im im-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>
+                        <li><a href="https://www.facebook.com/AnLiTaiwan" target="_blank" rel="noopener"><i class="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
+                        <li><a href="https://instagram.com/anli.tw2jp" target="_blank" rel="noopener"><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="row footer-bottom">
                 <div class="col-twelve">
                     <div class="copyright">
-                        <span>© Copyright Hola 2017</span> 
-                        <span>Design by <a href="https://www.styleshout.com/">styleshout</a></span>	
+                        <span>© An Li <span id="copyrightYear">2026</span></span>
+                        <span data-i18n="footer.rights"> · All rights reserved</span>
                     </div>
                     <div class="go-top">
-                        <a class="smoothscroll" title="Back to Top" href="#top">
+                        <a class="smoothscroll" data-i18n-aria="footer.backToTop" aria-label="Back to Top" href="#top">
                             <i class="im im-arrow-up" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
-            </div> <!-- end footer-bottom -->
-        </footer> <!-- end footer -->
-
-        <!-- photoswipe background
-        ================================================== -->
-        <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-            <div class="pswp__bg"></div>
-            <div class="pswp__scroll-wrap">
-                <div class="pswp__container">
-                    <div class="pswp__item"></div>
-                    <div class="pswp__item"></div>
-                    <div class="pswp__item"></div>
-                </div>
-                <div class="pswp__ui pswp__ui--hidden">
-                    <div class="pswp__top-bar">
-                        <div class="pswp__counter"></div>
-                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                        <button class="pswp__button pswp__button--share" title="Share"></button>
-                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                        <button class="pswp__button pswp__button--des" title="Description"></button>
-                        <div class="pswp__preloader">
-                            <div class="pswp__preloader__icn">
-                                <div class="pswp__preloader__cut">
-                                    <div class="pswp__preloader__donut"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                        <div class="pswp__share-tooltip"></div>
-                    </div>
-                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-                    <div class="pswp__caption">
-                        <div class="pswp__caption__center"></div>
-                    </div>
-                </div>
             </div>
-        </div><!-- end photoSwipe background -->
+        </footer>
 
-        <div id="preloader">
-            <div id="loader"></div>
-        </div>
+        <div id="preloader"><div id="loader"></div></div>
 
-        <!-- Java Script
-        ================================================== -->
+        <style>
+            #experienceList, #projectsList { max-width: 860px; margin: 3.6rem auto 0; }
+            #projectsList .timeline__block { min-height: 9rem; }
+        </style>
+
+        <script src="js/i18n-data.js"></script>
+
+        <script>
+        (function () {
+            function escapeHTML(s) {
+                return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+            }
+            function renderExperience(dict) {
+                const list = document.getElementById("experienceList");
+                if (!list) return;
+                list.innerHTML = dict.experience.items.map((item, idx) => `
+                    <div class="timeline__block">
+                        <div class="${idx === 0 ? "timeline__bullet__pulsating" : "timeline__bullet"}"></div>
+                        <div class="timeline__header">
+                            <p class="timeline__timeframe">${escapeHTML(item.period)}</p>
+                            <h3>${escapeHTML(item.company)}</h3>
+                            <h5>${escapeHTML(item.role)}</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <ul>${item.bullets.map(b => `<li>${escapeHTML(b)}</li>`).join("")}</ul>
+                        </div>
+                    </div>`).join("");
+            }
+            function renderProjects(dict) {
+                const list = document.getElementById("projectsList");
+                if (!list) return;
+                list.innerHTML = dict.projects.items.map(p => `
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h3>${escapeHTML(p.title)}</h3>
+                        </div>
+                        <div class="timeline__desc">
+                            <p>${escapeHTML(p.desc)}</p>
+                        </div>
+                    </div>`).join("");
+            }
+
+            // i18n-aware hero typer
+            function setupHeroTyper() {
+                const el = document.getElementById("hero-typer");
+                if (!el) return null;
+                let words = [], wi = 0, ci = 0, building = true, timer = null;
+                const delay = 90, deleteDelay = 2200;
+                function step() {
+                    if (!words.length) { timer = setTimeout(step, 200); return; }
+                    const w = words[wi % words.length];
+                    const chars = [...w];
+                    el.textContent = chars.slice(0, ci).join("");
+                    if (building) {
+                        if (ci >= chars.length) {
+                            building = false;
+                            timer = setTimeout(step, deleteDelay);
+                        } else { ci++; timer = setTimeout(step, delay); }
+                    } else {
+                        if (ci <= 0) {
+                            building = true;
+                            wi = (wi + 1) % words.length;
+                            timer = setTimeout(step, delay);
+                        } else { ci--; timer = setTimeout(step, delay); }
+                    }
+                }
+                function setWords(newWords) {
+                    words = (newWords || []).slice();
+                    wi = 0; ci = 0; building = true;
+                    if (timer) clearTimeout(timer);
+                    step();
+                }
+                return { setWords };
+            }
+
+            function renderAll(dict) {
+                renderExperience(dict);
+                renderProjects(dict);
+                if (window.__heroTyper) {
+                    window.__heroTyper.setWords(dict.hero.roles);
+                }
+            }
+            function init() {
+                const lang = window.I18nRuntime.getLang();
+                const dict = window.I18N[lang] || window.I18N.en;
+                window.__heroTyper = setupHeroTyper();
+                renderAll(dict);
+                const yearEl = document.getElementById("copyrightYear");
+                if (yearEl) yearEl.textContent = new Date().getFullYear();
+            }
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", init);
+            } else {
+                init();
+            }
+            window.addEventListener("i18n:change", (e) => renderAll(e.detail.dict));
+        })();
+        </script>
+
         <script src="js/jquery-3.6.4.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/typer.js"></script>
-
-        <!-- EmailJS API
-        ================================================== -->
         <script src="js/email.min-2.3.2.js"></script>
         <script src="js/sendEmail.js"></script>
     </body>
