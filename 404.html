@@ -1,46 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet" />
-	<link href="./css/404.css" rel="stylesheet" />
-	<title>This page is under construction.</title>
-	
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404 — Page Not Found · An Li</title>
+    <meta name="description" content="This page doesn't exist. Head back to an-li.tw.">
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="css/404.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <style>
+        .nf-lang-switch {
+            position: fixed;
+            top: 24px;
+            right: 32px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.08);
+            z-index: 10;
+        }
+        .nf-lang-switch__btn {
+            all: unset;
+            cursor: pointer;
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            padding: 6px 10px;
+            border-radius: 999px;
+            color: #333;
+            transition: all 0.2s ease;
+        }
+        .nf-lang-switch__btn:hover { background: rgba(0, 0, 0, 0.08); }
+        .nf-lang-switch__btn.is-active { background: #1a1a1a; color: #fff; }
+
+        .nf-cta-wrap {
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+            padding: 0 20px 60px;
+            font-family: "IBM Plex Mono", monospace;
+        }
+        .nf-cta {
+            display: inline-block;
+            padding: 12px 28px;
+            font-size: 12px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #1a1a1a;
+            background: transparent;
+            border: 2px solid #1a1a1a;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .nf-cta:hover { background: #1a1a1a; color: #fff; }
+
+        @media (max-width: 600px) {
+            .nf-lang-switch { top: 16px; right: 16px; }
+        }
+    </style>
 </head>
-	<body>
-		<div class="v103_2">
-			<div class="v230_0">
-				<div class="v110_18"></div>
-				<div class="v109_7"></div>
-				<div class="v109_10"></div>
-				<div class="v106_0"></div>
-				<div class="v114_3"></div>
-				<div class="v110_1"></div>
-				<div class="v110_4"></div>
-				<div class="v110_7"></div>
-				<div class="v110_3"></div>
-				<div class="v110_9"></div>
-				<div class="v110_10"></div>
-				<div class="v110_14"></div>
-				<div class="v110_16"></div>
-				<div class="v110_35">
-					<div class="v110_24">
-						<div class="v110_20"></div>
-						<div class="v110_23"></div>
-						<div class="v110_22"></div>
-					</div>
-				</div>
-				<div class="v110_26"></div>
-				<div class="v110_28"></div>
-				<div class="v110_30"></div>
-				<div class="v110_32"></div>
-				<div class="v110_34"></div>
-				<span class="v110_36">The page you’re locking for doesn’t exist or an another occured.
-					Go <a href="https://www.an-li.tw">an-li.tw</a>, or <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=Hello@an-li.tw">content me</a> if something should have been here.
-				</span>
-			</div>
-			<div class="v110_38"></div>
-		</div>
-	</body>
+<body id="top">
+    <div class="nf-lang-switch" role="group" aria-label="Language">
+        <button class="nf-lang-switch__btn" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button class="nf-lang-switch__btn" data-lang-btn="ja" aria-pressed="false">JA</button>
+        <button class="nf-lang-switch__btn" data-lang-btn="zh" aria-pressed="false">ZH</button>
+    </div>
+
+    <div class="v103_2">
+        <div class="v230_0">
+            <div class="v110_18"></div>
+            <div class="v109_7"></div>
+            <div class="v109_10"></div>
+            <div class="v106_0"></div>
+            <div class="v114_3"></div>
+            <div class="v110_1"></div>
+            <div class="v110_4"></div>
+            <div class="v110_7"></div>
+            <div class="v110_3"></div>
+            <div class="v110_9"></div>
+            <div class="v110_10"></div>
+            <div class="v110_14"></div>
+            <div class="v110_16"></div>
+            <div class="v110_35">
+                <div class="v110_24">
+                    <div class="v110_20"></div>
+                    <div class="v110_23"></div>
+                    <div class="v110_22"></div>
+                </div>
+            </div>
+            <div class="v110_26"></div>
+            <div class="v110_28"></div>
+            <div class="v110_30"></div>
+            <div class="v110_32"></div>
+            <div class="v110_34"></div>
+            <span class="v110_36" data-i18n-html="notFound.message">
+                The page you&rsquo;re looking for doesn&rsquo;t exist, or something else went wrong.
+                Head back to <a href="/">an-li.tw</a>, or <a href="mailto:hello@an-li.tw">contact me</a> if something should have been here.
+            </span>
+        </div>
+        <div class="v110_38"></div>
+    </div>
+
+    <div class="nf-cta-wrap">
+        <a href="/" class="nf-cta" data-i18n="notFound.cta">Back to Home</a>
+    </div>
+
+    <script src="js/i18n-data.js"></script>
+    <script>
+    (function () {
+        function applyHTML(lang) {
+            const dict = window.I18N[lang] || window.I18N.en;
+            document.querySelectorAll("[data-i18n-html]").forEach(el => {
+                const key = el.getAttribute("data-i18n-html");
+                const val = key.split(".").reduce((a, k) => (a && a[k] !== undefined ? a[k] : undefined), dict);
+                if (typeof val === "string") el.innerHTML = val;
+            });
+            if (dict.notFound && dict.notFound.pageTitle) {
+                document.title = dict.notFound.pageTitle;
+            }
+        }
+        function run() {
+            if (!window.I18N || !window.I18nRuntime) return;
+            applyHTML(window.I18nRuntime.getLang());
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", run);
+        } else { run(); }
+        window.addEventListener("i18n:change", (e) => applyHTML(e.detail.lang));
+    })();
+    </script>
+</body>
 </html>

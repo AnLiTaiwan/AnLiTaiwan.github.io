@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>An Li — QA Lead &amp; Automation Engineer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --paper: #f5f1e8;
+    --paper-deep: #ece5d3;
+    --ink: #1a1814;
+    --ink-soft: #5c564b;
+    --ink-faded: #9b948a;
+    --accent: #c8452b;
+    --line: rgba(26, 24, 20, 0.15);
+    --display: "Instrument Serif", "Georgia", serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--paper); color: var(--ink);
+    font-family: var(--mono); font-size: 14px;
+    line-height: 1.65; overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* Paper grain texture */
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.6; mix-blend-mode: multiply;
+  }
+
+  /* Margin rules (editorial) */
+  .page-margin-left {
+    position: fixed; left: 48px; top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left center;
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.3em; color: var(--ink-faded);
+    z-index: 3; pointer-events: none;
+  }
+  @media (max-width: 900px) { .page-margin-left { display: none; } }
+
+  /* Nav */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 48px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--ink);
+  }
+  .nav__brand {
+    font-family: var(--display); font-style: italic;
+    font-size: 26px; font-weight: 400;
+  }
+  .nav__brand sup {
+    font-family: var(--mono); font-size: 10px;
+    font-weight: 500; margin-left: 6px;
+    color: var(--accent); vertical-align: super;
+  }
+  .nav__links { display: flex; gap: 28px; list-style: none; }
+  .nav__links a {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink); transition: color 0.2s; position: relative;
+  }
+  .nav__links a:hover { color: var(--accent); }
+  .nav__links a::before {
+    content: "·"; margin-right: 8px; color: var(--accent);
+  }
+  .nav__right { display: flex; align-items: center; gap: 20px; }
+
+  .lang-switch {
+    display: inline-flex; gap: 0;
+    border: 1px solid var(--ink);
+  }
+  .lang-btn {
+    all: unset; cursor: pointer;
+    padding: 5px 10px; font-size: 10px; font-weight: 500;
+    letter-spacing: 0.2em; color: var(--ink);
+    transition: all 0.15s; font-family: var(--mono);
+    border-right: 1px solid var(--ink);
+  }
+  .lang-btn:last-child { border-right: none; }
+  .lang-btn:hover { background: var(--paper-deep); }
+  .lang-btn.is-active { background: var(--ink); color: var(--paper); }
+
+  .burger { display: none; cursor: pointer; font-family: var(--mono); font-size: 16px; }
+  @media (max-width: 800px) {
+    .nav { padding: 14px 20px; }
+    .nav__links { display: none; }
+    .burger { display: block; }
+    .nav.open .nav__links {
+      display: flex; flex-direction: column; gap: 18px;
+      position: absolute; top: 100%; left: 0; right: 0;
+      padding: 28px; background: var(--paper);
+      border-bottom: 1px solid var(--ink);
+    }
+  }
+
+  /* Hero: editorial magazine layout */
+  .hero {
+    position: relative; min-height: 100vh;
+    padding: 110px 48px 60px;
+    border-bottom: 1px solid var(--ink);
+    overflow: hidden;
+  }
+  .hero__grid {
+    display: grid; grid-template-columns: 1.3fr 1fr;
+    gap: 60px; max-width: 1400px; margin: 0 auto;
+    align-items: center;
+  }
+  @media (max-width: 900px) { .hero__grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  .hero__text { position: relative; z-index: 2; }
+  .hero__issue {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 40px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--ink);
+  }
+  .hero__eyebrow {
+    font-family: var(--display); font-style: italic; font-size: 18px;
+    color: var(--accent); margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .hero__title {
+    font-family: var(--display);
+    font-size: clamp(52px, 9vw, 140px);
+    line-height: 0.9; font-weight: 400;
+    letter-spacing: -0.02em; margin-bottom: 28px;
+  }
+  .hero__title .italic { font-style: italic; color: var(--accent); }
+  .hero__subtitle {
+    font-size: 14px; font-family: var(--mono);
+    color: var(--ink-soft); max-width: 560px;
+    line-height: 1.8; margin-bottom: 36px;
+    column-count: 1;
+  }
+  .hero__cta { display: inline-flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    padding: 12px 22px; font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border: 1px solid var(--ink); color: var(--ink);
+    background: var(--paper); cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn:hover { background: var(--ink); color: var(--paper); }
+  .btn--accent {
+    background: var(--accent); color: var(--paper); border-color: var(--accent);
+  }
+  .btn--accent:hover { background: var(--ink); border-color: var(--ink); }
+
+  .hero__canvas-wrap {
+    position: relative; aspect-ratio: 1 / 1.1;
+    border: 1px solid var(--ink); padding: 4px;
+  }
+  .hero__canvas-wrap::before {
+    content: ""; position: absolute; inset: 4px;
+    border: 1px dashed rgba(26,24,20,0.25); pointer-events: none;
+  }
+  #heroCanvas { width: 100%; height: 100%; display: block; }
+  .hero__figure-caption {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--ink-faded);
+    margin-top: 12px; text-align: right;
+  }
+  .hero__figure-caption::before { content: "Fig. 001 — "; color: var(--accent); font-weight: 700; }
+
+  /* Sections */
+  section { padding: 100px 48px; border-bottom: 1px solid var(--ink); position: relative; z-index: 2; }
+  @media (max-width: 800px) { section, .hero { padding-left: 20px; padding-right: 20px; } }
+  .container { max-width: 1400px; margin: 0 auto; }
+
+  .section__header {
+    display: grid; grid-template-columns: 180px 1fr;
+    gap: 40px; align-items: baseline;
+    margin-bottom: 64px; padding-bottom: 24px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .section__num {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.22em; color: var(--accent);
+  }
+  .section__title {
+    font-family: var(--display); font-size: clamp(44px, 6vw, 84px);
+    font-weight: 400; line-height: 1; letter-spacing: -0.02em;
+  }
+  .section__title em { color: var(--accent); }
+  @media (max-width: 700px) { .section__header { grid-template-columns: 1fr; gap: 12px; } }
+
+  /* Skills — magazine table */
+  .skills {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+    border-top: 1px solid var(--ink);
+  }
+  @media (max-width: 700px) { .skills { grid-template-columns: 1fr; } }
+  .skill {
+    padding: 28px 24px;
+    border-bottom: 1px solid var(--ink);
+    border-right: 1px solid var(--ink);
+    display: grid; grid-template-columns: 60px 1fr;
+    gap: 20px; align-items: start;
+    transition: background 0.2s;
+  }
+  .skill:nth-child(even) { border-right: none; }
+  .skill:hover { background: var(--paper-deep); }
+  .skill__num {
+    font-family: var(--display); font-style: italic;
+    font-size: 36px; color: var(--accent);
+    line-height: 0.9;
+  }
+  .skill__label {
+    font-family: var(--display); font-size: 20px; font-weight: 400;
+    margin-bottom: 6px; letter-spacing: -0.01em;
+  }
+  .skill__value {
+    font-size: 12px; color: var(--ink-soft); line-height: 1.6;
+  }
+
+  /* Experience */
+  .exp-list { display: flex; flex-direction: column; }
+  .exp {
+    display: grid; grid-template-columns: 180px 1fr;
+    gap: 48px; padding: 48px 0;
+    border-top: 1px solid var(--line);
+    transition: background 0.25s;
+  }
+  .exp:first-child { border-top: none; }
+  .exp:hover { background: rgba(200, 69, 43, 0.03); }
+  .exp__period-wrap { position: sticky; top: 90px; align-self: start; }
+  .exp__period {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.18em; color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .exp__location {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-faded);
+  }
+  .exp__company {
+    font-family: var(--display); font-size: 38px;
+    font-weight: 400; letter-spacing: -0.015em; margin-bottom: 4px;
+  }
+  .exp__role {
+    font-family: var(--display); font-style: italic;
+    font-size: 17px; color: var(--ink-soft); margin-bottom: 14px;
+    font-weight: 400;
+  }
+  .exp__stack {
+    display: inline-block; padding: 3px 10px;
+    font-family: var(--mono); font-size: 10px;
+    color: var(--ink); background: var(--paper-deep);
+    letter-spacing: 0.08em; margin-bottom: 18px;
+    border: 1px solid var(--ink);
+  }
+  .exp__bullets { list-style: none; padding: 0; column-gap: 32px; }
+  .exp__bullets li {
+    font-size: 13px; color: var(--ink-soft);
+    margin-bottom: 8px; padding-left: 18px;
+    position: relative; break-inside: avoid;
+  }
+  .exp__bullets li::before {
+    content: "§"; position: absolute; left: 0;
+    color: var(--accent); font-family: var(--display);
+    font-style: italic;
+  }
+  @media (max-width: 800px) {
+    .exp { grid-template-columns: 1fr; gap: 16px; padding: 36px 0; }
+    .exp__period-wrap { position: static; }
+  }
+
+  /* Projects */
+  .projects {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 0; border-top: 1px solid var(--ink);
+  }
+  @media (max-width: 700px) { .projects { grid-template-columns: 1fr; } }
+  .project {
+    padding: 36px 32px;
+    border-bottom: 1px solid var(--ink);
+    border-right: 1px solid var(--ink);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .project:nth-child(even) { border-right: none; }
+  .project:hover {
+    background: var(--ink); color: var(--paper);
+  }
+  .project:hover .project__title,
+  .project:hover .project__subtitle,
+  .project:hover .project__desc { color: var(--paper); }
+  .project:hover .project__subtitle { color: #f5b89e; }
+  .project__num {
+    font-family: var(--mono); font-size: 10px;
+    color: var(--accent); letter-spacing: 0.18em;
+    margin-bottom: 16px;
+  }
+  .project__title {
+    font-family: var(--display); font-size: 28px;
+    font-weight: 400; letter-spacing: -0.015em;
+    margin-bottom: 4px; color: var(--ink);
+    transition: color 0.3s;
+  }
+  .project__subtitle {
+    font-family: var(--mono); font-size: 10px;
+    color: var(--accent); letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 16px;
+    transition: color 0.3s;
+  }
+  .project__desc {
+    font-size: 13px; color: var(--ink-soft);
+    line-height: 1.7; transition: color 0.3s;
+  }
+
+  /* Contact */
+  .contact { text-align: left; }
+  .contact__intro {
+    font-family: var(--display); font-style: italic;
+    font-size: 22px; color: var(--ink-soft);
+    max-width: 700px; margin-bottom: 40px;
+  }
+  .contact__email {
+    font-family: var(--display); font-size: clamp(40px, 8vw, 96px);
+    font-weight: 400; letter-spacing: -0.02em;
+    color: var(--accent); display: inline-block;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  .contact__email:hover { border-bottom-color: var(--accent); }
+  .contact__meta {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px; margin-top: 48px;
+    padding-top: 24px; border-top: 1px solid var(--ink);
+  }
+  .contact__meta-item__label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-faded); margin-bottom: 6px;
+  }
+  .contact__meta-item__value {
+    font-family: var(--display); font-size: 18px;
+  }
+
+  footer {
+    padding: 24px 48px;
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-soft);
+    display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+  }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="page-margin-left">AN LI — PORTFOLIO / 2026 / TOKYO</div>
+
+<nav class="nav" id="nav">
+  <a class="nav__brand" href="#home">An Li<sup>*</sup></a>
+  <ul class="nav__links">
+    <li><a href="#home" data-i18n="nav.home">Home</a></li>
+    <li><a href="#about" data-i18n="nav.about">About</a></li>
+    <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+    <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+  </ul>
+  <div class="nav__right">
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button class="lang-btn" data-lang-btn="en">EN</button>
+      <button class="lang-btn" data-lang-btn="ja">JA</button>
+      <button class="lang-btn" data-lang-btn="zh">ZH</button>
+    </div>
+    <span class="burger" onclick="document.getElementById('nav').classList.toggle('open')">[+]</span>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero__grid">
+    <div class="hero__text">
+      <div class="hero__issue">
+        <span>Portfolio № 04</span>
+        <span>Vol. 2026</span>
+        <span>Tokyo, Japan</span>
+      </div>
+      <p class="hero__eyebrow" data-i18n="hero.greeting">Hello There</p>
+      <h1 class="hero__title">
+        <span data-i18n="hero.name">I'm An Li.</span><br/>
+        <span class="italic" data-i18n="hero.roleSuffix">engineer</span>
+      </h1>
+      <p class="hero__subtitle" data-i18n="about.summary">Loading...</p>
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn--accent" data-i18n="hero.ctaProjects">Latest Projects</a>
+        <a href="#about" class="btn" data-i18n="hero.ctaAbout">More About Me</a>
+      </div>
+    </div>
+    <div>
+      <div class="hero__canvas-wrap">
+        <canvas id="heroCanvas"></canvas>
+      </div>
+      <div class="hero__figure-caption">Parametric form · topology study</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section__header">
+      <div class="section__num">§ 01 / About</div>
+      <h2 class="section__title"><em data-i18n="about.skillsTitle">Core Skills</em></h2>
+    </div>
+    <div class="skills" id="skillsGrid"></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section__header">
+      <div class="section__num">§ 02 / Experience</div>
+      <h2 class="section__title"><em data-i18n="experience.title">Work Experience</em></h2>
+    </div>
+    <div class="exp-list" id="experienceList"></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section__header">
+      <div class="section__num">§ 03 / Projects</div>
+      <h2 class="section__title"><em data-i18n="projects.title">Highlighted Projects</em></h2>
+    </div>
+    <div class="projects" id="projectsGrid"></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section__header">
+      <div class="section__num">§ 04 / Contact</div>
+      <h2 class="section__title" data-i18n="contact.title">Say Hello.</h2>
+    </div>
+    <p class="contact__intro" data-i18n="contact.lead">Open to opportunities...</p>
+    <a class="contact__email" href="mailto:hello@an-li.tw">hello@an-li.tw</a>
+    <div class="contact__meta">
+      <div>
+        <div class="contact__meta-item__label" data-i18n="contact.infoLoc">Location</div>
+        <div class="contact__meta-item__value" data-i18n="contact.locAddr">Tokyo, Japan</div>
+      </div>
+      <div>
+        <div class="contact__meta-item__label">LinkedIn</div>
+        <div class="contact__meta-item__value"><a href="https://linkedin.com/in/anlitaiwan" target="_blank" rel="noopener">@anlitaiwan</a></div>
+      </div>
+      <div>
+        <div class="contact__meta-item__label" data-i18n="about.downloadCV">Download My CV</div>
+        <div class="contact__meta-item__value"><a href="../cv/Anli's Resume.pdf" target="_blank" rel="noopener">Anli_Resume.pdf</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="year">2026</span> An Li · All rights reserved</span>
+  <span>Paper &amp; Code / v5 · <a href="./index.html">All versions →</a></span>
+</footer>
+
+<script src="../js/i18n-data.js"></script>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from "three";
+
+/* ========== Three.js Scene: Parametric Wireframe Study ==========
+   Editorial zine aesthetic — fine line drawing of a morphing IcoSphere
+   with subtle vertex displacement. Monochrome on paper.
+*/
+const canvas = document.getElementById("heroCanvas");
+const wrap = canvas.parentElement;
+const scene = new THREE.Scene();
+
+const size = () => ({ w: wrap.clientWidth - 8, h: wrap.clientHeight - 8 });
+
+const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+camera.position.set(0, 0, 5);
+
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+const s0 = size();
+renderer.setSize(s0.w, s0.h, false);
+renderer.setClearColor(0x000000, 0);
+
+/* Parametric icosphere */
+const geo = new THREE.IcosahedronGeometry(1.3, 4);
+const basePos = geo.attributes.position.array.slice();
+
+/* Line material — ink on paper */
+const lineMat = new THREE.LineBasicMaterial({
+  color: 0x1a1814, transparent: true, opacity: 0.75
+});
+const wireGeo = new THREE.WireframeGeometry(geo);
+const wire = new THREE.LineSegments(wireGeo, lineMat);
+scene.add(wire);
+
+/* Secondary outline — thin accent */
+const outlineGeo = new THREE.IcosahedronGeometry(1.45, 2);
+const outline = new THREE.LineSegments(
+  new THREE.WireframeGeometry(outlineGeo),
+  new THREE.LineBasicMaterial({ color: 0xc8452b, transparent: true, opacity: 0.35 })
+);
+scene.add(outline);
+
+/* Fine dots on vertices */
+const dotGeo = new THREE.BufferGeometry();
+dotGeo.setAttribute("position", geo.attributes.position.clone());
+const dots = new THREE.Points(dotGeo, new THREE.PointsMaterial({
+  color: 0x1a1814, size: 0.035, transparent: true, opacity: 0.9
+}));
+scene.add(dots);
+
+/* Ground-plane grid lines (technical drawing feel) */
+const gridGeo = new THREE.BufferGeometry();
+const gridVerts = [];
+const R = 3, steps = 24;
+for (let i = 0; i <= steps; i++) {
+  const a = (i / steps) * Math.PI * 2;
+  gridVerts.push(Math.cos(a) * R, -1.8, Math.sin(a) * R);
+  gridVerts.push(Math.cos(a) * R, -1.8, Math.sin(a) * R); // duplicate next frame
+}
+// radial spokes
+for (let i = 0; i < 12; i++) {
+  const a = (i / 12) * Math.PI * 2;
+  gridVerts.push(0, -1.8, 0, Math.cos(a) * R, -1.8, Math.sin(a) * R);
+}
+gridGeo.setAttribute("position", new THREE.Float32BufferAttribute(gridVerts, 3));
+const grid = new THREE.LineSegments(gridGeo, new THREE.LineBasicMaterial({
+  color: 0x9b948a, transparent: true, opacity: 0.3
+}));
+scene.add(grid);
+
+/* Labels floating — small axis markers */
+function axisMarker(dir, color) {
+  const g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.Float32BufferAttribute([0, 0, 0, dir.x * 2, dir.y * 2, dir.z * 2], 3));
+  return new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.4 }));
+}
+// subtle reference X
+scene.add(axisMarker(new THREE.Vector3(1, 0, 0), 0xc8452b));
+
+addEventListener("resize", () => {
+  const s = size();
+  camera.aspect = s.w / s.h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(s.w, s.h, false);
+});
+// initial aspect set
+(() => {
+  const s = size();
+  camera.aspect = s.w / s.h;
+  camera.updateProjectionMatrix();
+})();
+
+const mouse = new THREE.Vector2();
+addEventListener("mousemove", (e) => {
+  const r = wrap.getBoundingClientRect();
+  mouse.x = ((e.clientX - r.left) / r.width) * 2 - 1;
+  mouse.y = -((e.clientY - r.top) / r.height) * 2 + 1;
+});
+
+const clock = new THREE.Clock();
+function animate() {
+  const t = clock.getElapsedTime();
+
+  // Deform vertices using noise-like function
+  const pos = geo.attributes.position.array;
+  const dotPos = dotGeo.attributes.position.array;
+  for (let i = 0; i < pos.length; i += 3) {
+    const bx = basePos[i], by = basePos[i + 1], bz = basePos[i + 2];
+    const wave =
+      Math.sin(bx * 2.5 + t * 0.7) * 0.08 +
+      Math.cos(by * 3 + t * 0.6) * 0.07 +
+      Math.sin(bz * 2 + t * 0.5) * 0.06;
+    const len = Math.sqrt(bx * bx + by * by + bz * bz);
+    const k = 1 + wave;
+    pos[i] = bx * k;
+    pos[i + 1] = by * k;
+    pos[i + 2] = bz * k;
+    dotPos[i] = pos[i];
+    dotPos[i + 1] = pos[i + 1];
+    dotPos[i + 2] = pos[i + 2];
+  }
+  geo.attributes.position.needsUpdate = true;
+  dotGeo.attributes.position.needsUpdate = true;
+
+  // Rebuild wireframe (costly but small mesh so OK)
+  wire.geometry.dispose();
+  wire.geometry = new THREE.WireframeGeometry(geo);
+
+  wire.rotation.y = t * 0.2 + mouse.x * 0.5;
+  wire.rotation.x = t * 0.15 + mouse.y * 0.3;
+  outline.rotation.copy(wire.rotation);
+  outline.rotation.y *= -0.7;
+  dots.rotation.copy(wire.rotation);
+  grid.rotation.y = t * 0.1;
+
+  renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
+
+<script>
+(function () {
+  function renderSkills(dict) {
+    const grid = document.getElementById("skillsGrid");
+    const s = dict.about.skills;
+    const keys = ["automation", "agentic", "cicd", "testing", "infra", "languages"];
+    grid.innerHTML = keys.map((k, i) => `
+      <div class="skill">
+        <div class="skill__num">${String(i + 1).padStart(2, "0")}</div>
+        <div>
+          <div class="skill__label">${s[k].label}</div>
+          <div class="skill__value">${s[k].value}</div>
+        </div>
+      </div>`).join("");
+  }
+  function renderExperience(dict) {
+    const list = document.getElementById("experienceList");
+    list.innerHTML = dict.experience.items.map(item => `
+      <div class="exp">
+        <div class="exp__period-wrap">
+          <div class="exp__period">${item.period}</div>
+          <div class="exp__location">${item.location}</div>
+        </div>
+        <div>
+          <h3 class="exp__company">${item.company}</h3>
+          <p class="exp__role">${item.role}</p>
+          <div class="exp__stack">${item.stack}</div>
+          <ul class="exp__bullets">${item.bullets.map(b => `<li>${b}</li>`).join("")}</ul>
+        </div>
+      </div>`).join("");
+  }
+  function renderProjects(dict) {
+    const grid = document.getElementById("projectsGrid");
+    grid.innerHTML = dict.projects.items.map((p, i) => `
+      <div class="project">
+        <div class="project__num">Fig. ${String(i + 1).padStart(3, "0")}</div>
+        <h3 class="project__title">${p.title}</h3>
+        <p class="project__subtitle">${p.subtitle}</p>
+        <p class="project__desc">${p.desc}</p>
+      </div>`).join("");
+  }
+  function renderAll(dict) { renderSkills(dict); renderExperience(dict); renderProjects(dict); }
+
+  function init() {
+    const lang = window.I18nRuntime.getLang();
+    renderAll(window.I18N[lang] || window.I18N.en);
+    document.getElementById("year").textContent = new Date().getFullYear();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+  window.addEventListener("i18n:change", (e) => renderAll(e.detail.dict));
+})();
+</script>
+</body>
+</html>
