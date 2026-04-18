@@ -5,7 +5,7 @@
 window.I18N = {
   en: {
     meta: {
-      title: "An Li — QA Lead & Automation Engineer",
+      title: "An Li",
       description: "QA Lead and Automation Engineer with 6+ years of experience across consumer electronics and SaaS (SalesMarker, Apple, Google)."
     },
     nav: {
@@ -185,7 +185,7 @@ window.I18N = {
 
   ja: {
     meta: {
-      title: "アン・リー — QAリード & 自動化エンジニア",
+      title: "アン・リー",
       description: "SalesMarker、Apple、Googleで6年以上の経験を持つQAリード兼自動化エンジニア。"
     },
     nav: {
@@ -365,7 +365,7 @@ window.I18N = {
 
   zh: {
     meta: {
-      title: "李安 — QA 主管 & 自動化工程師",
+      title: "李安",
       description: "於 SalesMarker、Apple、Google 擁有 6+ 年經驗的 QA 主管與自動化工程師。"
     },
     nav: {
