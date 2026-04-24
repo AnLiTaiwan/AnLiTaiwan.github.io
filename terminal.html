@@ -466,7 +466,7 @@
         <div class="view" id="view-contact">
           <h1 data-i18n="contact.title">Say Hello.</h1>
           <p data-i18n="contact.lead"></p>
-          <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_ID" method="POST">
+          <form class="contact-form" id="contactForm" method="POST" novalidate>
             <div class="row">
               <div><label data-i18n="contact.name">Name</label><input type="text" name="name" required data-i18n-placeholder="contact.name"></div>
               <div><label data-i18n="contact.email">Email</label><input type="email" name="email" required data-i18n-placeholder="contact.email"></div>
@@ -485,7 +485,7 @@
             <a href="https://instagram.com/anli.tw2jp" target="_blank" rel="noopener">Instagram</a>
           </p>
           <p style="margin-top:8px;font-size:11px;color:var(--dim)">
-            Form posts to <code>Formspree</code> when the endpoint is set; otherwise falls back to a <code>mailto:</code> draft.
+            Form delivers via <code>EmailJS</code>; use <code>mailto: fallback</code> to open a draft in your mail app instead.
           </p>
         </div>
 
@@ -707,6 +707,8 @@ test(<span class="str">'login flow · happy path'</span>, <span class="kw">async
 
 <script src="shared/i18n-data.js?v=13"></script>
 <script src="shared/common.js?v=13"></script>
-<script src="terminal-site.js?v=16"></script>
+<!-- EmailJS SDK — used by contact form, matches homepage -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="terminal-site.js?v=17"></script>
 </body>
 </html>

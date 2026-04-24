@@ -374,6 +374,16 @@
   // ---------- Contact form ----------
   const form = $("#contactForm");
   const formStatus = $("#formStatus");
+
+  // EmailJS config — shared with the classic homepage (js/sendEmail.js)
+  const EMAILJS_PUBLIC_KEY  = "FzivnNCaRKt7YjYiI";
+  const EMAILJS_SERVICE_ID  = "default_service";
+  const EMAILJS_TEMPLATE_ID = "template_xlgdz68";
+  if (window.emailjs) {
+    try { window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); }
+    catch (err) { console.warn("[contact] EmailJS init failed:", err); }
+  }
+
   $("#mailtoBtn").addEventListener("click", (e) => {
     e.preventDefault();
     const fd = new FormData(form);
@@ -383,26 +393,37 @@
     );
     window.location.href = `mailto:hello@an-li.tw?subject=${subject}&body=${body}`;
   });
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     formStatus.className = "form-status";
     formStatus.style.display = "block";
     formStatus.textContent = window.I18nRuntime.get("contact.sending", "Sending…");
-    const endpoint = form.getAttribute("action");
-    if (!endpoint || endpoint.includes("YOUR_ID")) {
-      $("#mailtoBtn").click();
-      formStatus.textContent = "Opened email draft in your mail client.";
+
+    if (!window.emailjs) {
+      formStatus.className = "form-status err";
+      formStatus.textContent = "Mail service failed to load. Use mailto: fallback.";
       return;
     }
+
+    // Map terminal's short field names to the homepage template's variables
+    // so one EmailJS template serves both pages.
+    const fd = new FormData(form);
+    const payload = {
+      contactName:    fd.get("name")    || "",
+      contactEmail:   fd.get("email")   || "",
+      contactSubject: fd.get("subject") || "Hello from an-li.tw",
+      contactMessage: fd.get("message") || ""
+    };
+
     try {
-      const r = await fetch(endpoint, { method:"POST", body: new FormData(form), headers:{"Accept":"application/json"} });
-      if (r.ok) {
-        formStatus.textContent = window.I18nRuntime.get("contact.successMsg","Thanks, your message was sent.");
-        form.reset();
-      } else throw new Error();
-    } catch {
+      await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, payload);
+      formStatus.textContent = window.I18nRuntime.get("contact.successMsg", "Thanks, your message was sent.");
+      form.reset();
+    } catch (err) {
+      console.error("[contact] EmailJS send failed:", err);
       formStatus.className = "form-status err";
-      formStatus.textContent = window.I18nRuntime.get("contact.errorMsg","Something went wrong. Please try again.");
+      formStatus.textContent = window.I18nRuntime.get("contact.errorMsg", "Something went wrong. Please try again.");
     }
   });
 
