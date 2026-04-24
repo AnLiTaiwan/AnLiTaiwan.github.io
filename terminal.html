@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>An Li</title>
+<title>An Li · Terminal</title>
 <meta name="description" content="An Li · QA Lead & Automation Engineer. Terminal edition with command palette.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
     --mono:"JetBrains Mono","Noto Sans JP","Noto Sans TC",monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:13px;line-height:1.55;min-height:100vh}
+  html,body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:13px;line-height:1.55;min-height:100vh;min-height:100dvh}
   body{background:
     radial-gradient(1200px 600px at 80% -10%, var(--bg-2) 0%, transparent 60%),
     var(--bg);
@@ -37,13 +37,29 @@
   .window{
     width:min(1240px, calc(100vw - 28px));
     height:calc(100vh - 28px);
+    height:calc(100dvh - 28px);
     margin:14px auto;
     border:1px solid var(--line);border-radius:10px;
     background:var(--panel);box-shadow:0 30px 80px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.02);
     overflow:hidden;
     display:flex;flex-direction:column;
   }
+  @media (max-width:760px){
+    .window{width:100vw;height:100vh;height:100dvh;margin:0;border-radius:0;border:none}
+  }
   .titlebar{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg-2);border-bottom:1px solid var(--line);font-size:12px;color:var(--mute);flex-wrap:wrap}
+  .hamburger{display:none;background:none;border:0;padding:0;font:inherit;color:var(--ink);cursor:pointer;width:28px;height:28px;align-items:center;justify-content:center;border-radius:5px}
+  .hamburger:hover{background:var(--panel-2)}
+  .hamburger svg{width:16px;height:16px;display:block}
+  @media (max-width:760px){
+    .hamburger{display:inline-flex}
+    .titlebar{padding:8px 10px;gap:6px;font-size:11px}
+    .titlebar .path{font-size:11px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .titlebar .spacer{display:none}
+    .titlebar .chip{display:none}
+    .lang-switch button,.theme-switch button{padding:3px 7px;font-size:10px}
+    .theme-switch button span.tb-label{display:none}
+  }
   .lights{display:flex;gap:6px;margin-right:8px}
   .lights span{
     width:11px;height:11px;border-radius:50%;display:inline-flex;
@@ -67,10 +83,29 @@
   .theme-switch button svg{width:13px;height:13px;display:block}
 
   /* ===== layout ===== */
-  .shell{display:grid;grid-template-columns:230px 1fr;flex:1;min-height:0}
-  @media (max-width: 760px){ .shell{grid-template-columns:1fr} .sidebar{display:none} }
+  .shell{display:grid;grid-template-columns:230px 1fr;flex:1;min-height:0;position:relative}
 
-  .sidebar{border-right:1px solid var(--line);background:var(--bg-2);padding:14px 0;overflow-y:auto;min-height:0}
+  .sidebar{border-right:1px solid var(--line);background:var(--bg-2);padding:14px 0;overflow-y:auto;min-height:0;-webkit-overflow-scrolling:touch}
+  .sidebar-backdrop{display:none}
+
+  @media (max-width:760px){
+    .shell{grid-template-columns:1fr}
+    .sidebar{
+      position:absolute;top:0;left:0;bottom:0;z-index:60;
+      width:min(280px, 82vw);
+      transform:translateX(-100%);transition:transform .22s ease;
+      box-shadow:8px 0 24px rgba(0,0,0,.4);
+      padding-top:10px;
+    }
+    .sidebar.open{transform:translateX(0)}
+    .sidebar-backdrop{display:block;position:absolute;inset:0;z-index:55;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .22s ease}
+    .sidebar-backdrop.on{opacity:1;pointer-events:auto}
+    .sidebar h5{font-size:11px}
+    .tree{font-size:14px}
+    .tree .node{padding:8px 14px 8px 28px}
+    .tree .node.file{padding-left:40px}
+    .tree .node.file.active{padding-left:38px}
+  }
   .sidebar h5{margin:0 14px 8px;font-size:10px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;font-weight:500}
   .sidebar h5:not(:first-child){margin-top:18px}
   .tree{font-size:12.5px}
@@ -96,7 +131,15 @@
   .tab .close:hover{background:var(--line-2);color:var(--ink)}
   .tab .ic{display:inline-flex;align-items:center;width:14px;height:14px}
   .tab .ic svg{width:13px;height:13px}
-  .editor{padding:22px 28px;flex:1;overflow:auto;min-height:0}
+  .editor{padding:22px 28px;flex:1;overflow:auto;min-height:0;-webkit-overflow-scrolling:touch}
+  @media (max-width:760px){
+    .editor{padding:16px 16px 24px}
+    .view h1{font-size:22px}
+    .view h2{font-size:16px;margin:22px 0 10px}
+    .tab{padding:7px 12px;font-size:11px}
+    .exp-head .period{margin-left:0;width:100%}
+    .resume-wrap iframe,.resume-wrap embed{height:60vh;min-height:420px}
+  }
   .editor::-webkit-scrollbar{width:8px;height:8px}
   .editor::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:4px}
   .view{display:none}
@@ -198,6 +241,33 @@
     display:flex;align-items:stretch;border-top:1px solid var(--line);
     font-family:var(--mono);
   }
+  @media (max-width:760px){
+    .statusbar{font-size:11px}
+    .statusbar .sb-cmd{padding:0 10px;gap:6px}
+    .statusbar .sb-cmd input{font-size:13px}
+    .statusbar .sb-right{display:none}
+    .statusbar .sb-cmd .prompt .full{display:none}
+  }
+
+  /* Mobile palette FAB */
+  .palette-fab{display:none}
+  @media (max-width:760px){
+    .palette-fab{
+      display:flex;align-items:center;justify-content:center;gap:6px;
+      position:fixed;right:14px;bottom:58px;z-index:50;
+      background:var(--accent);color:var(--bg);
+      width:auto;padding:10px 14px;border-radius:999px;
+      font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.5px;
+      border:none;cursor:pointer;
+      box-shadow:0 8px 24px rgba(0,0,0,.4), 0 0 0 3px var(--bg-2);
+      animation:fabPulse 2.8s ease-in-out infinite;
+    }
+    .palette-fab:active{transform:scale(.96)}
+  }
+  @keyframes fabPulse{
+    0%,100%{box-shadow:0 8px 24px rgba(0,0,0,.4),0 0 0 3px var(--bg-2),0 0 0 0 var(--accent)}
+    50%{box-shadow:0 8px 24px rgba(0,0,0,.4),0 0 0 3px var(--bg-2),0 0 0 6px transparent}
+  }
   .statusbar .sb-cmd{
     flex:1;display:flex;align-items:center;gap:8px;padding:0 12px;min-width:0;cursor:text;
   }
@@ -216,6 +286,7 @@
   /* Focus-follows cursor */
   .focus-cursor{position:fixed;pointer-events:none;z-index:200;background:var(--accent);width:8px;height:16px;opacity:0;transition:opacity .15s;box-shadow:0 0 8px var(--accent)}
   .focus-cursor.on{opacity:.85;animation:blink 1s steps(2) infinite}
+  @media (hover:none),(max-width:760px){.focus-cursor{display:none}}
   @keyframes blink{50%{opacity:0}}
   .block-cursor{display:inline-block;width:0.55em;height:1.1em;background:var(--accent);vertical-align:-2px;animation:blink 1s steps(2) infinite}
 
@@ -226,6 +297,15 @@
   }
   .palette-backdrop.open{display:flex}
   .palette{width:min(620px,92vw);background:var(--panel);border:1px solid var(--line-2);border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.7);overflow:hidden}
+  @media (max-width:760px){
+    .palette-backdrop{padding-top:6vh;align-items:flex-start}
+    .palette{width:94vw}
+    .palette-head input{font-size:15px}
+    .palette-list{max-height:60vh}
+    .palette-item{padding:12px 14px;font-size:13px}
+    .palette-item .cmd{min-width:0;flex-shrink:0}
+    .palette-item .sig{display:none}
+  }
   .palette-head{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
   .palette-head .prompt{color:var(--accent);font-weight:700}
   .palette-head input{all:unset;flex:1;color:var(--ink);font-family:var(--mono);font-size:14px}
@@ -248,6 +328,7 @@
   }
   .hint-bar.hide{opacity:0;transform:translate(-50%,-120%)}
   .hint-bar kbd{background:var(--bg);border:1px solid var(--line);padding:1px 5px;border-radius:3px;color:var(--ink);font-size:10px;font-family:var(--mono)}
+  @media (max-width:760px){.hint-bar{display:none}}
 
   /* Easter egg overlay */
   .egg{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.8);backdrop-filter:blur(4px);padding:20px}
@@ -370,12 +451,13 @@
   <!-- titlebar -->
   <div class="titlebar">
     <div class="lights"><span class="r" id="closeLight" role="button" tabindex="0" aria-label="Exit · back to classic UI" title="exit">×</span><span class="y"></span><span class="g"></span></div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle file explorer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     <span class="path"><span class="at">an</span>@portfolio: ~/<span id="tb-file">about.md</span></span>
     <div class="spacer"></div>
     <span class="chip">main</span>
     <div class="theme-switch" role="group" aria-label="Theme">
-      <button data-theme-btn="catppuccin" title="Dark (Catppuccin)"><svg><use href="#ic-moon"/></svg>Dark</button>
-      <button data-theme-btn="paper" title="Light (Paper)"><svg><use href="#ic-sun"/></svg>Light</button>
+      <button data-theme-btn="catppuccin" title="Dark (Catppuccin)"><svg><use href="#ic-moon"/></svg><span class="tb-label">Dark</span></button>
+      <button data-theme-btn="paper" title="Light (Paper)"><svg><use href="#ic-sun"/></svg><span class="tb-label">Light</span></button>
     </div>
     <div class="lang-switch" role="group" aria-label="Language">
       <button data-lang-btn="en">EN</button>
@@ -385,8 +467,9 @@
   </div>
 
   <div class="shell">
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
     <!-- sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <h5>EXPLORER</h5>
       <div class="tree">
         <div class="node folder open" data-folder><span class="file-ic"><svg><use href="#ic-folder"/></svg></span>portfolio</div>
@@ -605,6 +688,11 @@ test(<span class="str">'login flow · happy path'</span>, <span class="kw">async
   Press <kbd>⌘</kbd>+<kbd>K</kbd> / <kbd>Ctrl</kbd>+<kbd>K</kbd> · <kbd>:help</kbd>
 </div>
 
+<!-- Mobile command palette FAB -->
+<button class="palette-fab" id="paletteFab" aria-label="Open command palette">
+  <span style="font-size:14px">⌘</span><span>Commands</span>
+</button>
+
 <!-- focus-follows-cursor -->
 <div class="focus-cursor" id="focusCursor"></div>
 
@@ -707,6 +795,6 @@ test(<span class="str">'login flow · happy path'</span>, <span class="kw">async
 
 <script src="shared/i18n-data.js?v=13"></script>
 <script src="shared/common.js?v=13"></script>
-<script src="terminal-site.js?v=16"></script>
+<script src="terminal-site.js?v=17"></script>
 </body>
 </html>
