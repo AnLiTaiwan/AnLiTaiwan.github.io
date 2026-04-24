@@ -1,11 +1,11 @@
 /* ============================================================
-   i18n Data — An Li's Portfolio
+   i18n Data · An Li's Portfolio
    Languages: English (default), Japanese, Traditional Chinese
    ============================================================ */
 window.I18N = {
   en: {
     meta: {
-      title: "An Li — QA Lead & Automation Engineer",
+      title: "An Li · QA Lead & Automation Engineer",
       description: "QA Lead and Automation Engineer with 6+ years of experience across consumer electronics and SaaS (SalesMarker, Apple, Google)."
     },
     nav: {
@@ -31,7 +31,7 @@ window.I18N = {
     about: {
       eyebrow: "About",
       title: "More About Me",
-      summary: "Hey, I'm An. I've spent the past 6+ years chasing bugs and building automation — from Google Nest devices, to Apple's Siri evaluation, and now leading QA at a SaaS company in Tokyo. What I enjoy most is the puzzle of turning flaky manual tests into pipelines a team can actually trust, and lately, seeing how far LLM-driven agents can stretch what QA looks like. Off the clock, I'm usually knee-deep in board games or figuring out everyday life in a third language.",
+      summary: "Hey, I'm An. I've spent the past 6+ years chasing bugs and building automation. From Google Nest devices, to Apple's Siri evaluation, and now leading QA at a SaaS company in Tokyo. What I enjoy most is the puzzle of turning flaky manual tests into pipelines a team can actually trust, and lately, seeing how far LLM-driven agents can stretch what QA looks like. Off the clock, I'm usually figuring out everyday life in my third language.",
       downloadCV: "Download My CV",
       hire: "Hire Me Now",
       skillsTitle: "Core Skills",
@@ -48,7 +48,7 @@ window.I18N = {
       title: "Work Experience",
       items: [
         {
-          period: "Oct 2024 — Present",
+          period: "Oct 2024 - Present",
           company: "SalesMarker",
           location: "Tokyo, Japan",
           role: "Lead Quality Assurance Engineer",
@@ -63,10 +63,10 @@ window.I18N = {
           ]
         },
         {
-          period: "Apr 2024 — Sep 2024",
+          period: "Apr 2024 - Sep 2024",
           company: "Apple",
           location: "Yokohama, Japan",
-          role: "Sr. Automation Engineer — AI/ML System Evaluation",
+          role: "Sr. Automation Engineer · AI/ML System Evaluation",
           stack: "Swift · Python3 · Xcode",
           bullets: [
             "Optimized and maintained the quality of Siri automated testing.",
@@ -74,10 +74,10 @@ window.I18N = {
           ]
         },
         {
-          period: "Sep 2022 — Apr 2024",
+          period: "Sep 2022 - Apr 2024",
           company: "Apple",
           location: "Yokohama, Japan",
-          role: "Automation Engineer — AI/ML Platform Technology",
+          role: "Automation Engineer · AI/ML Platform Technology",
           stack: "Lab admin · Ansible · K8s · Splunk · Python3",
           bullets: [
             "Maintained in-house automated configuration services (Docker, K8s, Ansible).",
@@ -87,10 +87,10 @@ window.I18N = {
           ]
         },
         {
-          period: "Nov 2021 — Apr 2022",
+          period: "Nov 2021 - Apr 2022",
           company: "Google (Parallel assignment)",
           location: "Taipei, Taiwan",
-          role: "Quality Assurance Lead — Mediashell",
+          role: "Quality Assurance Lead · Mediashell",
           stack: "Manual Test · Project Management",
           bullets: [
             "Led a team of 5 QAs to execute manual tests and built an environment to handle regression/retry issues.",
@@ -100,10 +100,10 @@ window.I18N = {
           ]
         },
         {
-          period: "Nov 2020 — Apr 2022",
+          period: "Nov 2020 - Apr 2022",
           company: "Google",
           location: "Taipei, Taiwan",
-          role: "Sr. Software Testing Engineer — Chromecast",
+          role: "Sr. Software Testing Engineer · Chromecast",
           stack: "Automation · Shell Script · Java",
           bullets: [
             "Executed automated tests for Chromecast 3rd (Compatibility, GMS, Vendor suite).",
@@ -113,10 +113,10 @@ window.I18N = {
           ]
         },
         {
-          period: "Apr 2020 — Nov 2020",
+          period: "Apr 2020 - Nov 2020",
           company: "Google",
           location: "Taipei, Taiwan",
-          role: "Software Testing Engineer — Thermostat",
+          role: "Software Testing Engineer · Thermostat",
           stack: "Manual Test · Shell Script",
           bullets: [
             "Executed sensor functional, performance, load, regression, stress, and sanity testing.",
@@ -125,7 +125,7 @@ window.I18N = {
           ]
         },
         {
-          period: "Mar 2018 — Mar 2020",
+          period: "Mar 2018 - Mar 2020",
           company: "Grandsys Tech",
           location: "Taipei, Taiwan",
           role: "Software Developer",
@@ -142,14 +142,14 @@ window.I18N = {
     projects: {
       title: "Highlighted Projects",
       items: [
-        { title: "E2E Automation Framework", desc: "Playwright + GitHub Actions CI quality gates; >80% automation coverage growth." },
-        { title: "ReportPortal", desc: "Test reporting platform on AWS EKS integrated into CI for data-driven release decisions." },
+        { title: "E2E Automation Implementation with Playwright", desc: "Implemented Playwright at the product stage with GitHub Actions CI quality gates; >80% automation coverage growth." },
+        { title: "Self-hosted ReportPortal on Internal Cloud", desc: "Deployed ReportPortal (OSS framework) onto our internal AWS EKS cloud, integrated into CI for data-driven release decisions." },
         { title: "Agentic UI Automation PoC", desc: "LLM-driven exploratory flows using Gemini Computer Use Preview and Browser Use." },
         { title: "Apple AI/ML automation Lab Redesign", desc: "Rack/power/network redesign increased concurrent test capacity by 40%." },
         { title: "Google AndroidOS Test Design", desc: "Designed compatibility, GMS, and vendor-suite test plans across multiple Nest devices." },
         { title: "Google ChromeCast/Thermostat Test Design", desc: "Authored automated and manual test plans for Chromecast 3rd and Nest Thermostat." },
-        { title: "Map Encyclopedia", desc: "Interactive map-based knowledge archive — a personal full-stack exploration project." },
-        { title: "Citadels", desc: "Multiplayer board-game adaptation — game-logic engine and turn-based UX." },
+        { title: "Map Encyclopedia", desc: "Interactive map-based knowledge archive. A personal full-stack exploration project." },
+        { title: "Citadels", desc: "Multiplayer board-game adaptation with game-logic engine and turn-based UX." },
         { title: "Personal Health Education Management System", desc: "Web platform for health curriculum tracking with back-end architecture and DB design." },
         { title: "CYCUEat", desc: "Campus food-ordering web app for Chung Yuan Christian University." }
       ]
@@ -177,7 +177,7 @@ window.I18N = {
       backToTop: "Back to Top"
     },
     notFound: {
-      pageTitle: "404 — Page Not Found · An Li",
+      pageTitle: "404 · Page Not Found · An Li",
       message: "The page you&rsquo;re looking for doesn&rsquo;t exist, or something else went wrong. Head back to <a href=\"/\">an-li.tw</a>, or <a href=\"mailto:hello@an-li.tw\">contact me</a> if something should have been here.",
       cta: "Back to Home"
     }
@@ -185,7 +185,7 @@ window.I18N = {
 
   ja: {
     meta: {
-      title: "アン・リー — QAリード & 自動化エンジニア",
+      title: "アン・リー · QAリード & 自動化エンジニア",
       description: "SalesMarker、Apple、Googleで6年以上の経験を持つQAリード兼自動化エンジニア。"
     },
     nav: {
@@ -211,7 +211,7 @@ window.I18N = {
     about: {
       eyebrow: "について",
       title: "私について",
-      summary: "はじめまして、An です。この 6 年ちょっと、Google の Nest 機器から Apple の Siri 評価、そして今は東京の SaaS 企業で QA チームをリードしながら、ずっとバグ探しと自動化づくりを続けてきました。不安定な手動テストを、チームが安心して乗っかれるパイプラインに変えていく過程が一番好きで、最近は LLM 駆動のエージェントが QA をどこまで広げてくれるかを探っています。オフはボードゲームに夢中になったり、3 言語目の生活に少しずつ慣れていったり。",
+      summary: "はじめまして、An です。この 6 年ちょっと、Google の Nest 機器から Apple の Siri 評価、そして今は東京の SaaS 企業で QA チームをリードしながら、ずっとバグ探しと自動化づくりを続けてきました。不安定な手動テストを、チームが安心して乗っかれるパイプラインに変えていく過程が一番好きで、最近は LLM 駆動のエージェントが QA をどこまで広げてくれるかを探っています。オフは 3 言語目の生活に少しずつ慣れていっています。",
       downloadCV: "履歴書をダウンロード",
       hire: "お仕事のご依頼",
       skillsTitle: "コアスキル",
@@ -228,7 +228,7 @@ window.I18N = {
       title: "職務経歴",
       items: [
         {
-          period: "2024年10月 — 現在",
+          period: "2024年10月 - 現在",
           company: "SalesMarker",
           location: "東京都",
           role: "リードQAエンジニア",
@@ -243,10 +243,10 @@ window.I18N = {
           ]
         },
         {
-          period: "2024年4月 — 2024年9月",
+          period: "2024年4月 - 2024年9月",
           company: "Apple",
           location: "横浜市",
-          role: "シニア自動化エンジニア — AI/MLシステム評価",
+          role: "シニア自動化エンジニア · AI/MLシステム評価",
           stack: "Swift · Python3 · Xcode",
           bullets: [
             "Siri自動テストの品質を最適化・維持。",
@@ -254,10 +254,10 @@ window.I18N = {
           ]
         },
         {
-          period: "2022年9月 — 2024年4月",
+          period: "2022年9月 - 2024年4月",
           company: "Apple",
           location: "横浜市",
-          role: "自動化エンジニア — AI/MLプラットフォーム技術",
+          role: "自動化エンジニア · AI/MLプラットフォーム技術",
           stack: "ラボ管理 · Ansible · K8s · Splunk · Python3",
           bullets: [
             "社内自動化構成サービス(Docker、K8s、Ansible)を保守。",
@@ -267,10 +267,10 @@ window.I18N = {
           ]
         },
         {
-          period: "2021年11月 — 2022年4月",
+          period: "2021年11月 - 2022年4月",
           company: "Google (並行任務)",
           location: "台北市",
-          role: "QAリード — Mediashell",
+          role: "QAリード · Mediashell",
           stack: "マニュアルテスト · プロジェクト管理",
           bullets: [
             "5名のQAチームを率いてマニュアルテストを実施、回帰/リトライ環境を構築。",
@@ -280,10 +280,10 @@ window.I18N = {
           ]
         },
         {
-          period: "2020年11月 — 2022年4月",
+          period: "2020年11月 - 2022年4月",
           company: "Google",
           location: "台北市",
-          role: "シニアソフトウェアテストエンジニア — Chromecast",
+          role: "シニアソフトウェアテストエンジニア · Chromecast",
           stack: "自動化 · シェル · Java",
           bullets: [
             "Chromecast 3rdの自動テスト(互換性、GMS、ベンダースイート)を実行。",
@@ -293,10 +293,10 @@ window.I18N = {
           ]
         },
         {
-          period: "2020年4月 — 2020年11月",
+          period: "2020年4月 - 2020年11月",
           company: "Google",
           location: "台北市",
-          role: "ソフトウェアテストエンジニア — Thermostat",
+          role: "ソフトウェアテストエンジニア · Thermostat",
           stack: "マニュアルテスト · シェル",
           bullets: [
             "センサー機能、パフォーマンス、負荷、回帰、ストレス、健全性テストを実施。",
@@ -305,7 +305,7 @@ window.I18N = {
           ]
         },
         {
-          period: "2018年3月 — 2020年3月",
+          period: "2018年3月 - 2020年3月",
           company: "Grandsys Tech",
           location: "台北市",
           role: "ソフトウェア開発者",
@@ -322,14 +322,14 @@ window.I18N = {
     projects: {
       title: "注目のプロジェクト",
       items: [
-        { title: "E2E自動化フレームワーク", desc: "Playwright + GitHub Actions CI品質ゲートで自動化カバレッジ80%以上拡大。" },
-        { title: "ReportPortal", desc: "AWS EKS上のテストレポート基盤。CIワークフローに統合しデータ駆動のリリース判断を支援。" },
+        { title: "Playwrightによる製品段階でのE2E自動化実装", desc: "既存プロダクトにPlaywrightを導入し、GitHub Actions CI品質ゲートと組み合わせて自動化カバレッジを80%以上拡大。" },
+        { title: "自社クラウドでのReportPortalセルフホスト", desc: "OSSフレームワークReportPortalを社内AWS EKSクラウドに構築し、CIに統合してデータ駆動のリリース判断を支援。" },
         { title: "エージェンティックUI自動化PoC", desc: "Gemini Computer Use PreviewとBrowser Useを用いたLLM駆動の探索的フロー。" },
         { title: "Apple AI/ML自動化ラボ再設計", desc: "ラック/電源/ネットワーク再設計により並列テスト容量を40%増加。" },
         { title: "Google AndroidOSテスト設計", desc: "複数のNestデバイスに対して互換性・GMS・ベンダースイートのテスト計画を策定。" },
         { title: "Google Chromecast/Thermostatテスト設計", desc: "Chromecast 3rdおよびNest Thermostat向け自動化・手動テスト計画を作成。" },
-        { title: "Map Encyclopedia", desc: "地図ベースのナレッジアーカイブ — 個人のフルスタック探求プロジェクト。" },
-        { title: "Citadels", desc: "マルチプレイヤー対応ボードゲームの実装 — ゲームロジックとターン制UX設計。" },
+        { title: "Map Encyclopedia", desc: "地図ベースのナレッジアーカイブ。個人のフルスタック探求プロジェクト。" },
+        { title: "Citadels", desc: "マルチプレイヤー対応ボードゲームの実装。ゲームロジックとターン制UX設計。" },
         { title: "パーソナルヘルス教育管理システム", desc: "バックエンド設計とDB構築を伴う健康教育カリキュラム管理Webプラットフォーム。" },
         { title: "CYCUEat", desc: "中原大学向けのキャンパスフードオーダリングWebアプリ。" }
       ]
@@ -357,7 +357,7 @@ window.I18N = {
       backToTop: "トップへ戻る"
     },
     notFound: {
-      pageTitle: "404 — ページが見つかりません · An Li",
+      pageTitle: "404 · ページが見つかりません · An Li",
       message: "お探しのページは見つかりませんでした。<a href=\"/\">an-li.tw</a> に戻るか、本来あるはずのページが無い場合は <a href=\"mailto:hello@an-li.tw\">こちらまでご連絡</a> ください。",
       cta: "トップへ戻る"
     }
@@ -365,7 +365,7 @@ window.I18N = {
 
   zh: {
     meta: {
-      title: "李安 — QA 主管 & 自動化工程師",
+      title: "李安 · QA 主管 & 自動化工程師",
       description: "於 SalesMarker、Apple、Google 擁有 6+ 年經驗的 QA 主管與自動化工程師。"
     },
     nav: {
@@ -391,7 +391,7 @@ window.I18N = {
     about: {
       eyebrow: "關於",
       title: "關於我",
-      summary: "嗨,我是李安。過去 6 年多的時間,我從 Google 的 Nest 裝置、Apple 的 Siri 評估團隊一路走到東京的 SaaS 公司,現在帶著團隊把一個個 bug 轉成能被信賴的自動化流程。最喜歡的,就是把搖搖欲墜的手動測試整理成可以安心 ship 的 CI pipeline;最近則在研究 LLM agent 能把 QA 的邊界往哪裡推。下班以後通常會埋在桌遊、東京小旅行,或努力適應第三種語言的日常生活裡。",
+      summary: "嗨,我是李安。過去 6 年多的時間,我從 Google 的 Nest 裝置、Apple 的 Siri 評估團隊一路走到東京的 SaaS 公司,現在帶著團隊把一個個 bug 轉成能被信賴的自動化流程。最喜歡的,就是把搖搖欲墜的手動測試整理成可以安心 ship 的 CI pipeline;最近則在研究 LLM agent 能把 QA 的邊界往哪裡推。下班以後通常會努力適應第三種語言的日常生活。",
       downloadCV: "下載履歷",
       hire: "立即聘用",
       skillsTitle: "核心技能",
@@ -408,7 +408,7 @@ window.I18N = {
       title: "工作經歷",
       items: [
         {
-          period: "2024 年 10 月 — 至今",
+          period: "2024 年 10 月 - 至今",
           company: "SalesMarker",
           location: "日本東京",
           role: "QA 主管工程師",
@@ -423,10 +423,10 @@ window.I18N = {
           ]
         },
         {
-          period: "2024 年 4 月 — 2024 年 9 月",
+          period: "2024 年 4 月 - 2024 年 9 月",
           company: "Apple",
           location: "日本橫濱",
-          role: "資深自動化工程師 — AI/ML 系統評估",
+          role: "資深自動化工程師 · AI/ML 系統評估",
           stack: "Swift · Python3 · Xcode",
           bullets: [
             "最佳化並維持 Siri 自動化測試品質。",
@@ -434,10 +434,10 @@ window.I18N = {
           ]
         },
         {
-          period: "2022 年 9 月 — 2024 年 4 月",
+          period: "2022 年 9 月 - 2024 年 4 月",
           company: "Apple",
           location: "日本橫濱",
-          role: "自動化工程師 — AI/ML 平台技術",
+          role: "自動化工程師 · AI/ML 平台技術",
           stack: "Lab 管理 · Ansible · K8s · Splunk · Python3",
           bullets: [
             "維運內部自動化組態服務(Docker、K8s、Ansible)。",
@@ -447,10 +447,10 @@ window.I18N = {
           ]
         },
         {
-          period: "2021 年 11 月 — 2022 年 4 月",
+          period: "2021 年 11 月 - 2022 年 4 月",
           company: "Google (並行任務)",
           location: "台灣台北",
-          role: "QA 主管 — Mediashell",
+          role: "QA 主管 · Mediashell",
           stack: "手動測試 · 專案管理",
           bullets: [
             "率領 5 人 QA 團隊執行手動測試,建立回歸/重試環境。",
@@ -460,10 +460,10 @@ window.I18N = {
           ]
         },
         {
-          period: "2020 年 11 月 — 2022 年 4 月",
+          period: "2020 年 11 月 - 2022 年 4 月",
           company: "Google",
           location: "台灣台北",
-          role: "資深軟體測試工程師 — Chromecast",
+          role: "資深軟體測試工程師 · Chromecast",
           stack: "自動化 · Shell · Java",
           bullets: [
             "執行 Chromecast 3rd 的自動化測試(相容性、GMS、Vendor suite)。",
@@ -473,10 +473,10 @@ window.I18N = {
           ]
         },
         {
-          period: "2020 年 4 月 — 2020 年 11 月",
+          period: "2020 年 4 月 - 2020 年 11 月",
           company: "Google",
           location: "台灣台北",
-          role: "軟體測試工程師 — Thermostat",
+          role: "軟體測試工程師 · Thermostat",
           stack: "手動測試 · Shell",
           bullets: [
             "執行感測器功能、效能、負載、回歸、壓力、健檢測試。",
@@ -485,7 +485,7 @@ window.I18N = {
           ]
         },
         {
-          period: "2018 年 3 月 — 2020 年 3 月",
+          period: "2018 年 3 月 - 2020 年 3 月",
           company: "鈞晟科技",
           location: "台灣台北",
           role: "軟體開發工程師",
@@ -502,14 +502,14 @@ window.I18N = {
     projects: {
       title: "精選專案",
       items: [
-        { title: "E2E 自動化框架", desc: "以 Playwright + GitHub Actions CI 品質閘道達成自動化覆蓋率 80% 以上成長。" },
-        { title: "ReportPortal", desc: "建置於 AWS EKS 的測試報告平台,整合 CI 工作流以支援資料驅動發布決策。" },
+        { title: "以 Playwright 在產品階段導入 E2E 自動化", desc: "將 Playwright 實作於既有產品階段,搭配 GitHub Actions CI 品質閘道,自動化覆蓋率成長 80% 以上。" },
+        { title: "自架 ReportPortal 於內部雲端平台", desc: "將 OSS 框架 ReportPortal 自架於公司內部 AWS EKS 雲端平台,整合 CI 工作流以支援資料驅動發布決策。" },
         { title: "代理 UI 自動化 PoC", desc: "以 Gemini Computer Use Preview 與 Browser Use 建構 LLM 驅動的探索流程。" },
         { title: "Apple AI/ML 自動化實驗室重新設計", desc: "機櫃/電力/網路重新設計,並行測試容量增加 40%。" },
         { title: "Google AndroidOS 測試設計", desc: "為多款 Nest 裝置撰寫相容性、GMS 與 Vendor suite 測試計畫。" },
         { title: "Google ChromeCast/Thermostat 測試設計", desc: "為 Chromecast 3rd 與 Nest Thermostat 設計自動化與手動測試計畫。" },
         { title: "Map Encyclopedia", desc: "以地圖為核心的知識典藏,個人全端探索專案。" },
-        { title: "Citadels", desc: "多人桌遊線上化 — 遊戲邏輯與回合制 UX 設計。" },
+        { title: "Citadels", desc: "多人桌遊線上化,遊戲邏輯與回合制 UX 設計。" },
         { title: "個人健康教育管理系統", desc: "涵蓋後端架構與資料庫設計的健康教育課程管理 Web 平台。" },
         { title: "CYCUEat", desc: "中原大學校園訂餐 Web 應用。" }
       ]
@@ -537,7 +537,7 @@ window.I18N = {
       backToTop: "回到頂端"
     },
     notFound: {
-      pageTitle: "404 — 找不到頁面 · An Li",
+      pageTitle: "404 · 找不到頁面 · An Li",
       message: "你要找的頁面不存在,或者發生了其他錯誤。請回到 <a href=\"/\">an-li.tw</a>,如果這裡原本該有內容,歡迎 <a href=\"mailto:hello@an-li.tw\">聯絡我</a>。",
       cta: "回到首頁"
     }
@@ -545,9 +545,9 @@ window.I18N = {
 };
 
 /* ============================================================
-   i18n runtime — apply translations to any element with data-i18n
+   i18n runtime · apply translations to any element with data-i18n
    ============================================================ */
-window.I18nRuntime = (function () {
+window.I18nRuntimeLegacy = (function () {
   const SUPPORTED = ["en", "ja", "zh"];
   const STORAGE_KEY = "anli.lang";
 
@@ -619,21 +619,9 @@ window.I18nRuntime = (function () {
         setLang(btn.getAttribute("data-lang-btn"));
       });
     });
-
-    // Sync language across pages via storage events (terminal <-> classic).
-    window.addEventListener("storage", (e) => {
-      if (e.key === STORAGE_KEY && e.newValue && SUPPORTED.includes(e.newValue) && e.newValue !== getLang()) {
-        apply(e.newValue);
-      }
-    });
   }
 
   return { init, setLang, getLang, apply, SUPPORTED };
 })();
 
-// Auto-init on DOM ready
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", () => window.I18nRuntime.init());
-} else {
-  window.I18nRuntime.init();
-}
+// Auto-init disabled: runtime provided by shared/common.js. (v2)

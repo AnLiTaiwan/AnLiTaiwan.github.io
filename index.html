@@ -3,16 +3,10 @@
 
     <head>
         <!-- Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116691132-3"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-116691132-3');
-        </script>
+        <!-- analytics disabled in preview -->
 
         <meta charset="utf-8">
-        <title>An Li — QA Lead &amp; Automation Engineer</title>
+        <title>An Li · QA Lead &amp; Automation Engineer</title>
         <meta name="description" content="QA Lead and Automation Engineer with 6+ years of experience across consumer electronics and SaaS.">
         <meta name="author" content="An Li">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,6 +42,127 @@
             }
             .lang-switch__btn:hover { background: rgba(255, 255, 255, 0.15); }
             .lang-switch__btn.is-active { background: #fff; color: #000; }
+
+            /* Terminal edition text-link · between classic + terminal */
+            .term-link{
+                display:inline-flex;align-items:center;gap:8px;
+                font-family:"JetBrains Mono","Courier New",monospace;
+                font-size:13px;letter-spacing:.06em;
+                color:#cdd6f4;text-decoration:none;
+                background:transparent;border:0;padding:0;
+                margin-top:18px;
+                text-shadow:0 0 0 transparent;
+                transition:color .25s ease, text-shadow .25s ease, letter-spacing .25s ease;
+                cursor:pointer;white-space:nowrap;
+            }
+            .term-link__prompt{color:#a6e3a1;text-shadow:0 0 8px rgba(166,227,161,.55)}
+            .term-link__text{
+                position:relative;
+                background-image:linear-gradient(currentColor,currentColor);
+                background-size:100% 1px;background-repeat:no-repeat;
+                background-position:0 100%;
+                padding-bottom:2px;
+            }
+            .term-link__caret{
+                display:inline-block;width:7px;height:13px;
+                background:#a6e3a1;box-shadow:0 0 8px rgba(166,227,161,.7);
+                margin-left:2px;
+                animation:termBlink 1.05s steps(2) infinite;
+            }
+            @keyframes termBlink{50%{opacity:0}}
+            .term-link:hover{
+                color:#a6e3a1;letter-spacing:.08em;
+                text-shadow:0 0 12px rgba(166,227,161,.45);
+            }
+            .term-link:hover .term-link__prompt{text-shadow:0 0 14px rgba(166,227,161,.9)}
+            .term-link:hover .term-link__caret{box-shadow:0 0 14px rgba(166,227,161,.95)}
+
+            /* ===== Format → Boot transition overlay ===== */
+            #formatOverlay{
+                position:fixed;inset:0;z-index:9999;background:#000;
+                display:none;opacity:0;pointer-events:none;
+                font-family:"JetBrains Mono","Courier New",monospace;color:#a6e3a1;
+            }
+            #formatOverlay.on{display:block;pointer-events:all;opacity:1}
+
+            /* phase 1: glitch/format scanlines */
+            .fmt-glitch{
+                position:absolute;inset:0;background:#000;overflow:hidden;
+                opacity:0;animation:fmtGlitchIn .4s ease forwards;
+            }
+            .fmt-glitch::before,.fmt-glitch::after{
+                content:"";position:absolute;left:0;right:0;height:2px;background:#a6e3a1;opacity:.9;
+                box-shadow:0 0 12px #a6e3a1;
+            }
+            .fmt-glitch::before{top:30%;animation:scan1 .9s linear infinite}
+            .fmt-glitch::after{top:60%;animation:scan2 1.1s linear infinite}
+            @keyframes scan1{0%{top:-5%}100%{top:105%}}
+            @keyframes scan2{0%{top:105%}100%{top:-5%}}
+            @keyframes fmtGlitchIn{
+                0%{opacity:0;filter:brightness(3) hue-rotate(0deg)}
+                15%{opacity:1;filter:brightness(2.2) hue-rotate(20deg)}
+                25%{opacity:1;filter:brightness(.6) hue-rotate(-30deg)}
+                40%{opacity:1;filter:brightness(1.4) hue-rotate(0deg)}
+                100%{opacity:1;filter:none}
+            }
+            .fmt-glitch .bars{
+                position:absolute;inset:0;
+                background:repeating-linear-gradient(0deg,
+                    rgba(166,227,161,.05) 0 2px,
+                    transparent 2px 6px);
+                mix-blend-mode:screen;
+            }
+            .fmt-glitch .msg{
+                position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+                font-size:18px;letter-spacing:.3em;color:#f38ba8;
+                text-shadow:0 0 12px #f38ba8;
+                animation:fmtBlink .25s steps(2) infinite;
+            }
+            @keyframes fmtBlink{50%{opacity:.2}}
+
+            /* phase 2: black */
+            .fmt-black{position:absolute;inset:0;background:#000}
+
+            /* phase 3: boot + progress */
+            #fmtBoot{
+                position:absolute;inset:0;display:flex;flex-direction:column;
+                align-items:center;justify-content:center;gap:28px;
+                background:#0a0e14;opacity:0;transition:opacity .3s;
+            }
+            #fmtBoot.on{opacity:1}
+            .fmt-logo{
+                width:88px;height:88px;border-radius:20px;background:#1e1e2e;border:1px solid #313244;
+                display:flex;align-items:center;justify-content:center;
+                font-family:"JetBrains Mono",monospace;font-size:40px;font-weight:700;color:#a6e3a1;
+                box-shadow:0 0 40px rgba(166,227,161,.3), inset 0 0 20px rgba(166,227,161,.08);
+                animation:logoPulse 1.5s ease-in-out infinite;
+            }
+            @keyframes logoPulse{
+                0%,100%{box-shadow:0 0 30px rgba(166,227,161,.25),inset 0 0 15px rgba(166,227,161,.05)}
+                50%{box-shadow:0 0 55px rgba(166,227,161,.6),inset 0 0 25px rgba(166,227,161,.15)}
+            }
+            .fmt-appname{font-size:18px;color:#cdd6f4;letter-spacing:.15em;font-weight:500}
+            .fmt-appname .dim{color:#7f849c}
+            .fmt-progress{
+                width:min(380px,72vw);height:3px;background:#1e1e2e;border-radius:2px;overflow:hidden;position:relative;
+            }
+            .fmt-progress__bar{
+                position:absolute;inset:0;width:0%;
+                background:linear-gradient(90deg,#89b4fa,#a6e3a1);
+                box-shadow:0 0 10px rgba(166,227,161,.6);
+                transition:width .12s linear;
+            }
+            .fmt-progress__pct{
+                margin-top:10px;font-size:11px;color:#a6adc8;letter-spacing:.1em;
+                display:flex;justify-content:space-between;width:min(380px,72vw);
+            }
+            .fmt-log{
+                font-size:11px;color:#7f849c;height:60px;width:min(380px,72vw);
+                overflow:hidden;line-height:1.6;
+            }
+            .fmt-log .line{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+            .fmt-log .ok{color:#a6e3a1}
+            .fmt-log .warn{color:#f9e2af}
 
             @media (max-width: 800px) {
                 .header-nav-wrap .lang-switch {
@@ -104,6 +219,11 @@
                         <a href="#projects" class="smoothscroll btn btn--stroke" data-i18n="hero.ctaProjects">Latest Projects</a>
                         <a href="#about" class="smoothscroll btn btn--stroke" data-i18n="hero.ctaAbout">More About Me</a>
                     </div>
+                    <a href="terminal.html" class="term-link" id="terminalSwitchBtn" aria-label="Hello World · enter Terminal Edition">
+                        <span class="term-link__prompt">$</span>
+                        <span class="term-link__text">hello_world.sh</span>
+                        <span class="term-link__caret" aria-hidden="true"></span>
+                    </a>
                     <div class="home-content__scroll">
                         <a href="#about" class="scroll-link smoothscroll">
                             <span data-i18n="hero.scroll">Scroll Down</span>
@@ -113,7 +233,6 @@
             </div>
             <ul class="home-social">
                 <li><a href="https://linkedin.com/in/anlitaiwan" target="_blank" rel="noopener"><i class="im im-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>
-                <li><a href="https://www.facebook.com/AnLiTaiwan" target="_blank" rel="noopener"><i class="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
                 <li><a href="https://instagram.com/anli.tw2jp" target="_blank" rel="noopener"><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
             </ul>
         </section>
@@ -219,8 +338,7 @@
                     </div>
                     <ul class="footer-social">
                         <li><a href="https://linkedin.com/in/anlitaiwan" target="_blank" rel="noopener"><i class="im im-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>
-                        <li><a href="https://www.facebook.com/AnLiTaiwan" target="_blank" rel="noopener"><i class="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
-                        <li><a href="https://instagram.com/anli.tw2jp" target="_blank" rel="noopener"><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
+                                <li><a href="https://instagram.com/anli.tw2jp" target="_blank" rel="noopener"><i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -346,5 +464,92 @@
         <script src="js/main.js"></script>
         <script src="js/email.min-2.3.2.js"></script>
         <script src="js/sendEmail.js"></script>
+
+        <!-- Format → Boot transition to Terminal Edition -->
+        <div id="formatOverlay" aria-hidden="true">
+            <div class="fmt-glitch" id="fmtGlitch">
+                <div class="bars"></div>
+                <div class="msg">FORMATTING&nbsp;·&nbsp;DO&nbsp;NOT&nbsp;TURN&nbsp;OFF</div>
+            </div>
+            <div class="fmt-black" id="fmtBlack" style="display:none"></div>
+            <div id="fmtBoot">
+                <div class="fmt-logo">A</div>
+                <div class="fmt-appname">Terminal Edition <span class="dim">/ v2.4.1</span></div>
+                <div class="fmt-progress"><div class="fmt-progress__bar" id="fmtBar"></div></div>
+                <div class="fmt-progress__pct">
+                    <span id="fmtTask">Mounting ~/portfolio …</span>
+                    <span id="fmtPct">0%</span>
+                </div>
+                <div class="fmt-log" id="fmtLog"></div>
+            </div>
+        </div>
+        <script>
+        (function(){
+            const btn = document.getElementById('terminalSwitchBtn');
+            if (!btn) return;
+            const overlay = document.getElementById('formatOverlay');
+            const glitch  = document.getElementById('fmtGlitch');
+            const black   = document.getElementById('fmtBlack');
+            const boot    = document.getElementById('fmtBoot');
+            const bar     = document.getElementById('fmtBar');
+            const pct     = document.getElementById('fmtPct');
+            const task    = document.getElementById('fmtTask');
+            const logEl   = document.getElementById('fmtLog');
+
+            const TASKS = [
+                { at:   5, t: "Unmounting legacy theme…",                               log: "umount /dev/classic-ui" },
+                { at:  14, t: "Formatting portfolio partition…",                        log: "mkfs.zsh /dev/portfolio", cls: "warn" },
+                { at:  28, t: "Installing @terminal/kernel@2.4.1…",                     log: "pkg install terminal-kernel", cls: "ok" },
+                { at:  42, t: "Loading theme: Catppuccin Mocha…",                       log: "theme load: catppuccin", cls: "ok" },
+                { at:  56, t: "Indexing files (about.md, experience.json, projects.ts)…", log: "fts index: 6 files ready" },
+                { at:  68, t: "Registering command palette…",                           log: "cmd palette: 14 commands bound", cls: "ok" },
+                { at:  81, t: "Hydrating i18n (en / ja / zh)…",                         log: "i18n: 3 locales ok", cls: "ok" },
+                { at:  92, t: "Starting shell…",                                        log: "spawn: /bin/zsh --portfolio", cls: "ok" },
+                { at: 100, t: "Ready.",                                                 log: "✓ boot complete", cls: "ok" }
+            ];
+            function addLog(msg, cls){
+                const line = document.createElement('div');
+                line.className = 'line ' + (cls||'');
+                line.textContent = '[' + new Date().toLocaleTimeString('en-GB') + '] ' + msg;
+                logEl.appendChild(line);
+                while (logEl.children.length > 4) logEl.removeChild(logEl.firstChild);
+            }
+            function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
+
+            async function run(){
+                overlay.classList.add('on');
+                document.body.style.overflow = 'hidden';
+                await sleep(1200);
+                glitch.style.display = 'none';
+                black.style.display = 'block';
+                await sleep(400);
+                black.style.display = 'none';
+                boot.classList.add('on');
+                let p = 0, idx = 0;
+                while (p <= 100) {
+                    bar.style.width = p + '%';
+                    pct.textContent = p + '%';
+                    while (idx < TASKS.length && TASKS[idx].at <= p) {
+                        task.textContent = TASKS[idx].t;
+                        addLog(TASKS[idx].log, TASKS[idx].cls);
+                        idx++;
+                    }
+                    const step = p < 30 ? 3 : p < 70 ? 2 : 1;
+                    await sleep(p < 30 ? 55 : p < 70 ? 45 : 65);
+                    p += step;
+                    if (p >= 100) {
+                        p = 100;
+                        bar.style.width = '100%'; pct.textContent = '100%';
+                        task.textContent = TASKS[TASKS.length - 1].t;
+                        addLog(TASKS[TASKS.length - 1].log, 'ok');
+                        break;
+                    }
+                }
+                await sleep(500);
+                window.location.href = 'terminal.html';
+            }
+            btn.addEventListener('click', (e) => { e.preventDefault(); run(); });
+        })();
+        </script>
     </body>
 </html>
