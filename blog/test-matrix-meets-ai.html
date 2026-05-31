@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>An Li - When the test matrix has to cover the model</title>
+    <meta name="description" content="As companies move budget into AI, QA's definition of quality gains a new dimension: certifying model output. A practitioner's take on prompt regression, golden datasets, and adversarial verification.">
+    <meta name="author" content="An Li">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/vendor.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="../js/modernizr.js"></script>
+    <script src="../js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<body id="top">
+
+    <header class="s-header">
+        <div class="header-logo">
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="Homepage"></a>
+        </div>
+        <nav class="header-nav-wrap">
+            <ul class="header-nav">
+                <li><a href="../index.html#home" title="home">Home</a></li>
+                <li><a href="../index.html#about" title="about">About</a></li>
+                <li><a href="../index.html#experience" title="experience">Experience</a></li>
+                <li class="current"><a href="../index.html#projects" title="projects">Projects</a></li>
+                <li><a href="../index.html#contact" title="contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+    </header> <!-- end s-header -->
+
+
+    <article class="blog-single">
+
+        <!-- page header/blog hero
+        ================================================== -->
+        <div class="page-header page-header--single page-hero" style="background-image:linear-gradient(135deg,#0f1b2d 0%,#13283f 45%,#1c1230 100%);background-size:cover">
+
+            <div class="row page-header__content narrow">
+                <article class="col-full">
+                    <h1 class="page-header__title">
+                        <a href="#0" title="">
+                            When the test matrix has to cover the model
+                        </a>
+                    </h1>
+                    <ul class="page-header__meta">
+                        <li class="date">May 2026</li>
+                        <li class="author">
+                            By
+                            <span>An Li</span>
+                        </li>
+                    </ul>
+
+                </article>
+            </div>
+
+        </div> <!-- end page-header -->
+
+        <div class="row blog-content">
+            <div class="col-full blog-content__main">
+
+                <p class="lead">
+                    For most of my career the test matrix has been a stable thing. You map the
+                    product's critical paths, the platforms you support, and the risks the business
+                    actually cares about, then build coverage outward from there. The strategy follows
+                    the product, and the product follows the business. That is the job, and for years
+                    the shape of it barely moved.
+                </p>
+
+                <p>It is moving now.</p>
+
+                <p>
+                    As companies put real budget and roadmap behind AI, the test strategy has to move
+                    with them. It is not only that there are new features to cover. The definition of
+                    quality is picking up a dimension that most QA orgs do not yet have a column for.
+                </p>
+
+                <p>That dimension is the quality of what the model produces.</p>
+
+                <h2>A new column nobody owns yet</h2>
+
+                <p>
+                    Look at what a model actually outputs: text, images, video, audio, and increasingly
+                    something inside a specific professional domain, like a legal summary or a clinical
+                    note or a financial classification. For years, judging whether that output was any
+                    good belonged to the AI/ML scientists and the engineers who built the model. They
+                    ran their own evaluation. QA, meanwhile, owned user flows, system stability,
+                    performance, and security. Two tracks that rarely crossed.
+                </p>
+
+                <p>
+                    Those QA tracks are not going anywhere. User flows still break. Systems still fall
+                    over under load. Security probably matters more now, not less. But if you run QA,
+                    whether your title is QA Manager or QA Lead or CQO, there is an uncomfortable
+                    question waiting: can you keep treating model output as someone else's evaluation
+                    problem? I don't think we can for much longer. The thing the business is now selling
+                    is the output. If QA has no opinion on its quality, QA is testing the wrapper and
+                    ignoring the product.
+                </p>
+
+                <h2>Where to start: prompts and golden datasets</h2>
+
+                <p>
+                    So what does testing a model actually look like? A reasonable place to start is
+                    prompt testing, which got a lot more concrete over 2025. The pattern that has held
+                    up is regression testing against a golden dataset. You curate a set of inputs with
+                    known-good reference answers, run the model, and compare. Evidently AI has a clear
+                    walkthrough of this for LLMs (linked at the end).
+                </p>
+
+                <p>
+                    If you have ever written assertions it will feel familiar, with one catch: the
+                    comparison is usually a similarity judgment rather than an exact match, and that
+                    catch is where most of the real work hides. Deciding what "close enough" means for
+                    your domain is the hard part, and it is a QA decision, not a model decision.
+                </p>
+
+                <h2>Where it goes next: adversarial verification</h2>
+
+                <p>
+                    Golden datasets give you a baseline. They tell you when something regressed against
+                    cases you already thought of. What they do not do is find the failure you never
+                    wrote down.
+                </p>
+
+                <p>
+                    That is where I think this goes next, and it borrows from adversarial modeling.
+                    Instead of only checking against a fixed reference set, you build a second model
+                    whose whole job is to attack the output of the model under test. It hunts for the
+                    prompts, the edge cases, and the domain traps that make the first model fail. Run
+                    that loop long enough in a narrow domain and the attacker gets sharper. You end up
+                    with a verification model that understands your domain a little better every week,
+                    and that improves the more you use it. A test asset that compounds instead of
+                    decaying is rare, and worth building toward.
+                </p>
+
+                <blockquote>
+                    <p>
+                        None of this throws out the matrix we already have. It adds a row. The QA
+                        leaders who start learning how model output gets evaluated now, rather than
+                        handing it off, are the ones who will still own the word "quality" when quality
+                        means more than a green user flow.
+                    </p>
+                </blockquote>
+
+                <p>
+                    Reference: Evidently AI, "LLM regression testing tutorial":
+                    <a href="https://www.evidentlyai.com/blog/llm-regression-testing-tutorial" target="_blank" rel="noopener">evidentlyai.com/blog/llm-regression-testing-tutorial</a>
+                </p>
+
+                <p class="blog-content__tags">
+                    <span>Post Tags</span>
+                    <span class="blog-content__tag-list">
+                        <a>QA Strategy</a>
+                        <a>AI Testing</a>
+                        <a>LLM</a>
+                    </span>
+                </p>
+
+                <div class="blog-content__pagenav">
+                    <div class="blog-content__all">
+                        <a href="../index.html#home" class="btn btn--primary">
+                            Back to Home
+                        </a>
+                    </div>
+                </div>
+
+            </div><!-- end blog-content__main -->
+        </div> <!-- end blog-content -->
+
+    </article>
+    <!-- footer
+        ================================================== -->
+        <footer>
+            <div class="row">
+                <div class="col-full">
+                    <div class="footer-logo">
+                        <a class="footer-site-logo" href="#0"><img src="../images/logo.png" alt="Homepage"></a>
+                    </div>
+                    <ul class="footer-social">
+                        <li>
+                            <a href="https://linkedin.com/in/anlitaiwan" target="_blank" rel="noopener">
+                                <i class="im im-linkedin" aria-hidden="true"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/anli.tw2jp" target="_blank" rel="noopener">
+                                <i class="im im-instagram" aria-hidden="true"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row footer-bottom">
+                <div class="col-twelve">
+                    <div class="copyright">
+                        <span>© An Li</span>
+                    </div>
+                    <div class="go-top">
+                        <a class="smoothscroll" title="Back to Top" href="#top">
+                            <i class="im im-arrow-up" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div> <!-- end footer-bottom -->
+        </footer> <!-- end footer -->
+
+
+        <div id="preloader">
+            <div id="loader"></div>
+        </div>
+
+
+        <!-- Java Script
+        ================================================== -->
+        <script src="../js/jquery-3.6.4.js"></script>
+        <script src="../js/plugins.js"></script>
+        <script src="../js/main.js"></script>
+
+</body>
+
+</html>
