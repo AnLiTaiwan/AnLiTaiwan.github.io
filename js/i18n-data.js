@@ -224,8 +224,8 @@ window.I18N = {
       hire: "お仕事のご依頼",
       skillsTitle: "コアスキル",
       skills: {
-        automation: { label: "自動化(決定論的)", value: "Playwright" },
-        agentic: { label: "エージェンティックUI自動化(LLM駆動)", value: "Gemini Computer Use Preview、Browser Use" },
+        automation: { label: "自動化（決定論的）", value: "Playwright" },
+        agentic: { label: "エージェンティックUI自動化（LLM駆動）", value: "Gemini Computer Use Preview、Browser Use" },
         cicd: { label: "CI/CD", value: "GitHub Actions、品質ゲート、パイプライン設計" },
         testing: { label: "テスト", value: "E2E、回帰、機能検証、テスト戦略、テストケース管理" },
         infra: { label: "インフラ/ツール", value: "AWS EKS、K8s、Ansible、Splunk、Grafana、Docker" },
@@ -268,7 +268,7 @@ window.I18N = {
           role: "自動化エンジニア — AI/MLプラットフォーム技術",
           stack: "ラボ管理 · Ansible · K8s · Splunk · Python3",
           bullets: [
-            "社内自動化構成サービス(Docker、K8s、Ansible)を保守。",
+            "社内自動化構成サービス（Docker、K8s、Ansible）を保守。",
             "ラックレイアウト・電源/ネットワーク分配を再設計し、並列テスト容量を40%増加。",
             "Splunk・Grafanaでログ/インフラ監視用のデータ可視化ツールを作成。",
             "クロスファンクショナルチームと協力し、プラットフォーム欠陥やプロビジョニングエラーに対応。"
@@ -276,7 +276,7 @@ window.I18N = {
         },
         {
           period: "2021年11月 — 2022年4月",
-          company: "Google (並行任務)",
+          company: "Google （並行任務）",
           location: "台北市",
           role: "QAリード — Mediashell",
           stack: "マニュアルテスト · プロジェクト管理",
@@ -294,7 +294,7 @@ window.I18N = {
           role: "シニアソフトウェアテストエンジニア — Chromecast",
           stack: "自動化 · シェル · Java",
           bullets: [
-            "Chromecast 3rdの自動テスト(互換性、GMS、ベンダースイート)を実行。",
+            "Chromecast 3rdの自動テスト（互換性、GMS、ベンダースイート）を実行。",
             "Google Laboratoryで自動テスト環境を保守・構築。",
             "シェルスクリプトで自動テストスクリプトを開発。",
             "Multiroom、回帰、リモート、Assistant、Talkbackのマニュアルテストを実施。"
@@ -309,7 +309,7 @@ window.I18N = {
           bullets: [
             "センサー機能、パフォーマンス、負荷、回帰、ストレス、健全性テストを実施。",
             "初のオフライン製品テストのためのスタッフトレーニングを計画。",
-            "Mountain View(米国)、Bangalore(インド)のチームと協力。"
+            "Mountain View（米国）、Bangalore（インド）のチームと協力。"
           ]
         },
         {
@@ -322,7 +322,7 @@ window.I18N = {
             "Webサイトバックエンドアーキテクチャの設計・実装を主導。",
             "データベース、データバックアップ、保守計画を管理。",
             "クライアントと要件を共有しシステムプロセスを説明。",
-            "大量データ送信ソリューション(1億件以上)を設計。"
+            "大量データ送信ソリューション（1億件以上）を設計。"
           ]
         }
       ]
@@ -358,7 +358,7 @@ window.I18N = {
       message: "メッセージ",
       submit: "送信",
       sending: "送信中...",
-      successMsg: "メッセージが送信されました。ありがとうございます!",
+      successMsg: "メッセージが送信されました。ありがとうございます！",
       errorMsg: "エラーが発生しました。もう一度お試しください。",
       infoEmail: "メール",
       emailAddr: "hello@an-li.tw",
@@ -398,7 +398,7 @@ window.I18N = {
       rolePrefix: "",
       roles: ["軟體測試", "自動化", "Playwright"],
       roleSuffix: "工程師",
-      from: "來自台灣,目前位於東京。",
+      from: "來自台灣，目前位於東京。",
       ctaProjects: "最新專案",
       ctaAbout: "關於我",
       scroll: "向下滑動"
@@ -406,13 +406,13 @@ window.I18N = {
     about: {
       eyebrow: "關於",
       title: "關於我",
-      summary: "嗨,我是李安。過去 6 年多的時間,我從 Google 的 Nest 裝置、Apple 的 Siri 評估團隊一路走到東京的 SaaS 公司,現在帶著團隊把一個個 bug 轉成能被信賴的自動化流程。最喜歡的,就是把搖搖欲墜的手動測試整理成可以安心 ship 的 CI pipeline;最近則在研究 LLM agent 能把 QA 的邊界往哪裡推。下班以後通常會埋在桌遊、東京小旅行,或努力適應第三種語言的日常生活裡。",
+      summary: "嗨，我是李安。過去 6 年多的時間，我從 Google 的 Nest 裝置、Apple 的 Siri 評估團隊一路走到東京的 SaaS 公司，現在帶著團隊把一個個 bug 轉成能被信賴的自動化流程。最喜歡的，就是把搖搖欲墜的手動測試整理成可以安心 ship 的 CI pipeline；最近則在研究 LLM agent 能把 QA 的邊界往哪裡推。下班以後通常會埋在桌遊、東京小旅行，或努力適應第三種語言的日常生活裡。",
       downloadCV: "下載履歷",
       hire: "立即聘用",
       skillsTitle: "核心技能",
       skills: {
-        automation: { label: "自動化(確定性)", value: "Playwright" },
-        agentic: { label: "代理型 UI 自動化(LLM 驅動)", value: "Gemini Computer Use Preview、Browser Use" },
+        automation: { label: "自動化（確定性）", value: "Playwright" },
+        agentic: { label: "代理型 UI 自動化（LLM 驅動）", value: "Gemini Computer Use Preview、Browser Use" },
         cicd: { label: "CI/CD", value: "GitHub Actions、品質閘道、流水線設計" },
         testing: { label: "測試", value: "E2E、迴歸、功能驗證、測試策略、測試案例管理" },
         infra: { label: "基礎建設 / 工具", value: "AWS EKS、K8s、Ansible、Splunk、Grafana、Docker" },
@@ -429,11 +429,11 @@ window.I18N = {
           role: "QA 主管工程師",
           stack: "Playwright · GitHub Actions · CI/CD · 測試策略",
           bullets: [
-            "主導設計與實作以 Playwright 為基礎的穩健 E2E 自動化框架,使關鍵產品自動化覆蓋率成長 80% 以上。",
-            "與後端、前端、產品團隊緊密合作,對齊測試策略與發布目標。",
-            "開發並維護跨多專案的 CI 流水線架構,降低部署風險。",
-            "標準化 QA 流程、推動測試案例管理策略,提升追溯性與跨地 QA 團隊協作效率。",
-            "在 AWS EKS 上建置整合 ReportPortal 的測試報告平台,支援資料驅動的利害關係人討論。",
+            "主導設計與實作以 Playwright 為基礎的穩健 E2E 自動化框架，使關鍵產品自動化覆蓋率成長 80% 以上。",
+            "與後端、前端、產品團隊緊密合作，對齊測試策略與發布目標。",
+            "開發並維護跨多專案的 CI 流水線架構，降低部署風險。",
+            "標準化 QA 流程、推動測試案例管理策略，提升追溯性與跨地 QA 團隊協作效率。",
+            "在 AWS EKS 上建置整合 ReportPortal 的測試報告平台，支援資料驅動的利害關係人討論。",
             "以 Gemini Computer Use Preview 與 Browser Use 原型 LLM 驅動的代理 UI 自動化。"
           ]
         },
@@ -455,21 +455,21 @@ window.I18N = {
           role: "自動化工程師 — AI/ML 平台技術",
           stack: "Lab 管理 · Ansible · K8s · Splunk · Python3",
           bullets: [
-            "維運內部自動化組態服務(Docker、K8s、Ansible)。",
-            "重新設計機櫃配置與電力/網路分配,並行測試容量提升 40%。",
+            "維運內部自動化組態服務（Docker、K8s、Ansible）。",
+            "重新設計機櫃配置與電力/網路分配，並行測試容量提升 40%。",
             "以 Splunk 與 Grafana 建立日誌與基礎設施監控的資料視覺化工具。",
             "與跨職能團隊合作排除平台缺陷與配置錯誤。"
           ]
         },
         {
           period: "2021 年 11 月 — 2022 年 4 月",
-          company: "Google (並行任務)",
+          company: "Google （並行任務）",
           location: "台灣台北",
           role: "QA 主管 — Mediashell",
           stack: "手動測試 · 專案管理",
           bullets: [
-            "率領 5 人 QA 團隊執行手動測試,建立迴歸/重試環境。",
-            "為 4 款 Nest 裝置設計 Mediashell 與 SDK 測試計畫,撰寫 2000+ 測試案例。",
+            "率領 5 人 QA 團隊執行手動測試，建立迴歸/重試環境。",
+            "為 4 款 Nest 裝置設計 Mediashell 與 SDK 測試計畫，撰寫 2000+ 測試案例。",
             "規劃 Multiroom 測試的人員訓練。",
             "與 PM/RD 協調人力與專案進度。"
           ]
@@ -481,7 +481,7 @@ window.I18N = {
           role: "資深軟體測試工程師 — Chromecast",
           stack: "自動化 · Shell · Java",
           bullets: [
-            "執行 Chromecast 3rd 的自動化測試(相容性、GMS、Vendor suite)。",
+            "執行 Chromecast 3rd 的自動化測試（相容性、GMS、Vendor suite）。",
             "於 Google Laboratory 維運與建置自動化測試環境。",
             "以 shell script 開發自動化測試腳本。",
             "執行 Multiroom、迴歸、遙控、Assistant、Talkback 手動測試。"
@@ -518,12 +518,12 @@ window.I18N = {
       title: "精選專案",
       items: [
         { title: "E2E 自動化框架", desc: "以 Playwright + GitHub Actions CI 品質閘道達成自動化覆蓋率 80% 以上成長。" },
-        { title: "ReportPortal", desc: "建置於 AWS EKS 的測試報告平台,整合 CI 工作流以支援資料驅動發布決策。" },
+        { title: "ReportPortal", desc: "建置於 AWS EKS 的測試報告平台，整合 CI 工作流以支援資料驅動發布決策。" },
         { title: "代理 UI 自動化 PoC", desc: "以 Gemini Computer Use Preview 與 Browser Use 建構 LLM 驅動的探索流程。" },
-        { title: "Apple AI/ML 自動化實驗室重新設計", desc: "機櫃/電力/網路重新設計,並行測試容量增加 40%。" },
+        { title: "Apple AI/ML 自動化實驗室重新設計", desc: "機櫃/電力/網路重新設計，並行測試容量增加 40%。" },
         { title: "Google AndroidOS 測試設計", desc: "為多款 Nest 裝置撰寫相容性、GMS 與 Vendor suite 測試計畫。" },
         { title: "Google ChromeCast/Thermostat 測試設計", desc: "為 Chromecast 3rd 與 Nest Thermostat 設計自動化與手動測試計畫。" },
-        { title: "Map Encyclopedia", desc: "以地圖為核心的知識典藏,個人全端探索專案。" },
+        { title: "Map Encyclopedia", desc: "以地圖為核心的知識典藏，個人全端探索專案。" },
         { title: "Citadels", desc: "多人桌遊線上化 — 遊戲邏輯與回合制 UX 設計。" },
         { title: "個人健康教育管理系統", desc: "涵蓋後端架構與資料庫設計的健康教育課程管理 Web 平台。" },
         { title: "CYCUEat", desc: "中原大學校園訂餐 Web 應用。" }
@@ -532,7 +532,7 @@ window.I18N = {
     writing: {
       title: "文章",
       items: [
-        { title: "當 test matrix 必須涵蓋模型", desc: "Golden dataset 抓得到你描述得出的 regression,真正難的是你壓根沒寫下來的那種失敗,而這正是 metamorphic testing 與對抗式紅隊登場的地方。", date: "2026 年 5 月", url: "blog/test-matrix-meets-ai.html" }
+        { title: "當 test matrix 必須涵蓋模型", desc: "Golden dataset 抓得到你描述得出的 regression，真正難的是你壓根沒寫下來的那種失敗，而這正是 metamorphic testing 與對抗式紅隊登場的地方。", date: "2026 年 5 月", url: "blog/test-matrix-meets-ai.html" }
       ]
     },
     contact: {
@@ -545,8 +545,8 @@ window.I18N = {
       message: "訊息",
       submit: "送出訊息",
       sending: "傳送中...",
-      successMsg: "您的訊息已送出,感謝!",
-      errorMsg: "發生錯誤,請再試一次。",
+      successMsg: "您的訊息已送出，感謝！",
+      errorMsg: "發生錯誤，請再試一次。",
       infoEmail: "電子郵件",
       emailAddr: "hello@an-li.tw",
       infoLoc: "所在地",
@@ -559,7 +559,7 @@ window.I18N = {
     },
     notFound: {
       pageTitle: "404 — 找不到頁面 · An Li",
-      message: "你要找的頁面不存在,或者發生了其他錯誤。請回到 <a href=\"/\">an-li.tw</a>,如果這裡原本該有內容,歡迎 <a href=\"mailto:hello@an-li.tw\">聯絡我</a>。",
+      message: "你要找的頁面不存在，或者發生了其他錯誤。請回到 <a href=\"/\">an-li.tw</a>，如果這裡原本該有內容，歡迎 <a href=\"mailto:hello@an-li.tw\">聯絡我</a>。",
       cta: "回到首頁"
     }
   }
