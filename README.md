@@ -45,7 +45,7 @@ Posts and project write-ups are standalone pages under [`blog/`](blog/):
 
 | Post | Page |
 |------|------|
-| When the test matrix has to cover the model (QA strategy for AI output) | https://an-li.tw/blog/test-matrix-meets-ai.html |
+| When the test matrix has to cover the model (QA strategy for AI output) | https://an-li.tw/blog/test-matrix-meets-ai-product.html |
 
 **Project case studies**
 

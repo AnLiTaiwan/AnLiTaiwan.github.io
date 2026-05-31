@@ -158,7 +158,7 @@ window.I18N = {
     writing: {
       title: "Writing",
       items: [
-        { title: "When the test matrix has to cover the model", desc: "Golden datasets catch the regressions you can describe. The open problem is the failure you never wrote down, where metamorphic testing and adversarial red teaming come in.", date: "May 2026", url: "blog/test-matrix-meets-ai.html" }
+        { title: "When the test matrix has to cover the model", desc: "Golden datasets catch the regressions you can describe. The open problem is the failure you never wrote down, where metamorphic testing and adversarial red teaming come in.", date: "May 2026", url: "blog/test-matrix-meets-ai-product.html" }
       ]
     },
     contact: {
@@ -345,7 +345,7 @@ window.I18N = {
     writing: {
       title: "ブログ",
       items: [
-        { title: "テストマトリクスがモデルまで担うとき", desc: "ゴールデンデータセットは「想定済み」の回帰を捕まえる。本当の難題は想定外の失敗で、そこにメタモルフィックテストと敵対的レッドチームが入ってくる。", date: "2026年5月", url: "blog/test-matrix-meets-ai.html" }
+        { title: "テストマトリクスがモデルまで担うとき", desc: "ゴールデンデータセットは「想定済み」の回帰を捕まえる。本当の難題は想定外の失敗で、そこにメタモルフィックテストと敵対的レッドチームが入ってくる。", date: "2026年5月", url: "blog/test-matrix-meets-ai-product.html" }
       ]
     },
     contact: {
@@ -532,7 +532,7 @@ window.I18N = {
     writing: {
       title: "文章",
       items: [
-        { title: "當 test matrix 必須涵蓋模型", desc: "Golden dataset 抓得到你描述得出的 regression，真正難的是你壓根沒寫下來的那種失敗，而這正是 metamorphic testing 與對抗式紅隊登場的地方。", date: "2026 年 5 月", url: "blog/test-matrix-meets-ai.html" }
+        { title: "當 test matrix 必須涵蓋模型", desc: "Golden dataset 抓得到你描述得出的 regression，真正難的是你壓根沒寫下來的那種失敗，而這正是 metamorphic testing 與對抗式紅隊登場的地方。", date: "2026 年 5 月", url: "blog/test-matrix-meets-ai-product.html" }
       ]
     },
     contact: {
