@@ -11,7 +11,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <title>An Li - When the test matrix has to cover the model</title>
-    <meta name="description" content="As companies move budget into AI, QA's definition of quality gains a new dimension: certifying model output. A practitioner's take on prompt regression, golden datasets, and adversarial verification.">
+    <meta name="description" content="Golden datasets catch the regressions you can describe. The open problem is the failure you never wrote down. A QA take on testing model output: LLM-as-a-judge, metamorphic testing, adversarial red teaming, and runtime guardrails.">
     <meta name="author" content="An Li">
 
     <!-- mobile specific metas
@@ -48,7 +48,7 @@
                 <li><a href="../index.html#home" title="home">Home</a></li>
                 <li><a href="../index.html#about" title="about">About</a></li>
                 <li><a href="../index.html#experience" title="experience">Experience</a></li>
-                <li class="current"><a href="../index.html#projects" title="projects">Projects</a></li>
+                <li class="current"><a href="../index.html#writing" title="writing">Writing</a></li>
                 <li><a href="../index.html#contact" title="contact">Contact</a></li>
             </ul>
         </nav>
@@ -89,8 +89,8 @@
                     For most of my career the test matrix has been a stable thing. You map the
                     product's critical paths, the platforms you support, and the risks the business
                     actually cares about, then build coverage outward from there. The strategy follows
-                    the product, and the product follows the business. That is the job, and for years
-                    the shape of it barely moved.
+                    the product, and the product follows the business. That has been the job, and for
+                    years its shape barely moved.
                 </p>
 
                 <p>It is moving now.</p>
@@ -98,95 +98,138 @@
                 <p>
                     As companies put real budget and roadmap behind AI, the test strategy has to move
                     with them. It is not only that there are new features to cover. The definition of
-                    quality is picking up a dimension that most QA orgs do not yet have a column for.
-                </p>
-
-                <p>That dimension is the quality of what the model produces.</p>
-
-                <h2>A new column nobody owns yet</h2>
-
-                <p>
-                    Look at what a model actually outputs: text, images, video, audio, and increasingly
-                    something inside a specific professional domain, like a legal summary or a clinical
-                    note or a financial classification. For years, judging whether that output was any
-                    good belonged to the AI/ML scientists and the engineers who built the model. They
-                    ran their own evaluation. QA, meanwhile, owned user flows, system stability,
-                    performance, and security. Two tracks that rarely crossed.
+                    quality is picking up a dimension that most QA orgs do not yet have a column for:
+                    the quality of what the model produces. Text, images, audio, video, and
+                    increasingly something inside a specific professional domain, like a legal summary
+                    or a clinical note. For years, judging whether that output was any good belonged to
+                    the AI/ML scientists who built the model. QA owned user flows, stability,
+                    performance, and security. If you lead QA today, that split is getting harder to
+                    defend, because the thing the business is selling is now the output itself.
                 </p>
 
                 <p>
-                    Those QA tracks are not going anywhere. User flows still break. Systems still fall
-                    over under load. Security probably matters more now, not less. But if you run QA,
-                    whether your title is QA Manager or QA Lead or CQO, there is an uncomfortable
-                    question waiting: can you keep treating model output as someone else's evaluation
-                    problem? I don't think we can for much longer. The thing the business is now selling
-                    is the output. If QA has no opinion on its quality, QA is testing the wrapper and
-                    ignoring the product.
+                    So how do you actually test it? I find it useful to split the problem into two
+                    kinds of failure.
                 </p>
 
-                <h2>Where to start: prompts and golden datasets</h2>
+                <h2>The failures you already know about</h2>
 
                 <p>
-                    So what does testing a model actually look like? A reasonable place to start is
-                    prompt testing, which got a lot more concrete over 2025. The pattern that has held
-                    up is regression testing against a golden dataset. You curate a set of inputs with
-                    known-good reference answers, run the model, and compare. Evidently AI has a clear
-                    walkthrough of this for LLMs (linked at the end).
+                    The first kind is the regression you can describe in advance. You know what good
+                    looks like for a given input, and you want to catch the day the model stops
+                    producing it. The standard answer here is solid and worth adopting now: build a
+                    golden dataset of inputs with reference answers, run the model, and compare. Where
+                    the output is open-ended and an exact-match check makes no sense, a second model
+                    grades it, the pattern people call LLM-as-a-judge. Evidently AI has a clear
+                    walkthrough of both (linked at the end).
                 </p>
 
                 <p>
-                    If you have ever written assertions it will feel familiar, with one catch: the
-                    comparison is usually a similarity judgment rather than an exact match, and that
-                    catch is where most of the real work hides. Deciding what "close enough" means for
-                    your domain is the hard part, and it is a QA decision, not a model decision.
-                </p>
-
-                <h2>Where it goes next: adversarial verification</h2>
-
-                <p>
-                    Golden datasets give you a baseline. They tell you when something regressed against
-                    cases you already thought of. What they do not do is find the failure you never
-                    wrote down.
+                    This works, with one honest caveat. The judge is itself a model, and it has biases.
+                    It tends to prefer longer answers, it can favor whatever sits first in a pairwise
+                    comparison, and it will sometimes rate its own family of models too kindly. You
+                    manage that with chain-of-thought prompts, a few anchored examples, and by tuning
+                    the judge against real graded data instead of trusting it out of the box. Treat the
+                    judge as a test that also needs testing.
                 </p>
 
                 <p>
-                    That is where I think this goes next, and it borrows from adversarial modeling.
-                    Instead of only checking against a fixed reference set, you build a second model
-                    whose whole job is to attack the output of the model under test. It hunts for the
-                    prompts, the edge cases, and the domain traps that make the first model fail. Run
-                    that loop long enough in a narrow domain and the attacker gets sharper. You end up
-                    with a verification model that understands your domain a little better every week,
-                    and that improves the more you use it. A test asset that compounds instead of
-                    decaying is rare, and worth building toward.
+                    Golden datasets give you a baseline and a regression alarm. What they cannot do is
+                    find the failure you never thought to write down.
+                </p>
+
+                <h2>The failures you haven't imagined yet</h2>
+
+                <p>
+                    This is the open problem, and it is where the interesting work is happening. Two
+                    directions are worth watching, and they are complementary rather than competing.
+                </p>
+
+                <p>
+                    The first is metamorphic testing, and I think it is the most underused idea in this
+                    whole space. Instead of asserting an exact output, you assert a relation between
+                    inputs and outputs. Rephrase a question and the classification should not change.
+                    Add an irrelevant sentence and the answer should stay the same. Translate the input
+                    and the sentiment should survive. You are not saying what the right answer is, only
+                    how the output should behave when you perturb the input in a known way. That
+                    sidesteps the hardest part of testing a generative system, which is that there is
+                    no single correct answer to compare against. Frameworks like METAL can generate
+                    these relations from templates by the hundred. It is also the most QA-native
+                    technique on this list, because defining good metamorphic relations is exactly the
+                    kind of edge-case thinking testers are already good at.
+                </p>
+
+                <p>
+                    The second direction is the one I want to be careful about, because it is easy to
+                    oversell. The idea is to build an adversarial model whose job is to attack the model
+                    under test, hunt for the prompts and edge cases that make it fail, and keep the ones
+                    that work so it gets sharper over time. This is real. Systems like AutoRedTeamer do
+                    exactly this, accumulating an attack library across runs in what the authors call
+                    lifelong attack integration. My honest read, though, is that today this line of work
+                    lives almost entirely in safety and security: jailbreaks, harmful or biased output,
+                    prompt injection. It is very good at finding ways to break a model. It is not yet a
+                    way to certify that a model is correct. So I would put it on the roadmap as a
+                    direction worth betting on, not as the settled future of output quality. If an
+                    earlier version of this argument read more like red teaming than QA, that was the
+                    tell, and the distinction matters.
+                </p>
+
+                <h2>Offline evaluation is not enough</h2>
+
+                <p>
+                    One more thing the matrix has to absorb. Everything above is offline evaluation, run
+                    before release. Models drift, inputs drift, and users do things your dataset never
+                    imagined. So the same teams are adding a runtime layer: guardrails that check inputs
+                    and outputs live for things like leaked PII, toxic content, or malformed format, and
+                    observability that watches production signals such as refusal rate, latency, and
+                    answer drift. Offline evals tell you the model was good last Tuesday. The runtime
+                    layer tells you whether it is still good right now.
+                </p>
+
+                <h2>What this means if you run QA</h2>
+
+                <p>
+                    None of this throws out the matrix we already have. User flows still break, systems
+                    still fall over, and security matters more now, not less. What changes is that a new
+                    set of rows shows up: known-regression evals, metamorphic relations, adversarial
+                    probing, and live guardrails. I don't think anyone has the finished playbook yet,
+                    and I am wary of anyone who says they do.
                 </p>
 
                 <blockquote>
                     <p>
-                        None of this throws out the matrix we already have. It adds a row. The QA
-                        leaders who start learning how model output gets evaluated now, rather than
-                        handing it off, are the ones who will still own the word "quality" when quality
-                        means more than a green user flow.
+                        The QA leaders who start learning how model output gets evaluated now, rather
+                        than handing it to the model team and looking away, are the ones who will still
+                        own the word "quality" when quality means more than a green user flow.
                     </p>
                 </blockquote>
 
-                <p>
-                    Reference: Evidently AI, "LLM regression testing tutorial":
-                    <a href="https://www.evidentlyai.com/blog/llm-regression-testing-tutorial" target="_blank" rel="noopener">evidentlyai.com/blog/llm-regression-testing-tutorial</a>
-                </p>
+                <p>References</p>
+                <ul>
+                    <li>Evidently AI, "LLM-as-a-judge: a complete guide":
+                        <a href="https://www.evidentlyai.com/llm-guide/llm-as-a-judge" target="_blank" rel="noopener">evidentlyai.com/llm-guide/llm-as-a-judge</a>
+                    </li>
+                    <li>Ministry of Testing, "Metamorphic and adversarial strategies for testing AI systems":
+                        <a href="https://www.ministryoftesting.com/articles/metamorphic-and-adversarial-strategies-for-testing-ai-systems" target="_blank" rel="noopener">ministryoftesting.com</a>
+                    </li>
+                    <li>AutoRedTeamer, "Autonomous red teaming with lifelong attack integration":
+                        <a href="https://arxiv.org/abs/2503.15754" target="_blank" rel="noopener">arxiv.org/abs/2503.15754</a>
+                    </li>
+                </ul>
 
                 <p class="blog-content__tags">
                     <span>Post Tags</span>
                     <span class="blog-content__tag-list">
                         <a>QA Strategy</a>
                         <a>AI Testing</a>
-                        <a>LLM</a>
+                        <a>LLM Evaluation</a>
                     </span>
                 </p>
 
                 <div class="blog-content__pagenav">
                     <div class="blog-content__all">
-                        <a href="../index.html#home" class="btn btn--primary">
-                            Back to Home
+                        <a href="../index.html#writing" class="btn btn--primary">
+                            Back to Writing
                         </a>
                     </div>
                 </div>

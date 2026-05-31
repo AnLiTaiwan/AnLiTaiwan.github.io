@@ -158,7 +158,7 @@ window.I18N = {
     writing: {
       title: "Writing",
       items: [
-        { title: "When the test matrix has to cover the model", desc: "As companies move budget into AI, QA's definition of quality gains a new dimension: certifying model output. On prompt regression, golden datasets, and adversarial verification.", date: "May 2026", url: "blog/test-matrix-meets-ai.html" }
+        { title: "When the test matrix has to cover the model", desc: "Golden datasets catch the regressions you can describe. The open problem is the failure you never wrote down, where metamorphic testing and adversarial red teaming come in.", date: "May 2026", url: "blog/test-matrix-meets-ai.html" }
       ]
     },
     contact: {
@@ -345,7 +345,7 @@ window.I18N = {
     writing: {
       title: "ブログ",
       items: [
-        { title: "テストマトリクスがモデルまで担うとき", desc: "企業がAIへ投資を移す中で、品質の定義に新たな次元が加わる。モデル出力の品質保証、プロンプト回帰テスト、ゴールデンデータセット、敵対的検証について。", date: "2026年5月", url: "blog/test-matrix-meets-ai.html" }
+        { title: "テストマトリクスがモデルまで担うとき", desc: "ゴールデンデータセットは「想定済み」の回帰を捕まえる。本当の難題は想定外の失敗で、そこにメタモルフィックテストと敵対的レッドチームが入ってくる。", date: "2026年5月", url: "blog/test-matrix-meets-ai.html" }
       ]
     },
     contact: {
@@ -532,7 +532,7 @@ window.I18N = {
     writing: {
       title: "文章",
       items: [
-        { title: "當測試矩陣必須涵蓋模型", desc: "當企業把預算投向 AI，QA 對品質的定義多了一個新維度：驗證模型輸出。談 prompt 回歸測試、golden dataset 與對抗式驗證。", date: "2026 年 5 月", url: "blog/test-matrix-meets-ai.html" }
+        { title: "當測試矩陣必須涵蓋模型", desc: "Golden dataset 抓得到你描述得出的回歸,真正的難題是你沒寫下來的失敗,而這正是 metamorphic testing 與對抗式紅隊登場之處。", date: "2026 年 5 月", url: "blog/test-matrix-meets-ai.html" }
       ]
     },
     contact: {
