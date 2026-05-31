@@ -1,48 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" role="img" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" aria-label="The test matrix keeps its classic rows (user flows, stability, performance, security) and adds new rows for AI output: known-regression evals, metamorphic relations, adversarial probing, and live guardrails">
-  <rect width="820" height="520" fill="#ffffff"/>
-  <text x="40" y="44" font-size="20" font-weight="700" fill="#13283f">The test matrix gains rows</text>
-  <text x="40" y="68" font-size="13" fill="#6b7a8d">It does not replace what you already test. It adds to it.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" aria-label="The QA you already know (user flows, stability, performance, security) is extended with a new expansion for testing model output: known-regression evals, metamorphic relations, adversarial probing, and live guardrails. Together they form one test strategy.">
+  <rect width="900" height="470" fill="#ffffff"/>
 
-  <!-- classic rows -->
-  <g font-size="15">
-    <rect x="40" y="86" width="740" height="40" rx="8" fill="#f1f3f7"/>
-    <text x="58" y="111" fill="#5b6b80">User flows</text>
-    <rect x="40" y="132" width="740" height="40" rx="8" fill="#f1f3f7"/>
-    <text x="58" y="157" fill="#5b6b80">System stability</text>
-    <rect x="40" y="178" width="740" height="40" rx="8" fill="#f1f3f7"/>
-    <text x="58" y="203" fill="#5b6b80">Performance</text>
-    <rect x="40" y="224" width="740" height="40" rx="8" fill="#f1f3f7"/>
-    <text x="58" y="249" fill="#5b6b80">Security</text>
+  <!-- LEFT CARD: the QA you already know -->
+  <rect x="36" y="40" width="350" height="312" rx="14" fill="#f4f6fa" stroke="#cdd5e1"/>
+  <rect x="36" y="40" width="350" height="46" rx="14" fill="#13283f"/>
+  <rect x="36" y="64" width="350" height="22" fill="#13283f"/>
+  <text x="60" y="70" font-size="15" font-weight="700" fill="#ffffff">The QA you already know</text>
+
+  <g font-size="14.5" fill="#41506680">
+    <rect x="60" y="104" width="302" height="44" rx="9" fill="#ffffff" stroke="#d4dbe6"/>
+    <text x="80" y="131" fill="#415066">User flows</text>
+    <rect x="60" y="158" width="302" height="44" rx="9" fill="#ffffff" stroke="#d4dbe6"/>
+    <text x="80" y="185" fill="#415066">System stability</text>
+    <rect x="60" y="212" width="302" height="44" rx="9" fill="#ffffff" stroke="#d4dbe6"/>
+    <text x="80" y="239" fill="#415066">Performance</text>
+    <rect x="60" y="266" width="302" height="44" rx="9" fill="#ffffff" stroke="#d4dbe6"/>
+    <text x="80" y="293" fill="#415066">Security</text>
   </g>
 
-  <!-- divider -->
-  <line x1="40" y1="282" x2="780" y2="282" stroke="#d7dde6" stroke-dasharray="4 5"/>
-  <text x="40" y="304" font-size="12" font-weight="700" fill="#8a97a8" letter-spacing="1.5">NEW: TESTING MODEL OUTPUT</text>
+  <!-- PLUS connector -->
+  <circle cx="450" cy="196" r="30" fill="#ffffff" stroke="#7a4fd0" stroke-width="2.5"/>
+  <line x1="450" y1="180" x2="450" y2="212" stroke="#7a4fd0" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="434" y1="196" x2="466" y2="196" stroke="#7a4fd0" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="450" y="250" text-anchor="middle" font-size="12" fill="#7a4fd0" font-weight="600">extends</text>
 
-  <!-- new rows -->
-  <g font-size="15" font-weight="600">
-    <!-- known-regression evals (blue) -->
-    <rect x="40" y="316" width="740" height="40" rx="8" fill="#eaf3ff"/>
-    <rect x="40" y="316" width="6" height="40" rx="3" fill="#3a6ea5"/>
-    <text x="62" y="341" fill="#1f3a5f">Known-regression evals</text>
-    <text x="600" y="341" font-size="12" font-weight="500" fill="#3a6ea5">golden dataset + judge</text>
+  <!-- RIGHT CARD: the expansion (dashed = new) -->
+  <rect x="514" y="40" width="350" height="312" rx="14" fill="#faf7ff" stroke="#7a4fd0" stroke-width="2" stroke-dasharray="7 6"/>
+  <rect x="514" y="40" width="350" height="46" rx="14" fill="#5b34a8"/>
+  <rect x="514" y="64" width="350" height="22" fill="#5b34a8"/>
+  <text x="538" y="70" font-size="15" font-weight="700" fill="#ffffff">New: testing model output</text>
+  <rect x="794" y="50" width="56" height="26" rx="13" fill="#ffffff" fill-opacity="0.18"/>
+  <text x="822" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff" letter-spacing="1">NEW</text>
 
-    <!-- metamorphic (purple) -->
-    <rect x="40" y="362" width="740" height="40" rx="8" fill="#f3eeff"/>
-    <rect x="40" y="362" width="6" height="40" rx="3" fill="#7a4fd0"/>
-    <text x="62" y="387" fill="#3d2a6b">Metamorphic relations</text>
-    <text x="590" y="387" font-size="12" font-weight="500" fill="#7a4fd0">consistency under change</text>
+  <g font-size="14.5" font-weight="600">
+    <rect x="538" y="104" width="302" height="44" rx="9" fill="#eaf3ff"/>
+    <rect x="538" y="104" width="6" height="44" rx="3" fill="#3a6ea5"/>
+    <text x="560" y="131" fill="#1f3a5f">Known-regression evals</text>
 
-    <!-- adversarial (amber) -->
-    <rect x="40" y="408" width="740" height="40" rx="8" fill="#fff4e6"/>
-    <rect x="40" y="408" width="6" height="40" rx="3" fill="#d98a2b"/>
-    <text x="62" y="433" fill="#a85f12">Adversarial probing</text>
-    <text x="600" y="433" font-size="12" font-weight="500" fill="#d98a2b">a direction, not a verdict</text>
+    <rect x="538" y="158" width="302" height="44" rx="9" fill="#f3eeff"/>
+    <rect x="538" y="158" width="6" height="44" rx="3" fill="#7a4fd0"/>
+    <text x="560" y="185" fill="#3d2a6b">Metamorphic relations</text>
 
-    <!-- live guardrails (green) -->
-    <rect x="40" y="454" width="740" height="40" rx="8" fill="#e7f6ef"/>
-    <rect x="40" y="454" width="6" height="40" rx="3" fill="#1f9d6b"/>
-    <text x="62" y="479" fill="#15734e">Live guardrails &amp; monitoring</text>
-    <text x="610" y="479" font-size="12" font-weight="500" fill="#1f9d6b">runtime, not offline</text>
+    <rect x="538" y="212" width="302" height="44" rx="9" fill="#fff4e6"/>
+    <rect x="538" y="212" width="6" height="44" rx="3" fill="#d98a2b"/>
+    <text x="560" y="239" fill="#a85f12">Adversarial probing</text>
+
+    <rect x="538" y="266" width="302" height="44" rx="9" fill="#e7f6ef"/>
+    <rect x="538" y="266" width="6" height="44" rx="3" fill="#1f9d6b"/>
+    <text x="560" y="293" fill="#15734e">Live guardrails &amp; monitoring</text>
   </g>
+
+  <!-- unifying bar: one strategy -->
+  <rect x="36" y="392" width="828" height="46" rx="12" fill="#0f1b2d"/>
+  <text x="450" y="420" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">It does not replace what you already test. It is one test strategy now.</text>
 </svg>
