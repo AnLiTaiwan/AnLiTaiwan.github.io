@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 520" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A test matrix grid fading from known, checked cells into unknown, question-marked cells">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1b2d"/>
+      <stop offset="0.45" stop-color="#13283f"/>
+      <stop offset="1" stop-color="#1c1230"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#13283f" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0f1b2d" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="520" fill="url(#bg)"/>
+
+  <!-- matrix motif: left columns are "known" (green ticks), right columns fade to "unknown" (amber question marks) -->
+  <g transform="translate(905,96)" font-family="Menlo,Consolas,monospace" font-size="30" text-anchor="middle">
+    <!-- row generator: 4 rows x 9 cols, cell 64 + gap 14 -->
+    <!-- known cells (cols 0-4) -->
+    <g fill="none">
+      <!-- We draw cells explicitly for control over color/state -->
+    </g>
+    <!-- Row 0 -->
+    <g transform="translate(0,0)">
+      <rect x="0"   y="0" width="64" height="64" rx="10" fill="#1f9d6b" fill-opacity="0.16" stroke="#1f9d6b" stroke-opacity="0.5"/>
+      <text x="32" y="44" fill="#46d39a" fill-opacity="0.8">&#10003;</text>
+      <rect x="78"  y="0" width="64" height="64" rx="10" fill="#1f9d6b" fill-opacity="0.14" stroke="#1f9d6b" stroke-opacity="0.45"/>
+      <text x="110" y="44" fill="#46d39a" fill-opacity="0.75">&#10003;</text>
+      <rect x="156" y="0" width="64" height="64" rx="10" fill="#1f9d6b" fill-opacity="0.10" stroke="#1f9d6b" stroke-opacity="0.4"/>
+      <text x="188" y="44" fill="#46d39a" fill-opacity="0.7">&#10003;</text>
+      <rect x="234" y="0" width="64" height="64" rx="10" fill="#5b8cff" fill-opacity="0.08" stroke="#5b8cff" stroke-opacity="0.35"/>
+      <text x="266" y="44" fill="#9db8ff" fill-opacity="0.55">&#10003;</text>
+      <rect x="312" y="0" width="64" height="64" rx="10" fill="none" stroke="#b07cff" stroke-opacity="0.4" stroke-dasharray="5 6"/>
+      <text x="344" y="46" fill="#caa9ff" fill-opacity="0.6">?</text>
+      <rect x="390" y="0" width="64" height="64" rx="10" fill="none" stroke="#d98a2b" stroke-opacity="0.4" stroke-dasharray="5 6"/>
+      <text x="422" y="46" fill="#f0b25e" fill-opacity="0.6">?</text>
+      <rect x="468" y="0" width="64" height="64" rx="10" fill="none" stroke="#d98a2b" stroke-opacity="0.3" stroke-dasharray="5 6"/>
+      <text x="500" y="46" fill="#f0b25e" fill-opacity="0.45">?</text>
+    </g>
+    <!-- Row 1 -->
+    <g transform="translate(0,78)">
+      <rect x="0"   y="0" width="64" height="64" rx="10" fill="#1f9d6b" fill-opacity="0.14" stroke="#1f9d6b" stroke-opacity="0.45"/>
+      <text x="32" y="44" fill="#46d39a" fill-opacity="0.75">&#10003;</text>
+      <rect x="78"  y="0" width="64" height="64" rx="10" fill="#1f9d6b" fill-opacity="0.12" stroke="#1f9d6b" stroke-opacity="0.4"/>
+      <text x="110" y="44" fill="#46d39a" fill-opacity="0.7">&#10003;</text>
+      <rect x="156" y="0" width="64" height="64" rx="10" fill="#5b8cff" fill-opacity="0.08" stroke="#5b8cff" stroke-opacity="0.35"/>
+      <text x="188" y="44" fill="#9db8ff" fill-opacity="0.6">&#10003;</text>
+      <rect x="234" y="0" width="64" height="64" rx="10" fill="none" stroke="#b07cff" stroke-opacity="0.4" stroke-dasharray="5 6"/>
+      <text x="266" y="46" fill="#caa9ff" fill-opacity="0.6">?</text>
+      <rect x="312" y="0" width="64" height="64" rx="10" fill="none" stroke="#d98a2b" stroke-opacity="0.4" stroke-dasharray="5 6"/>
+      <text x="344" y="46" fill="#f0b25e" fill-opacity="0.6">?</text>
+      <rect x="390" y="0" width="64" height="64" rx="10" fill="none" stroke="#d98a2b" stroke-opacity="0.3" stroke-dasharray="5 6"/>
+      <text x="422" y="46" fill="#f0b25e" fill-opacity="0.45">?</text>
+      <rect x="468" y="0" width="64" height="64" rx="10" fill="none" stroke="#d98a2b" stroke-opacity="0.22" stroke-dasharray="5 6"/>
+      <text x="500" y="46" fill="#f0b25e" fill-opacity="0.32">?</text>
+    </g>
+    <!-- Row 2 -->
+    <g transform="translate(0,156)">
+      <rect x="0"   y="0" width="64" height="64" rx="10" fill="#1f9d6b" fill-opacity="0.12" stroke="#1f9d6b" stroke-opacity="0.4"/>
+      <text x="32" y="44" fill="#46d39a" fill-opacity="0.7">&#10003;</text>
+      <rect x="78"  y="0" width="64" height="64" rx="10" fill="#5b8cff" fill-opacity="0.08" stroke="#5b8cff" stroke-opacity="0.35"/>
+      <text x="110" y="44" fill="#9db8ff" fill-opacity="0.6">&#10003;</text>
+      <rect x="156" y="0" width="64" height="64" rx="10" fill="none" stroke="#b07cff" stroke-opacity="0.4" stroke-dasharray="5 6"/>
+      <text x="188" y="46" fill="#caa9ff" fill-opacity="0.6">?</text>
+      <rect x="234" y="0" width="64" height="64" rx="10" fill="none" stroke="#d98a2b" stroke-opacity="0.4" stroke-dasharray="5 6"/>
+      <text x="266" y="46" fill="#f0b25e" fill-opacity="0.6">?</text>
+      <rect x="312" y="0" width="64" height="64" rx="10" fill="none" stroke="#d98a2b" stroke-opacity="0.3" stroke-dasharray="5 6"/>
+      <text x="344" y="46" fill="#f0b25e" fill-opacity="0.45">?</text>
+      <rect x="390" y="0" width="64" height="64" rx="10" fill="none" stroke="#d98a2b" stroke-opacity="0.22" stroke-dasharray="5 6"/>
+      <text x="422" y="46" fill="#f0b25e" fill-opacity="0.32">?</text>
+    </g>
+  </g>
+
+  <rect width="1600" height="520" fill="url(#fade)" opacity="0.25"/>
+</svg>

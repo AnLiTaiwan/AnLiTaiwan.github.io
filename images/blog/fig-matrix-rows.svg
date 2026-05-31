@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" role="img" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" aria-label="The test matrix keeps its classic rows (user flows, stability, performance, security) and adds new rows for AI output: known-regression evals, metamorphic relations, adversarial probing, and live guardrails">
+  <rect width="820" height="520" fill="#ffffff"/>
+  <text x="40" y="44" font-size="20" font-weight="700" fill="#13283f">The test matrix gains rows</text>
+  <text x="40" y="68" font-size="13" fill="#6b7a8d">It does not replace what you already test. It adds to it.</text>
+
+  <!-- classic rows -->
+  <g font-size="15">
+    <rect x="40" y="86" width="740" height="40" rx="8" fill="#f1f3f7"/>
+    <text x="58" y="111" fill="#5b6b80">User flows</text>
+    <rect x="40" y="132" width="740" height="40" rx="8" fill="#f1f3f7"/>
+    <text x="58" y="157" fill="#5b6b80">System stability</text>
+    <rect x="40" y="178" width="740" height="40" rx="8" fill="#f1f3f7"/>
+    <text x="58" y="203" fill="#5b6b80">Performance</text>
+    <rect x="40" y="224" width="740" height="40" rx="8" fill="#f1f3f7"/>
+    <text x="58" y="249" fill="#5b6b80">Security</text>
+  </g>
+
+  <!-- divider -->
+  <line x1="40" y1="282" x2="780" y2="282" stroke="#d7dde6" stroke-dasharray="4 5"/>
+  <text x="40" y="304" font-size="12" font-weight="700" fill="#8a97a8" letter-spacing="1.5">NEW: TESTING MODEL OUTPUT</text>
+
+  <!-- new rows -->
+  <g font-size="15" font-weight="600">
+    <!-- known-regression evals (blue) -->
+    <rect x="40" y="316" width="740" height="40" rx="8" fill="#eaf3ff"/>
+    <rect x="40" y="316" width="6" height="40" rx="3" fill="#3a6ea5"/>
+    <text x="62" y="341" fill="#1f3a5f">Known-regression evals</text>
+    <text x="600" y="341" font-size="12" font-weight="500" fill="#3a6ea5">golden dataset + judge</text>
+
+    <!-- metamorphic (purple) -->
+    <rect x="40" y="362" width="740" height="40" rx="8" fill="#f3eeff"/>
+    <rect x="40" y="362" width="6" height="40" rx="3" fill="#7a4fd0"/>
+    <text x="62" y="387" fill="#3d2a6b">Metamorphic relations</text>
+    <text x="590" y="387" font-size="12" font-weight="500" fill="#7a4fd0">consistency under change</text>
+
+    <!-- adversarial (amber) -->
+    <rect x="40" y="408" width="740" height="40" rx="8" fill="#fff4e6"/>
+    <rect x="40" y="408" width="6" height="40" rx="3" fill="#d98a2b"/>
+    <text x="62" y="433" fill="#a85f12">Adversarial probing</text>
+    <text x="600" y="433" font-size="12" font-weight="500" fill="#d98a2b">a direction, not a verdict</text>
+
+    <!-- live guardrails (green) -->
+    <rect x="40" y="454" width="740" height="40" rx="8" fill="#e7f6ef"/>
+    <rect x="40" y="454" width="6" height="40" rx="3" fill="#1f9d6b"/>
+    <text x="62" y="479" fill="#15734e">Live guardrails &amp; monitoring</text>
+    <text x="610" y="479" font-size="12" font-weight="500" fill="#1f9d6b">runtime, not offline</text>
+  </g>
+</svg>
