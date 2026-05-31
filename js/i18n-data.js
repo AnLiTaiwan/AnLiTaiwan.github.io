@@ -414,7 +414,7 @@ window.I18N = {
         automation: { label: "自動化(確定性)", value: "Playwright" },
         agentic: { label: "代理型 UI 自動化(LLM 驅動)", value: "Gemini Computer Use Preview、Browser Use" },
         cicd: { label: "CI/CD", value: "GitHub Actions、品質閘道、流水線設計" },
-        testing: { label: "測試", value: "E2E、回歸、功能驗證、測試策略、測試案例管理" },
+        testing: { label: "測試", value: "E2E、迴歸、功能驗證、測試策略、測試案例管理" },
         infra: { label: "基礎建設 / 工具", value: "AWS EKS、K8s、Ansible、Splunk、Grafana、Docker" },
         languages: { label: "語言", value: "TypeScript、Python、Java、Bash、SQL、Swift、YAML" }
       }
@@ -468,7 +468,7 @@ window.I18N = {
           role: "QA 主管 — Mediashell",
           stack: "手動測試 · 專案管理",
           bullets: [
-            "率領 5 人 QA 團隊執行手動測試,建立回歸/重試環境。",
+            "率領 5 人 QA 團隊執行手動測試,建立迴歸/重試環境。",
             "為 4 款 Nest 裝置設計 Mediashell 與 SDK 測試計畫,撰寫 2000+ 測試案例。",
             "規劃 Multiroom 測試的人員訓練。",
             "與 PM/RD 協調人力與專案進度。"
@@ -484,7 +484,7 @@ window.I18N = {
             "執行 Chromecast 3rd 的自動化測試(相容性、GMS、Vendor suite)。",
             "於 Google Laboratory 維運與建置自動化測試環境。",
             "以 shell script 開發自動化測試腳本。",
-            "執行 Multiroom、回歸、遙控、Assistant、Talkback 手動測試。"
+            "執行 Multiroom、迴歸、遙控、Assistant、Talkback 手動測試。"
           ]
         },
         {
@@ -494,7 +494,7 @@ window.I18N = {
           role: "軟體測試工程師 — Thermostat",
           stack: "手動測試 · Shell",
           bullets: [
-            "執行感測器功能、效能、負載、回歸、壓力、健檢測試。",
+            "執行感測器功能、效能、負載、迴歸、壓力、健檢測試。",
             "規劃第一輪離線測試的人員訓練。",
             "與加州 Mountain View 及印度 Bangalore 團隊合作。"
           ]
