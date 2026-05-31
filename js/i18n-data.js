@@ -13,6 +13,7 @@ window.I18N = {
       about: "About",
       experience: "Experience",
       projects: "Projects",
+      writing: "Writing",
       contact: "Contact",
       menu: "Menu"
     },
@@ -154,6 +155,12 @@ window.I18N = {
         { title: "CYCUEat", desc: "Campus food-ordering web app for Chung Yuan Christian University." }
       ]
     },
+    writing: {
+      title: "Writing",
+      items: [
+        { title: "When the test matrix has to cover the model", desc: "As companies move budget into AI, QA's definition of quality gains a new dimension: certifying model output. On prompt regression, golden datasets, and adversarial verification.", date: "May 2026", url: "blog/test-matrix-meets-ai.html" }
+      ]
+    },
     contact: {
       eyebrow: "Contact",
       title: "Say Hello.",
@@ -193,6 +200,7 @@ window.I18N = {
       about: "について",
       experience: "経歴",
       projects: "プロジェクト",
+      writing: "ブログ",
       contact: "お問い合わせ",
       menu: "メニュー"
     },
@@ -334,6 +342,12 @@ window.I18N = {
         { title: "CYCUEat", desc: "中原大学向けのキャンパスフードオーダリングWebアプリ。" }
       ]
     },
+    writing: {
+      title: "ブログ",
+      items: [
+        { title: "テストマトリクスがモデルまで担うとき", desc: "企業がAIへ投資を移す中で、品質の定義に新たな次元が加わる。モデル出力の品質保証、プロンプト回帰テスト、ゴールデンデータセット、敵対的検証について。", date: "2026年5月", url: "blog/test-matrix-meets-ai.html" }
+      ]
+    },
     contact: {
       eyebrow: "お問い合わせ",
       title: "お気軽にどうぞ。",
@@ -373,6 +387,7 @@ window.I18N = {
       about: "關於",
       experience: "經歷",
       projects: "專案",
+      writing: "文章",
       contact: "聯絡",
       menu: "選單"
     },
@@ -512,6 +527,12 @@ window.I18N = {
         { title: "Citadels", desc: "多人桌遊線上化 — 遊戲邏輯與回合制 UX 設計。" },
         { title: "個人健康教育管理系統", desc: "涵蓋後端架構與資料庫設計的健康教育課程管理 Web 平台。" },
         { title: "CYCUEat", desc: "中原大學校園訂餐 Web 應用。" }
+      ]
+    },
+    writing: {
+      title: "文章",
+      items: [
+        { title: "當測試矩陣必須涵蓋模型", desc: "當企業把預算投向 AI，QA 對品質的定義多了一個新維度：驗證模型輸出。談 prompt 回歸測試、golden dataset 與對抗式驗證。", date: "2026 年 5 月", url: "blog/test-matrix-meets-ai.html" }
       ]
     },
     contact: {
