@@ -1,57 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 520" preserveAspectRatio="xMidYMid slice" role="img" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" aria-label="A person at a desk looking at a chat screen where an AI bot has replied with a generated avatar image. A thought bubble above the person shows a quality score, x out of 100, being decided.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 520" preserveAspectRatio="xMidYMid slice" role="img" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" aria-label="A person at a desk looking at a chat screen where an AI bot replied with a generated avatar, and a thought bubble above them scores the output, x out of 100.">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0f1b2d"/>
-      <stop offset="0.45" stop-color="#13283f"/>
-      <stop offset="1" stop-color="#1c1230"/>
+      <stop offset="0" stop-color="#0d1830"/><stop offset="0.5" stop-color="#13233f"/><stop offset="1" stop-color="#1b1233"/>
     </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#3f72ff" stop-opacity="0.55"/><stop offset="55%" stop-color="#6b3fd0" stop-opacity="0.18"/><stop offset="100%" stop-color="#6b3fd0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="frame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26374f"/><stop offset="1" stop-color="#0d1828"/></linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eaf0f8"/></linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3450"/><stop offset="1" stop-color="#241f38"/></linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6cda4"/><stop offset="1" stop-color="#e7ad7e"/></linearGradient>
+    <linearGradient id="hoodie" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#43568c"/><stop offset="1" stop-color="#293765"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6ea2ff"/><stop offset="1" stop-color="#4a63ff"/></linearGradient>
+    <linearGradient id="avatarbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4e3ff"/><stop offset="1" stop-color="#aec7ff"/></linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a4fd0"/><stop offset="1" stop-color="#4a63ff"/></linearGradient>
+    <linearGradient id="bubble" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f3f5fb"/></linearGradient>
+    <linearGradient id="desk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2742"/><stop offset="1" stop-color="#0c1426"/></linearGradient>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#050b1c" flood-opacity="0.45"/></filter>
+    <filter id="sh2" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0a1426" flood-opacity="0.28"/></filter>
   </defs>
+
   <rect width="1600" height="520" fill="url(#bg)"/>
 
-  <!-- illustration: person scoring an AI chat output (subtle, behind the centered title) -->
-  <g transform="translate(965,30)" opacity="0.5">
-    <!-- thought bubble -->
-    <g>
-      <circle cx="135" cy="205" r="12" fill="#ffffff" opacity="0.95"/>
-      <circle cx="152" cy="232" r="9" fill="#ffffff" opacity="0.9"/>
-      <circle cx="168" cy="255" r="6" fill="#ffffff" opacity="0.85"/>
-      <rect x="20" y="70" width="232" height="120" rx="34" fill="#ffffff"/>
-      <ellipse cx="48" cy="182" rx="20" ry="15" fill="#ffffff"/>
-      <text x="46" y="112" font-size="15" fill="#7e90a6">scoring the output</text>
-      <text x="46" y="160" font-size="42" font-weight="800" fill="#13283f"><tspan fill="#7a4fd0">x</tspan> / 100</text>
-      <text x="206" y="112" font-size="28" font-weight="700" fill="#d98a2b">?</text>
-    </g>
+  <!-- illustration (dimmed, behind the centered hero title) -->
+  <g transform="translate(900,26) scale(0.92)" opacity="0.62">
+    <ellipse cx="430" cy="215" rx="320" ry="250" fill="url(#glow)"/>
+    <rect x="-60" y="404" width="760" height="90" fill="url(#desk)"/>
+    <rect x="-60" y="404" width="760" height="3" fill="#33507e" opacity="0.5"/>
 
-    <!-- person (back view at the desk) -->
-    <g>
-      <path d="M78 470 Q78 372 150 372 Q222 372 222 470 Z" fill="#2b3a52"/>
-      <circle cx="150" cy="318" r="44" fill="#34435e"/>
+    <ellipse cx="450" cy="392" rx="125" ry="16" fill="#050c18" opacity="0.55"/>
+    <rect x="440" y="330" width="22" height="48" fill="url(#frame)"/>
+    <rect x="398" y="374" width="108" height="14" rx="7" fill="url(#frame)"/>
+    <rect x="300" y="62" width="300" height="276" rx="18" fill="url(#frame)" filter="url(#sh)"/>
+    <rect x="315" y="78" width="270" height="244" rx="9" fill="url(#screen)"/>
+    <circle cx="336" cy="102" r="5" fill="#ff5f57"/><circle cx="353" cy="102" r="5" fill="#febc2e"/><circle cx="370" cy="102" r="5" fill="#28c840"/>
+    <text x="568" y="107" font-size="11" fill="#9aa7b8" text-anchor="end">AI assistant</text>
+    <line x1="315" y1="120" x2="585" y2="120" stroke="#eef1f5" stroke-width="2"/>
+    <rect x="402" y="136" width="166" height="32" rx="12" fill="url(#accent)" filter="url(#sh2)"/>
+    <text x="558" y="157" font-size="12" fill="#ffffff" text-anchor="end">make me an avatar</text>
+    <rect x="330" y="182" width="240" height="124" rx="12" fill="#ffffff" stroke="#eef1f5" filter="url(#sh2)"/>
+    <circle cx="372" cy="228" r="29" fill="url(#avatarbg)" stroke="#5b8cff" stroke-width="2"/>
+    <clipPath id="av"><circle cx="372" cy="228" r="29"/></clipPath>
+    <g clip-path="url(#av)">
+      <circle cx="372" cy="222" r="12" fill="url(#skin)"/>
+      <path d="M356 220 q16 -20 32 0 q2 -18 -16 -18 q-18 0 -16 18 Z" fill="url(#hair)"/>
+      <path d="M350 262 q22 -22 44 0 L394 268 q-22 8 -44 0 Z" fill="#6e86c8"/>
     </g>
+    <rect x="414" y="214" width="128" height="8" rx="4" fill="#cdd8e8"/>
+    <rect x="414" y="230" width="96" height="8" rx="4" fill="#cdd8e8"/>
+    <rect x="346" y="270" width="208" height="8" rx="4" fill="#dde4ee"/>
+    <rect x="346" y="286" width="150" height="8" rx="4" fill="#dde4ee"/>
 
-    <!-- monitor -->
-    <g>
-      <rect x="402" y="368" width="18" height="40" fill="#2b3a52"/>
-      <rect x="360" y="404" width="104" height="14" rx="6" fill="#2b3a52"/>
-      <rect x="255" y="64" width="330" height="304" rx="16" fill="#0b1422" stroke="#46587a" stroke-width="2"/>
-      <rect x="271" y="80" width="298" height="272" rx="8" fill="#ffffff"/>
-      <!-- chat header -->
-      <circle cx="293" cy="104" r="5" fill="#ff5f57"/>
-      <circle cx="311" cy="104" r="5" fill="#febc2e"/>
-      <circle cx="329" cy="104" r="5" fill="#28c840"/>
-      <text x="556" y="109" font-size="12" fill="#9aa7b8" text-anchor="end">AI assistant</text>
-      <line x1="271" y1="122" x2="569" y2="122" stroke="#eef1f5" stroke-width="2"/>
-      <!-- user prompt bubble -->
-      <rect x="372" y="140" width="182" height="34" rx="12" fill="#5b8cff"/>
-      <text x="546" y="162" font-size="12.5" fill="#ffffff" text-anchor="end">make me an avatar</text>
-      <!-- bot reply bubble with generated avatar -->
-      <rect x="286" y="190" width="268" height="150" rx="12" fill="#f1f4f8"/>
-      <circle cx="332" cy="240" r="30" fill="#dbe7ff" stroke="#5b8cff" stroke-width="2"/>
-      <circle cx="332" cy="232" r="11" fill="#5b8cff"/>
-      <path d="M313 259 Q332 240 351 259 Q332 270 313 259 Z" fill="#5b8cff"/>
-      <rect x="376" y="222" width="150" height="9" rx="4" fill="#c7d2e0"/>
-      <rect x="376" y="240" width="116" height="9" rx="4" fill="#c7d2e0"/>
-      <rect x="304" y="298" width="226" height="9" rx="4" fill="#dde4ee"/>
-      <rect x="304" y="315" width="176" height="9" rx="4" fill="#dde4ee"/>
+    <g filter="url(#sh)">
+      <path d="M64 470 C64 356 104 332 150 332 C196 332 236 356 236 470 Z" fill="url(#hoodie)"/>
     </g>
+    <ellipse cx="150" cy="338" rx="54" ry="22" fill="#222e52"/>
+    <rect x="138" y="300" width="24" height="28" rx="9" fill="url(#skin)"/>
+    <circle cx="150" cy="284" r="47" fill="url(#hair)"/>
+    <ellipse cx="184" cy="290" rx="15" ry="27" fill="url(#skin)"/>
+    <ellipse cx="172" cy="290" rx="6" ry="9" fill="#e7ad7e"/>
+    <path d="M104 282 q46 -64 92 0 q-46 -28 -92 0 Z" fill="url(#hair)"/>
+    <path d="M206 392 C252 378 300 390 326 404 L320 420 C296 410 250 404 206 416 Z" fill="url(#hoodie)"/>
+    <ellipse cx="326" cy="410" rx="15" ry="11" fill="url(#skin)"/>
+
+    <circle cx="150" cy="236" r="6" fill="#ffffff" opacity="0.9"/>
+    <circle cx="138" cy="212" r="9" fill="#ffffff" opacity="0.92"/>
+    <circle cx="122" cy="184" r="12" fill="#ffffff" opacity="0.95"/>
+    <g filter="url(#sh)">
+      <rect x="6" y="16" width="244" height="134" rx="36" fill="url(#bubble)"/>
+      <ellipse cx="40" cy="146" rx="18" ry="13" fill="#f3f5fb"/>
+    </g>
+    <circle cx="66" cy="86" r="27" fill="none" stroke="#e7ebf3" stroke-width="9"/>
+    <circle cx="66" cy="86" r="27" fill="none" stroke="url(#ring)" stroke-width="9" stroke-linecap="round" stroke-dasharray="134 170" transform="rotate(-90 66 86)"/>
+    <text x="66" y="92" text-anchor="middle" font-size="17" font-weight="800" fill="#13283f">x</text>
+    <text x="108" y="72" font-size="13" fill="#7e90a6">scoring the output</text>
+    <text x="108" y="106" font-size="30" font-weight="800" fill="#13283f"><tspan fill="#7a4fd0">x</tspan>/100</text>
+    <text x="218" y="54" font-size="24" font-weight="700" fill="#d98a2b">?</text>
   </g>
 </svg>
