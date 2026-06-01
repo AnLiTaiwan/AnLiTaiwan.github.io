@@ -1,44 +1,94 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 360" role="img" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" aria-label="Model output passes through a golden-dataset filter: known regressions are caught, unknown failures slip through to metamorphic, adversarial, and runtime methods">
-  <rect width="840" height="360" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 360" role="img" font-family="Montserrat,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" aria-label="Model output passes through a golden-dataset filter: known regressions are caught, unknown failures slip through to metamorphic, adversarial, and runtime methods">
+  <defs>
+    <linearGradient id="f1-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"></stop>
+      <stop offset="1" stop-color="#f7f9fc"></stop>
+    </linearGradient>
+    <linearGradient id="f1-neutral" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f7fb"></stop>
+      <stop offset="1" stop-color="#e9eef6"></stop>
+    </linearGradient>
+    <linearGradient id="f1-blue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0f6ff"></stop>
+      <stop offset="1" stop-color="#dcebfc"></stop>
+    </linearGradient>
+    <linearGradient id="f1-green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ecf9f2"></stop>
+      <stop offset="1" stop-color="#d8f1e4"></stop>
+    </linearGradient>
+    <linearGradient id="f1-amber" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff7ec"></stop>
+      <stop offset="1" stop-color="#ffedd4"></stop>
+    </linearGradient>
+    <linearGradient id="f1-purple" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6f1ff"></stop>
+      <stop offset="1" stop-color="#ece2ff"></stop>
+    </linearGradient>
+    <filter id="f1-shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#13283f" flood-opacity="0.12"></feDropShadow>
+    </filter>
+    <marker id="f1-arrow-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#48607c"></path>
+    </marker>
+    <marker id="f1-arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#1f9d6b"></path>
+    </marker>
+    <marker id="f1-arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#d98a2b"></path>
+    </marker>
+    <marker id="f1-arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#7a4fd0"></path>
+    </marker>
+  </defs>
 
-  <!-- A: model output -->
-  <rect x="24" y="140" width="150" height="80" rx="12" fill="#eef2f8" stroke="#13283f" stroke-opacity="0.35"/>
-  <text x="99" y="172" text-anchor="middle" font-size="16" font-weight="600" fill="#13283f">Model output</text>
-  <text x="99" y="196" text-anchor="middle" font-size="12" fill="#5b6b80">text · image · audio</text>
+  <rect width="840" height="360" fill="url(#f1-bg)"></rect>
 
-  <!-- arrow A -> filter -->
-  <line x1="174" y1="180" x2="234" y2="180" stroke="#13283f" stroke-opacity="0.5" stroke-width="2"/>
-  <polygon points="234,180 224,175 224,185" fill="#13283f" fill-opacity="0.6"/>
+  
+  <g filter="url(#f1-shadow)">
+    <rect x="26" y="138" width="150" height="84" rx="16" fill="url(#f1-neutral)" stroke="#cdd8e6"></rect>
+  </g>
+  <rect x="26" y="138" width="5" height="84" rx="2.5" fill="#48607c"></rect>
+  <text x="105" y="172" text-anchor="middle" font-size="16" font-weight="700" fill="#13283f">Model output</text>
+  <text x="105" y="195" text-anchor="middle" font-size="11.5" fill="#5b6b80">text · image · audio</text>
 
-  <!-- Filter -->
-  <rect x="240" y="128" width="206" height="104" rx="12" fill="#eaf3ff" stroke="#3a6ea5"/>
-  <text x="343" y="166" text-anchor="middle" font-size="15" font-weight="700" fill="#1f3a5f">Golden dataset</text>
-  <text x="343" y="188" text-anchor="middle" font-size="13" fill="#3a6ea5">+ LLM-as-a-judge</text>
-  <text x="343" y="210" text-anchor="middle" font-size="11" fill="#7286a0">the regression alarm</text>
+  
+  <line x1="180" y1="180" x2="232" y2="180" stroke="#48607c" stroke-width="2.5" marker-end="url(#f1-arrow-ink)"></line>
 
-  <!-- caught branch (down, green) -->
-  <line x1="343" y1="232" x2="343" y2="276" stroke="#1f9d6b" stroke-width="2"/>
-  <polygon points="343,288 338,276 348,276" fill="#1f9d6b"/>
-  <rect x="246" y="288" width="194" height="56" rx="10" fill="#e7f6ef" stroke="#1f9d6b"/>
-  <text x="343" y="312" text-anchor="middle" font-size="14" font-weight="600" fill="#15734e">Known regressions</text>
-  <text x="343" y="332" text-anchor="middle" font-size="12" fill="#1f9d6b">caught &#10003;</text>
+  
+  <g filter="url(#f1-shadow)">
+    <rect x="240" y="124" width="208" height="112" rx="16" fill="url(#f1-blue)" stroke="#3a6ea5"></rect>
+  </g>
+  <circle cx="343" cy="152" r="13" fill="#3a6ea5"></circle>
+  <path d="M337 152.5l4 4 6-7.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+  <text x="343" y="186" text-anchor="middle" font-size="15" font-weight="700" fill="#1f3a5f">Golden dataset</text>
+  <text x="343" y="206" text-anchor="middle" font-size="12.5" fill="#3a6ea5">+ LLM-as-a-judge</text>
+  <text x="343" y="224" text-anchor="middle" font-size="10.5" fill="#8195ad">the regression alarm</text>
 
-  <!-- slip-through branch (right, amber) -->
-  <line x1="446" y1="180" x2="506" y2="180" stroke="#d98a2b" stroke-width="2" stroke-dasharray="6 5"/>
-  <polygon points="518,180 506,175 506,185" fill="#d98a2b"/>
-  <rect x="520" y="140" width="120" height="80" rx="12" fill="#fff4e6" stroke="#d98a2b" stroke-dasharray="6 5"/>
-  <text x="580" y="172" text-anchor="middle" font-size="14" font-weight="700" fill="#a85f12">Unknown</text>
-  <text x="580" y="194" text-anchor="middle" font-size="14" font-weight="700" fill="#a85f12">failures</text>
+  
+  <line x1="343" y1="236" x2="343" y2="286" stroke="#1f9d6b" stroke-width="2.5" marker-end="url(#f1-arrow-green)"></line>
+  <g filter="url(#f1-shadow)">
+    <rect x="246" y="292" width="194" height="56" rx="13" fill="url(#f1-green)" stroke="#1f9d6b"></rect>
+  </g>
+  <text x="343" y="316" text-anchor="middle" font-size="13.5" font-weight="700" fill="#15734e">Known regressions</text>
+  <text x="343" y="336" text-anchor="middle" font-size="12" fill="#1f9d6b">caught ✓</text>
 
-  <!-- to frontier methods -->
-  <line x1="640" y1="180" x2="676" y2="180" stroke="#7a4fd0" stroke-width="2"/>
-  <polygon points="688,180 676,175 676,185" fill="#7a4fd0"/>
-  <rect x="690" y="116" width="128" height="128" rx="12" fill="#f3eeff" stroke="#7a4fd0"/>
-  <text x="754" y="142" text-anchor="middle" font-size="12" font-weight="700" fill="#5b34a8">the frontier</text>
-  <text x="754" y="170" text-anchor="middle" font-size="13" fill="#3d2a6b">Metamorphic</text>
-  <text x="754" y="192" text-anchor="middle" font-size="13" fill="#3d2a6b">Adversarial</text>
-  <text x="754" y="214" text-anchor="middle" font-size="13" fill="#3d2a6b">Runtime</text>
+  
+  <text x="448" y="158" font-size="11" fill="#b3711a" font-style="italic">slip through</text>
+  <line x1="448" y1="180" x2="514" y2="180" stroke="#d98a2b" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#f1-arrow-amber)"></line>
+  <g filter="url(#f1-shadow)">
+    <rect x="522" y="138" width="120" height="84" rx="16" fill="url(#f1-amber)" stroke="#d98a2b" stroke-dasharray="7 5"></rect>
+  </g>
+  <text x="582" y="174" text-anchor="middle" font-size="14" font-weight="700" fill="#a85f12">Unknown</text>
+  <text x="582" y="196" text-anchor="middle" font-size="14" font-weight="700" fill="#a85f12">failures</text>
 
-  <!-- captions for branches -->
-  <text x="470" y="158" font-size="11" fill="#a85f12" font-style="italic">slip through</text>
+  
+  <line x1="644" y1="180" x2="680" y2="180" stroke="#7a4fd0" stroke-width="2.5" marker-end="url(#f1-arrow-purple)"></line>
+  <g filter="url(#f1-shadow)">
+    <rect x="690" y="112" width="128" height="136" rx="16" fill="url(#f1-purple)" stroke="#7a4fd0"></rect>
+  </g>
+  <text x="754" y="140" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7a4fd0" letter-spacing="1.2">THE FRONTIER</text>
+  <line x1="710" y1="152" x2="798" y2="152" stroke="#7a4fd0" stroke-opacity="0.25"></line>
+  <text x="754" y="176" text-anchor="middle" font-size="13" font-weight="600" fill="#3d2a6b">Metamorphic</text>
+  <text x="754" y="200" text-anchor="middle" font-size="13" font-weight="600" fill="#3d2a6b">Adversarial</text>
+  <text x="754" y="224" text-anchor="middle" font-size="13" font-weight="600" fill="#3d2a6b">Runtime</text>
 </svg>

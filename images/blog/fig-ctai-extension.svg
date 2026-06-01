@@ -1,66 +1,121 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" aria-label="The ISTQB CT-AI syllabus is the standard baseline: data testing, model testing (adversarial, metamorphic, A/B, back-to-back, drift), performance metrics, GenAI red teaming, and shadow/canary deployment testing. The extension, beyond the syllabus, is treating output quality as a first-class QA domain, a self-accumulating adversarial verifier, metamorphic as the primary oracle, and always-on guardrails plus observability.">
-  <rect width="960" height="520" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" role="img" font-family="Montserrat,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" aria-label="The ISTQB CT-AI syllabus is the standard baseline: data testing, model testing (adversarial, metamorphic, A/B, back-to-back, drift), performance metrics, coverage, GenAI red teaming, and shadow/canary deployment testing. The extension, beyond the syllabus, is treating output quality as a first-class QA domain, a self-accumulating adversarial verifier, metamorphic as the primary oracle, and always-on guardrails plus observability.">
+  <defs>
+    <linearGradient id="f3-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"></stop>
+      <stop offset="1" stop-color="#f7f9fc"></stop>
+    </linearGradient>
+    <linearGradient id="f3-left" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6f8fc"></stop>
+      <stop offset="1" stop-color="#eef2f8"></stop>
+    </linearGradient>
+    <linearGradient id="f3-right" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbf8ff"></stop>
+      <stop offset="1" stop-color="#f4eeff"></stop>
+    </linearGradient>
+    <linearGradient id="f3-hdr-l" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1a3b5c"></stop>
+      <stop offset="1" stop-color="#13283f"></stop>
+    </linearGradient>
+    <linearGradient id="f3-hdr-r" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6b41bf"></stop>
+      <stop offset="1" stop-color="#5b34a8"></stop>
+    </linearGradient>
+    <filter id="f3-shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#13283f" flood-opacity="0.12"></feDropShadow>
+    </filter>
+    <filter id="f3-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#3d2a6b" flood-opacity="0.12"></feDropShadow>
+    </filter>
+    <marker id="f3-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#7a4fd0"></path>
+    </marker>
+    <clipPath id="f3-clipL"><rect x="32" y="34" width="512" height="452" rx="16"></rect></clipPath>
+    <clipPath id="f3-clipR"><rect x="664" y="34" width="304" height="452" rx="16"></rect></clipPath>
+  </defs>
 
-  <!-- LEFT: CT-AI baseline -->
-  <rect x="28" y="34" width="560" height="452" rx="14" fill="#f4f6fa" stroke="#cdd5e1"/>
-  <rect x="28" y="34" width="560" height="46" rx="14" fill="#13283f"/>
-  <rect x="28" y="58" width="560" height="22" fill="#13283f"/>
-  <text x="52" y="64" font-size="15" font-weight="700" fill="#ffffff">ISTQB CT-AI · the standard baseline</text>
+  <rect width="1000" height="520" fill="url(#f3-bg)"></rect>
 
-  <g font-size="13.5">
-    <!-- group rows: label + chips -->
-    <text x="52" y="116" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.5">DATA TESTING</text>
-    <text x="52" y="138" fill="#41566f">bias · representativeness · label correctness · pipeline</text>
+  
+  <g filter="url(#f3-shadow)">
+    <rect x="32" y="34" width="512" height="452" rx="16" fill="url(#f3-left)" stroke="#cdd5e1"></rect>
+  </g>
+  <g clip-path="url(#f3-clipL)">
+    <rect x="32" y="34" width="512" height="50" fill="url(#f3-hdr-l)"></rect>
+  </g>
+  <text x="56" y="65" font-size="15" font-weight="700" fill="#ffffff">ISTQB CT-AI · the standard baseline</text>
 
-    <text x="52" y="178" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.5">MODEL TESTING</text>
-    <text x="52" y="200" fill="#41566f">adversarial · metamorphic · A/B · back-to-back · drift</text>
+  <g>
+    <g filter="url(#f3-soft)"><rect x="50" y="104" width="476" height="54" rx="11" fill="#ffffff" stroke="#dde4ee"></rect></g>
+    <rect x="50" y="104" width="6" height="54" rx="3" fill="#3a6ea5"></rect>
+    <text x="70" y="127" font-size="11" font-weight="700" fill="#3a6ea5" letter-spacing="0.6">DATA TESTING</text>
+    <text x="70" y="147" font-size="12.5" fill="#41566f">bias · representativeness · label correctness · pipeline</text>
 
-    <text x="52" y="240" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.5">PERFORMANCE METRICS</text>
-    <text x="52" y="262" fill="#41566f">precision · recall · F1 · confusion matrix · ROC/AUC</text>
+    <g filter="url(#f3-soft)"><rect x="50" y="166" width="476" height="54" rx="11" fill="#ffffff" stroke="#dde4ee"></rect></g>
+    <rect x="50" y="166" width="6" height="54" rx="3" fill="#3a6ea5"></rect>
+    <text x="70" y="189" font-size="11" font-weight="700" fill="#3a6ea5" letter-spacing="0.6">MODEL TESTING</text>
+    <text x="70" y="209" font-size="12.5" fill="#41566f">adversarial · metamorphic · A/B · back-to-back · drift</text>
 
-    <text x="52" y="302" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.5">COVERAGE</text>
-    <text x="52" y="324" fill="#41566f">neuron · layer · activation-pattern coverage</text>
+    <g filter="url(#f3-soft)"><rect x="50" y="228" width="476" height="54" rx="11" fill="#ffffff" stroke="#dde4ee"></rect></g>
+    <rect x="50" y="228" width="6" height="54" rx="3" fill="#3a6ea5"></rect>
+    <text x="70" y="251" font-size="11" font-weight="700" fill="#3a6ea5" letter-spacing="0.6">PERFORMANCE METRICS</text>
+    <text x="70" y="271" font-size="12.5" fill="#41566f">precision · recall · F1 · confusion matrix · ROC/AUC</text>
 
-    <text x="52" y="364" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.5">GENERATIVE AI</text>
-    <text x="52" y="386" fill="#41566f">red teaming · exploratory / experience-based</text>
+    <g filter="url(#f3-soft)"><rect x="50" y="290" width="476" height="54" rx="11" fill="#ffffff" stroke="#dde4ee"></rect></g>
+    <rect x="50" y="290" width="6" height="54" rx="3" fill="#3a6ea5"></rect>
+    <text x="70" y="313" font-size="11" font-weight="700" fill="#3a6ea5" letter-spacing="0.6">COVERAGE</text>
+    <text x="70" y="333" font-size="12.5" fill="#41566f">neuron · layer · activation-pattern coverage</text>
 
-    <text x="52" y="426" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.5">DEPLOYMENT</text>
-    <text x="52" y="448" fill="#41566f">shadow testing · canary testing</text>
+    <g filter="url(#f3-soft)"><rect x="50" y="352" width="476" height="54" rx="11" fill="#ffffff" stroke="#dde4ee"></rect></g>
+    <rect x="50" y="352" width="6" height="54" rx="3" fill="#3a6ea5"></rect>
+    <text x="70" y="375" font-size="11" font-weight="700" fill="#3a6ea5" letter-spacing="0.6">GENERATIVE AI</text>
+    <text x="70" y="395" font-size="12.5" fill="#41566f">red teaming · exploratory / experience-based</text>
+
+    <g filter="url(#f3-soft)"><rect x="50" y="414" width="476" height="54" rx="11" fill="#ffffff" stroke="#dde4ee"></rect></g>
+    <rect x="50" y="414" width="6" height="54" rx="3" fill="#3a6ea5"></rect>
+    <text x="70" y="437" font-size="11" font-weight="700" fill="#3a6ea5" letter-spacing="0.6">DEPLOYMENT</text>
+    <text x="70" y="457" font-size="12.5" fill="#41566f">shadow testing · canary testing</text>
   </g>
 
-  <!-- connector -->
-  <circle cx="612" cy="260" r="26" fill="#ffffff" stroke="#7a4fd0" stroke-width="2.5"/>
-  <line x1="612" y1="246" x2="612" y2="274" stroke="#7a4fd0" stroke-width="3.5" stroke-linecap="round"/>
-  <line x1="598" y1="260" x2="626" y2="260" stroke="#7a4fd0" stroke-width="3.5" stroke-linecap="round"/>
-  <text x="612" y="310" text-anchor="middle" font-size="11" fill="#7a4fd0" font-weight="600">we push</text>
+  
+  <line x1="544" y1="260" x2="582" y2="260" stroke="#7a4fd0" stroke-width="2.5" stroke-dasharray="6 5"></line>
+  <line x1="626" y1="260" x2="660" y2="260" stroke="#7a4fd0" stroke-width="2.5" marker-end="url(#f3-arrow)"></line>
+  <g filter="url(#f3-shadow)">
+    <circle cx="604" cy="260" r="30" fill="#ffffff" stroke="#7a4fd0" stroke-width="2.5"></circle>
+  </g>
+  <line x1="604" y1="244" x2="604" y2="276" stroke="#7a4fd0" stroke-width="4" stroke-linecap="round"></line>
+  <line x1="588" y1="260" x2="620" y2="260" stroke="#7a4fd0" stroke-width="4" stroke-linecap="round"></line>
+  <text x="604" y="306" text-anchor="middle" font-size="11" fill="#7a4fd0" font-weight="700" letter-spacing="0.5">we push</text>
 
-  <!-- RIGHT: the extension -->
-  <rect x="652" y="34" width="280" height="452" rx="14" fill="#faf7ff" stroke="#7a4fd0" stroke-width="2" stroke-dasharray="7 6"/>
-  <rect x="652" y="34" width="280" height="46" rx="14" fill="#5b34a8"/>
-  <rect x="652" y="58" width="280" height="22" fill="#5b34a8"/>
-  <text x="676" y="64" font-size="14" font-weight="700" fill="#ffffff">The extension · where we push</text>
+  
+  <g filter="url(#f3-shadow)">
+    <rect x="664" y="34" width="304" height="452" rx="16" fill="url(#f3-right)" stroke="#7a4fd0" stroke-width="2" stroke-dasharray="8 6"></rect>
+  </g>
+  <g clip-path="url(#f3-clipR)">
+    <rect x="664" y="34" width="304" height="50" fill="url(#f3-hdr-r)"></rect>
+  </g>
+  <text x="688" y="65" font-size="14" font-weight="700" fill="#ffffff">The extension · where we push</text>
 
   <g font-size="13.5" font-weight="600" fill="#3d2a6b">
-    <rect x="672" y="108" width="240" height="64" rx="9" fill="#f3eeff"/>
-    <rect x="672" y="108" width="6" height="64" rx="3" fill="#7a4fd0"/>
-    <text x="690" y="134">Output quality as a</text>
-    <text x="690" y="154">first-class QA domain</text>
+    <g filter="url(#f3-soft)"><rect x="684" y="106" width="264" height="68" rx="11" fill="#f3eeff"></rect></g>
+    <rect x="684" y="106" width="7" height="68" rx="3.5" fill="#7a4fd0"></rect>
+    <text x="706" y="135">Output quality as a</text>
+    <text x="706" y="156">first-class QA domain</text>
 
-    <rect x="672" y="184" width="240" height="64" rx="9" fill="#f3eeff"/>
-    <rect x="672" y="184" width="6" height="64" rx="3" fill="#7a4fd0"/>
-    <text x="690" y="210">Self-accumulating</text>
-    <text x="690" y="230">adversarial verifier</text>
+    <g filter="url(#f3-soft)"><rect x="684" y="184" width="264" height="68" rx="11" fill="#f3eeff"></rect></g>
+    <rect x="684" y="184" width="7" height="68" rx="3.5" fill="#7a4fd0"></rect>
+    <text x="706" y="213">Self-accumulating</text>
+    <text x="706" y="234">adversarial verifier</text>
 
-    <rect x="672" y="260" width="240" height="64" rx="9" fill="#f3eeff"/>
-    <rect x="672" y="260" width="6" height="64" rx="3" fill="#7a4fd0"/>
-    <text x="690" y="286">Metamorphic as the</text>
-    <text x="690" y="306">primary test oracle</text>
+    <g filter="url(#f3-soft)"><rect x="684" y="262" width="264" height="68" rx="11" fill="#f3eeff"></rect></g>
+    <rect x="684" y="262" width="7" height="68" rx="3.5" fill="#7a4fd0"></rect>
+    <text x="706" y="291">Metamorphic as the</text>
+    <text x="706" y="312">primary test oracle</text>
 
-    <rect x="672" y="336" width="240" height="64" rx="9" fill="#f3eeff"/>
-    <rect x="672" y="336" width="6" height="64" rx="3" fill="#7a4fd0"/>
-    <text x="690" y="362">Guardrails + observability,</text>
-    <text x="690" y="382">always-on in production</text>
+    <g filter="url(#f3-soft)"><rect x="684" y="340" width="264" height="68" rx="11" fill="#f3eeff"></rect></g>
+    <rect x="684" y="340" width="7" height="68" rx="3.5" fill="#7a4fd0"></rect>
+    <text x="706" y="369">Guardrails + observability,</text>
+    <text x="706" y="390">always-on in production</text>
   </g>
 
-  <text x="792" y="446" text-anchor="middle" font-size="11.5" fill="#8a7ab5" font-style="italic">a direction, not yet in any syllabus</text>
+  <text x="816" y="450" text-anchor="middle" font-size="11.5" fill="#8a7ab5" font-style="italic">a direction, not yet in any syllabus</text>
 </svg>
