@@ -163,6 +163,7 @@
 
             var FIG1 = '<figure class="post-figure"><img src="../images/blog/fig-two-failures.svg" alt="Model output passes through a golden-dataset filter. Known regressions are caught; unknown failures slip through to metamorphic, adversarial and runtime methods.">CAP1</figure>';
             var FIG2 = '<figure class="post-figure"><img src="../images/blog/fig-matrix-rows.svg" alt="The test matrix keeps its classic rows and adds new rows for testing model output.">CAP2</figure>';
+            var FIG3 = '<figure class="post-figure"><img src="../images/blog/fig-ctai-extension.svg" alt="The ISTQB CT-AI syllabus is the baseline (data testing, model testing, metrics, coverage, GenAI red teaming, deployment testing); the extension beyond it is output quality as a first-class QA domain, a self-accumulating adversarial verifier, metamorphic as the primary oracle, and always-on guardrails plus observability.">CAP3</figure>';
 
             function tags(label, t) {
                 return '<p class="blog-content__tags"><span>' + label + '</span><span class="blog-content__tag-list">'
@@ -199,6 +200,14 @@
                         + '<p>None of this throws out the matrix we already have. User flows still break, systems still fall over, and security matters more now, not less. What changes is that a new set of rows shows up: known-regression evals, metamorphic relations, adversarial probing, and live guardrails. I don\'t think anyone has the finished playbook yet, and I am wary of anyone who says they do.</p>'
                         + FIG2.replace('CAP2', '<figcaption>The QA you already know, now extended with a new set of checks for model output.</figcaption>')
                         + '<blockquote><p>The QA leaders who start learning how model output gets evaluated now, rather than handing it to the model team and looking away, are the ones who will still own the word "quality" when quality means more than a green user flow.</p></blockquote>'
+                        + '<h2>Where this lines up with the CT-AI syllabus</h2>'
+                        + '<p>If this reads like a framework I made up, it mostly is not. Most of it already lives in the ISTQB Certified Tester AI Testing (CT-AI) syllabus, the closest thing the field has to a shared standard. CT-AI spreads testing across the ML lifecycle: data testing (bias, representativeness, label correctness), model testing (adversarial, metamorphic, A/B, back-to-back, drift), performance metrics (precision, recall, F1, the confusion matrix), neuron and layer coverage, red teaming for generative models, and shadow or canary testing at deployment. If you want the shared vocabulary for any of this, that is where to get it.</p>'
+                        + '<p>Where I would push past the syllabus is the adversarial part. CT-AI treats red teaming as a mostly manual, point-in-time activity. The bet in this post is that it grows into a verification model that accumulates attacks and gets sharper in your domain over time. That is not in any syllabus yet. It might be the next chapter, or it might not pan out. Either way, the baseline is table stakes, and the edge is where the interesting fights will be.</p>'
+                        + FIG3.replace('CAP3', '<figcaption>The CT-AI syllabus is the shared baseline. The extension is where I think QA gets to push next.</figcaption>')
+                        + '<h2>Over to you</h2>'
+                        + '<p>I do not have settled answers here, so let me end with the questions I keep turning over:</p>'
+                        + '<ul><li>Which of these layers is already in your test plan, and which is still filed under "the model team owns that"?</li><li>Where should the line between QA and the data-science team actually sit?</li><li>Is a self-improving adversarial verifier a real direction, or am I over-reading one research trend?</li><li>If what your product ships is the model output, who owns its quality on your org chart today?</li></ul>'
+                        + '<p>If you have a take, I would genuinely like to hear it.</p>'
                         + REFS
                         + tags("Post Tags", ["QA Strategy", "AI Testing", "LLM Evaluation"])
                         + back("Back to Writing")
@@ -229,6 +238,14 @@
                         + '<p>どれも、いまあるマトリクスを捨てる話ではありません。ユーザーフローは相変わらず壊れるし、システムも倒れる。セキュリティはむしろ前より重い。変わるのは、新しい行が増えること。既知回帰のeval、メタモルフィック関係、敵対的プロービング、そして本番のガードレール。完成した台本を持っている人は、まだいないと思います。持っていると言う人がいたら、私はちょっと疑います。</p>'
                         + FIG2.replace('CAP2', '<figcaption>あなたが知っているQAに、モデル出力のための新しいチェックが加わる。</figcaption>')
                         + '<blockquote><p>モデルの出力がどう評価されるのか。それをモデルチームに丸投げして目をそらすのではなく、いまから自分で学び始めるQAリーダー。品質という言葉が「緑のユーザーフロー」より大きな意味を持つようになったとき、その言葉を握り続けるのは、たぶんその人たちです。</p></blockquote>'
+                        + '<h2>CT-AIシラバスとの位置関係</h2>'
+                        + '<p>これ、私が勝手に作った枠組みに聞こえるかもしれません。でも、ほとんどはすでにISTQBのCertified Tester AI Testing（CT-AI）シラバスに入っています。この分野で「標準」にいちばん近いもの。CT-AIはテストをMLのライフサイクル全体に広げます。データテスト（バイアス、代表性、ラベルの正しさ）、モデルテスト（敵対的、メタモルフィック、A/B、バックトゥバック、ドリフト）、性能指標（precision、recall、F1、混同行列）、ニューロンやレイヤーのカバレッジ、生成モデルへのレッドチーム、そしてデプロイ時のシャドー／カナリアテスト。共通言語が欲しいなら、まずはここから。</p>'
+                        + '<p>私がシラバスの先へ押したいのは、敵対的の部分です。CT-AIはレッドチームを、ほぼ手作業で一回きりの活動として扱います。この記事の賭けは、それが攻撃をためて、自分のドメインで時間とともに鋭くなる検証モデルへ育つ、というもの。これはまだどのシラバスにもありません。次の章になるかもしれないし、ならないかもしれない。どちらにせよ、ベースラインは最低限の前提。面白い勝負は、その先にあります。</p>'
+                        + FIG3.replace('CAP3', '<figcaption>CT-AIシラバスが共通のベースライン。その先が、QAがこれから押していける場所。</figcaption>')
+                        + '<h2>ここからは、あなたへ</h2>'
+                        + '<p>答えはまだ持っていません。なので、いま抱えている問いで締めます。</p>'
+                        + '<ul><li>この層のうち、どれがすでにあなたのテスト計画に入っていて、どれがまだ「モデルチームの仕事」のままですか。</li><li>QAとデータサイエンスチームの線引きは、本当はどこにあるべきでしょう。</li><li>自己強化する敵対的検証モデルは、本物の方向でしょうか。それとも、私が一つの研究トレンドを読みすぎているだけ。</li><li>あなたの製品が出荷しているのがモデルの出力なら、その品質はいま、組織図の上で誰のものですか。</li></ul>'
+                        + '<p>意見があれば、ぜひ聞かせてください。</p>'
                         + REFS
                         + tags("タグ", ["QA戦略", "AIテスト", "LLM評価"])
                         + back("記事一覧へ戻る")
@@ -259,6 +276,14 @@
                         + '<p>上面這些，沒有一樣是要你把現有那套 test matrix 丟掉。使用者流程照樣會壞、系統照樣會倒，而安全只會比以前更重要。真正變的是，會多冒出一批新的項目：已知 regression 的 eval、metamorphic 關係、對抗式探測，還有線上的 guardrails。我不覺得現在有誰手上握著一本寫完的劇本；真有人說他有，我反而會多留個心眼。</p>'
                         + FIG2.replace('CAP2', '<figcaption>你熟悉的那套 QA，再擴充上一組專門測模型輸出的新檢查。</figcaption>')
                         + '<blockquote><p>與其把這塊丟給模型團隊、自己別過頭去，不如現在就去搞懂：模型的輸出到底是怎麼被評估的。因為當「品質」不再只是「一條綠色的使用者流程」，真正還握得住這個詞的，會是那些現在就先動手去懂的 QA 主管。</p></blockquote>'
+                        + '<h2>這套東西，跟 CT-AI 考綱對得起來嗎</h2>'
+                        + '<p>如果你覺得這像我自己掰出來的框架，其實不是。上面講的大部分，早就寫在 ISTQB 的 Certified Tester AI Testing（CT-AI）考綱裡了，那大概是這個領域目前最接近「標準」的東西。CT-AI 把測試攤在整個 ML 生命週期上：資料測試（偏誤、代表性、標籤正確性）、模型測試（對抗式、metamorphic、A/B、back-to-back、drift）、效能指標（precision、recall、F1、混淆矩陣）、neuron 與 layer 覆蓋率、對生成式模型的紅隊，還有部署期的 shadow／canary 測試。你想要一套共同語言，從這裡拿就對了。</p>'
+                        + '<p>我會想往考綱之外推的，是對抗式那塊。CT-AI 把紅隊當成一個幾乎全手動、一次性的活動；而這篇押的賭注是：它會長成一個會累積攻擊、在你的領域裡越打越準的驗證模型。這目前還沒寫進任何考綱。它可能是下一章，也可能根本走不通。但不管怎樣，基準線只是入場門票，真正好玩的仗都在那條邊界上。</p>'
+                        + FIG3.replace('CAP3', '<figcaption>CT-AI 考綱是共同的基準線；延伸的部分，才是 QA 接下來可以往前推的地方。</figcaption>')
+                        + '<h2>換你了</h2>'
+                        + '<p>這題我也沒有定論，所以用幾個我自己還在想的問題收尾：</p>'
+                        + '<ul><li>這些層裡，哪些已經在你的測試計畫裡，哪些還被歸在「那是模型團隊的事」？</li><li>QA 跟資料科學團隊之間的那條線，到底該畫在哪？</li><li>「會自我強化的對抗式驗證模型」是真方向，還是我把單一研究趨勢讀過頭了？</li><li>如果你的產品賣的就是模型輸出，那它的品質，今天在組織圖上是誰的？</li></ul>'
+                        + '<p>你有想法的話，我很想聽聽看。</p>'
                         + REFS
                         + tags("標籤", ["QA 策略", "AI 測試", "LLM 評估"])
                         + back("返回文章列表")
