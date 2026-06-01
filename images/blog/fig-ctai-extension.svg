@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" aria-label="The ISTQB CT-AI syllabus is the standard baseline: data testing, model testing (adversarial, metamorphic, A/B, back-to-back, drift), performance metrics, GenAI red teaming, and shadow/canary deployment testing. The extension, beyond the syllabus, is treating output quality as a first-class QA domain, a self-accumulating adversarial verifier, metamorphic as the primary oracle, and always-on guardrails plus observability.">
+  <rect width="960" height="520" fill="#ffffff"/>
+
+  <!-- LEFT: CT-AI baseline -->
+  <rect x="28" y="34" width="560" height="452" rx="14" fill="#f4f6fa" stroke="#cdd5e1"/>
+  <rect x="28" y="34" width="560" height="46" rx="14" fill="#13283f"/>
+  <rect x="28" y="58" width="560" height="22" fill="#13283f"/>
+  <text x="52" y="64" font-size="15" font-weight="700" fill="#ffffff">ISTQB CT-AI · the standard baseline</text>
+
+  <g font-size="13.5">
+    <!-- group rows: label + chips -->
+    <text x="52" y="116" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.5">DATA TESTING</text>
+    <text x="52" y="138" fill="#41566f">bias · representativeness · label correctness · pipeline</text>
+
+    <text x="52" y="178" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.5">MODEL TESTING</text>
+    <text x="52" y="200" fill="#41566f">adversarial · metamorphic · A/B · back-to-back · drift</text>
+
+    <text x="52" y="240" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.5">PERFORMANCE METRICS</text>
+    <text x="52" y="262" fill="#41566f">precision · recall · F1 · confusion matrix · ROC/AUC</text>
+
+    <text x="52" y="302" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.5">COVERAGE</text>
+    <text x="52" y="324" fill="#41566f">neuron · layer · activation-pattern coverage</text>
+
+    <text x="52" y="364" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.5">GENERATIVE AI</text>
+    <text x="52" y="386" fill="#41566f">red teaming · exploratory / experience-based</text>
+
+    <text x="52" y="426" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.5">DEPLOYMENT</text>
+    <text x="52" y="448" fill="#41566f">shadow testing · canary testing</text>
+  </g>
+
+  <!-- connector -->
+  <circle cx="612" cy="260" r="26" fill="#ffffff" stroke="#7a4fd0" stroke-width="2.5"/>
+  <line x1="612" y1="246" x2="612" y2="274" stroke="#7a4fd0" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="598" y1="260" x2="626" y2="260" stroke="#7a4fd0" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="612" y="310" text-anchor="middle" font-size="11" fill="#7a4fd0" font-weight="600">we push</text>
+
+  <!-- RIGHT: the extension -->
+  <rect x="652" y="34" width="280" height="452" rx="14" fill="#faf7ff" stroke="#7a4fd0" stroke-width="2" stroke-dasharray="7 6"/>
+  <rect x="652" y="34" width="280" height="46" rx="14" fill="#5b34a8"/>
+  <rect x="652" y="58" width="280" height="22" fill="#5b34a8"/>
+  <text x="676" y="64" font-size="14" font-weight="700" fill="#ffffff">The extension · where we push</text>
+
+  <g font-size="13.5" font-weight="600" fill="#3d2a6b">
+    <rect x="672" y="108" width="240" height="64" rx="9" fill="#f3eeff"/>
+    <rect x="672" y="108" width="6" height="64" rx="3" fill="#7a4fd0"/>
+    <text x="690" y="134">Output quality as a</text>
+    <text x="690" y="154">first-class QA domain</text>
+
+    <rect x="672" y="184" width="240" height="64" rx="9" fill="#f3eeff"/>
+    <rect x="672" y="184" width="6" height="64" rx="3" fill="#7a4fd0"/>
+    <text x="690" y="210">Self-accumulating</text>
+    <text x="690" y="230">adversarial verifier</text>
+
+    <rect x="672" y="260" width="240" height="64" rx="9" fill="#f3eeff"/>
+    <rect x="672" y="260" width="6" height="64" rx="3" fill="#7a4fd0"/>
+    <text x="690" y="286">Metamorphic as the</text>
+    <text x="690" y="306">primary test oracle</text>
+
+    <rect x="672" y="336" width="240" height="64" rx="9" fill="#f3eeff"/>
+    <rect x="672" y="336" width="6" height="64" rx="3" fill="#7a4fd0"/>
+    <text x="690" y="362">Guardrails + observability,</text>
+    <text x="690" y="382">always-on in production</text>
+  </g>
+
+  <text x="792" y="446" text-anchor="middle" font-size="11.5" fill="#8a7ab5" font-style="italic">a direction, not yet in any syllabus</text>
+</svg>

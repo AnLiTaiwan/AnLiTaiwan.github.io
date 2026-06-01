@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <meta charset="utf-8">
+    <title>An Li - When the test matrix has to cover the AI model</title>
+    <meta name="description" content="Golden datasets catch the regressions you can describe. The open problem is the failure you never wrote down. A QA take on testing model output.">
+    <meta name="author" content="An Li">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/vendor.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <script src="../js/modernizr.js"></script>
+    <script src="../js/pace.min.js"></script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
+    <style>
+        .post-figure { margin: 3.6rem auto; text-align: center; max-width: 760px; }
+        .post-figure img { width: 100%; height: auto; border: 1px solid #e6eaf0; border-radius: 12px; background: #fff; box-shadow: 0 6px 24px rgba(15,27,45,0.06); }
+        .post-figure figcaption { margin-top: 1.2rem; font-size: 1.4rem; line-height: 1.6; color: #7a8696; font-style: italic; }
+        .blog-content__main h2 { margin-top: 4rem; }
+
+        /* language switcher — matched to the homepage */
+        .header-nav-wrap .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            vertical-align: middle;
+            margin-right: 16px;
+            line-height: normal;
+            letter-spacing: normal;
+        }
+        .lang-switch__btn {
+            all: unset;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            padding: 6px 10px;
+            border-radius: 999px;
+            color: #fff;
+            transition: all 0.2s ease;
+            font-family: "Montserrat", sans-serif;
+        }
+        .lang-switch__btn:hover { background: rgba(255, 255, 255, 0.15); }
+        .lang-switch__btn.is-active { background: #fff; color: #000; }
+        @media (max-width: 800px) {
+            .header-nav-wrap .lang-switch { display: flex; width: fit-content; margin: 0 auto 24px; }
+        }
+    </style>
+
+</head>
+
+
+<body id="top">
+
+    <header class="s-header">
+        <div class="header-logo">
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="Homepage"></a>
+        </div>
+        <nav class="header-nav-wrap">
+            <div class="lang-switch" role="group" aria-label="Language">
+                <button class="lang-switch__btn" data-lang-btn="en" aria-pressed="true">EN</button>
+                <button class="lang-switch__btn" data-lang-btn="ja" aria-pressed="false">JA</button>
+                <button class="lang-switch__btn" data-lang-btn="zh" aria-pressed="false">ZH</button>
+            </div>
+            <ul class="header-nav">
+                <li><a href="../index.html#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="../index.html#about" data-i18n="nav.about">About</a></li>
+                <li><a href="../index.html#experience" data-i18n="nav.experience">Experience</a></li>
+                <li class="current"><a href="../index.html#writing" data-i18n="nav.writing">Writing</a></li>
+                <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+    </header> <!-- end s-header -->
+
+
+    <article class="blog-single">
+
+        <div class="page-header page-header--single page-hero" style="background-image:url(../images/blog/cover-test-matrix.svg);background-color:#13283f;background-size:cover;background-position:center">
+
+            <div class="row page-header__content narrow">
+                <article class="col-full">
+                    <h1 class="page-header__title">
+                        <a id="artTitle" href="#0" title="">When the test matrix has to cover the AI model</a>
+                    </h1>
+                    <ul class="page-header__meta">
+                        <li class="date" id="artDate">May 2026</li>
+                        <li class="author">
+                            <span id="artBy">By</span>
+                            <span>An Li</span>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+        </div> <!-- end page-header -->
+
+        <div class="row blog-content">
+            <div class="col-full blog-content__main" id="artBody">
+                <!-- rendered by i18n script below -->
+            </div>
+        </div> <!-- end blog-content -->
+
+    </article>
+
+        <footer>
+            <div class="row">
+                <div class="col-full">
+                    <div class="footer-logo">
+                        <a class="footer-site-logo" href="#0"><img src="../images/logo.png" alt="Homepage"></a>
+                    </div>
+                    <ul class="footer-social">
+                        <li>
+                            <a href="https://linkedin.com/in/anlitaiwan" target="_blank" rel="noopener">
+                                <i class="im im-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/anli.tw2jp" target="_blank" rel="noopener">
+                                <i class="im im-instagram" aria-hidden="true"></i><span>Instagram</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row footer-bottom">
+                <div class="col-twelve">
+                    <div class="copyright"><span>&copy; An Li</span></div>
+                    <div class="go-top">
+                        <a class="smoothscroll" title="Back to Top" href="#top"><i class="im im-arrow-up" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <div id="preloader"><div id="loader"></div></div>
+
+        <script src="../js/i18n-data.js"></script>
+        <script>
+        (function () {
+            var REFS = '<p id="refsLabel">References</p>'
+                + '<ul>'
+                + '<li>Evidently AI, "LLM-as-a-judge: a complete guide": <a href="https://www.evidentlyai.com/llm-guide/llm-as-a-judge" target="_blank" rel="noopener">evidentlyai.com/llm-guide/llm-as-a-judge</a></li>'
+                + '<li>Ministry of Testing, "Metamorphic and adversarial strategies for testing AI systems": <a href="https://www.ministryoftesting.com/articles/metamorphic-and-adversarial-strategies-for-testing-ai-systems" target="_blank" rel="noopener">ministryoftesting.com</a></li>'
+                + '<li>AutoRedTeamer, "Autonomous red teaming with lifelong attack integration": <a href="https://arxiv.org/abs/2503.15754" target="_blank" rel="noopener">arxiv.org/abs/2503.15754</a></li>'
+                + '</ul>';
+
+            var FIG1 = '<figure class="post-figure"><img src="../images/blog/fig-two-failures.svg" alt="Model output passes through a golden-dataset filter. Known regressions are caught; unknown failures slip through to metamorphic, adversarial and runtime methods.">CAP1</figure>';
+            var FIG2 = '<figure class="post-figure"><img src="../images/blog/fig-matrix-rows.svg" alt="The test matrix keeps its classic rows and adds new rows for testing model output.">CAP2</figure>';
+            var FIG3 = '<figure class="post-figure"><img src="../images/blog/fig-ctai-extension.svg" alt="The ISTQB CT-AI syllabus is the baseline (data testing, model testing, metrics, coverage, GenAI red teaming, deployment testing); the extension beyond it is output quality as a first-class QA domain, a self-accumulating adversarial verifier, metamorphic as the primary oracle, and always-on guardrails plus observability.">CAP3</figure>';
+
+            function tags(label, t) {
+                return '<p class="blog-content__tags"><span>' + label + '</span><span class="blog-content__tag-list">'
+                    + t.map(function (x) { return '<a>' + x + '</a>'; }).join('') + '</span></p>';
+            }
+            function back(label) {
+                return '<div class="blog-content__pagenav"><div class="blog-content__all"><a href="../index.html#writing" class="btn btn--primary">' + label + '</a></div></div>';
+            }
+
+            var ART = {
+                en: {
+                    metaTitle: "An Li - When the test matrix has to cover the AI model",
+                    metaDesc: "Golden datasets catch the regressions you can describe. The open problem is the failure you never wrote down. A QA take on testing model output.",
+                    title: "When the test matrix has to cover the AI model",
+                    date: "May 2026",
+                    by: "By",
+                    body:
+                        '<p class="lead">For most of my career the test matrix has been a stable thing. You map the product\'s critical paths, the platforms you support, and the risks the business actually cares about, then build coverage outward from there. The strategy follows the product, and the product follows the business. That has been the job, and for years its shape barely moved.</p>'
+                        + '<p>It is moving now.</p>'
+                        + '<p>As companies put real budget and roadmap behind AI, the test strategy has to move with them. It is not only that there are new features to cover. The definition of quality is picking up a dimension that most QA orgs do not yet have a column for: <strong>the quality of what the model produces</strong>. Text, images, audio, video, and increasingly something inside a specific professional domain, like a legal summary or a clinical note. For years, judging whether that output was any good belonged to the AI/ML scientists who built the model. QA owned user flows, stability, performance, and security. If you lead QA today, that split is getting harder to defend, because the thing the business is selling is now the output itself.</p>'
+                        + '<p>So how do you actually test it? I find it useful to split the problem into <strong>two kinds of failure</strong>.</p>'
+                        + FIG1.replace('CAP1', '<figcaption>Known regressions get caught by a golden dataset and an LLM judge. The failures you never wrote down slip through to the frontier methods.</figcaption>')
+                        + '<h2>The failures you already know about</h2>'
+                        + '<p>The first kind is the regression you can describe in advance. You know what good looks like for a given input, and you want to catch the day the model stops producing it. The standard answer here is solid and worth adopting now: build a <strong>golden dataset</strong> of inputs with reference answers, run the model, and compare. Where the output is open-ended and an exact-match check makes no sense, a second model grades it, the pattern people call <strong>LLM-as-a-judge</strong>. Evidently AI has a clear walkthrough of both (linked at the end).</p>'
+                        + '<p>This works, with one honest caveat. The judge is itself a model, and it has biases. It tends to prefer longer answers, it can favor whatever sits first in a pairwise comparison, and it will sometimes rate its own family of models too kindly. You manage that with chain-of-thought prompts, a few anchored examples, and by tuning the judge against real graded data instead of trusting it out of the box. Treat the judge as a test that also needs testing.</p>'
+                        + '<p>Golden datasets give you a baseline and a regression alarm. What they cannot do is find the failure you never thought to write down.</p>'
+                        + '<h2>The failures you haven\'t imagined yet</h2>'
+                        + '<p>This is the open problem, and it is where the interesting work is happening. Two directions are worth watching, and they are complementary rather than competing.</p>'
+                        + '<p>The first is <strong>metamorphic testing</strong>, and I think it is the most underused idea in this whole space. Instead of asserting an exact output, you assert a relation between inputs and outputs. Rephrase a question and the classification should not change. Add an irrelevant sentence and the answer should stay the same. Translate the input and the sentiment should survive. You are not saying what the right answer is, only how the output should behave when you perturb the input in a known way. That sidesteps the hardest part of testing a generative system, which is that there is no single correct answer to compare against. Frameworks like METAL can generate these relations from templates by the hundred. It is also the most QA-native technique on this list, because defining good metamorphic relations is exactly the kind of edge-case thinking testers are already good at.</p>'
+                        + '<p>The second direction is the one I want to be careful about, because it is easy to oversell. The idea is to build an <strong>adversarial model</strong> whose job is to attack the model under test, hunt for the prompts and edge cases that make it fail, and keep the ones that work so it gets sharper over time. This is real. Systems like AutoRedTeamer do exactly this, accumulating an attack library across runs in what the authors call lifelong attack integration. My honest read, though, is that today this line of work lives almost entirely in safety and security: jailbreaks, harmful or biased output, prompt injection. It is very good at finding ways to break a model. <strong>It is not yet a way to certify that a model is correct.</strong> So I would put it on the roadmap as a direction worth betting on, not as the settled future of output quality. If an earlier version of this argument read more like red teaming than QA, that was the tell, and the distinction matters.</p>'
+                        + '<h2>Offline evaluation is not enough</h2>'
+                        + '<p>One more thing the matrix has to absorb. Everything above is offline evaluation, run before release. Models drift, inputs drift, and users do things your dataset never imagined. So the same teams are adding a <strong>runtime layer</strong>: guardrails that check inputs and outputs live for things like leaked PII, toxic content, or malformed format, and observability that watches production signals such as refusal rate, latency, and output drift. Offline evals tell you the model was good last Tuesday. The runtime layer tells you whether it is still good right now.</p>'
+                        + '<h2>What this means if you run QA</h2>'
+                        + '<p>None of this throws out the matrix we already have. User flows still break, systems still fall over, and security matters more now, not less. What changes is that a new set of rows shows up: known-regression evals, metamorphic relations, adversarial probing, and live guardrails. I don\'t think anyone has the finished playbook yet, and I am wary of anyone who says they do.</p>'
+                        + FIG2.replace('CAP2', '<figcaption>The QA you already know, now extended with a new set of checks for model output.</figcaption>')
+                        + '<blockquote><p>The QA leaders who start learning how model output gets evaluated now, rather than handing it to the model team and looking away, are the ones who will still own the word "quality" when quality means more than a green user flow.</p></blockquote>'
+                        + '<h2>Where this lines up with the CT-AI syllabus</h2>'
+                        + '<p>If this reads like a framework I made up, it mostly is not. Most of it already lives in the <strong>ISTQB Certified Tester AI Testing (CT-AI) syllabus</strong>, the closest thing the field has to a shared standard. CT-AI spreads testing across the ML lifecycle: data testing (bias, representativeness, label correctness), model testing (adversarial, metamorphic, A/B, back-to-back, drift), performance metrics (precision, recall, F1, the confusion matrix), neuron and layer coverage, red teaming for generative models, and shadow or canary testing at deployment. If you want the shared vocabulary for any of this, that is where to get it.</p>'
+                        + '<p>Where I would push past the syllabus is the adversarial part. CT-AI treats red teaming as a mostly manual, point-in-time activity. The bet in this post is that it grows into a verification model that accumulates attacks and gets sharper in your domain over time. That is not in any syllabus yet. It might be the next chapter, or it might not pan out. Either way, the baseline is table stakes, and the edge is where the interesting fights will be.</p>'
+                        + FIG3.replace('CAP3', '<figcaption>The CT-AI syllabus is the shared baseline. The extension is where I think QA gets to push next.</figcaption>')
+                        + '<h2>Over to you</h2>'
+                        + '<p>I do not have settled answers here, so let me end with the questions I keep turning over:</p>'
+                        + '<ul><li>Which of these layers is already in your test plan, and which is still filed under "the model team owns that"?</li><li>Where should the line between QA and the data-science team actually sit?</li><li>Is a self-improving adversarial verifier a real direction, or am I over-reading one research trend?</li><li>If what your product ships is the model output, who owns its quality on your org chart today?</li></ul>'
+                        + '<p>If you have a take, I would genuinely like to hear it.</p>'
+                        + REFS
+                        + tags("Post Tags", ["QA Strategy", "AI Testing", "LLM Evaluation"])
+                        + back("Back to Writing")
+                },
+                ja: {
+                    metaTitle: "An Li - テストマトリクスがAIモデルまで担うとき",
+                    metaDesc: "ゴールデンデータセットは想定済みの回帰を捕まえる。本当の難題は、書き出していなかった失敗。モデル出力をどう測るかについての、QAからの一つの見方。",
+                    title: "テストマトリクスがAIモデルまで担うとき",
+                    date: "2026年5月",
+                    by: "文",
+                    body:
+                        '<p class="lead">この仕事を長くやってきて、テストマトリクスはずっと安定したものでした。製品のクリティカルパス、サポートするプラットフォーム、ビジネスが本当に気にするリスク。そこを洗い出して、外へカバレッジを広げていく。戦略は製品に従い、製品はビジネスに従う。それが仕事で、正直、何年もほとんど形が変わりませんでした。</p>'
+                        + '<p>それが、いま動き始めています。</p>'
+                        + '<p>企業がAIに本気で予算とロードマップを振り始めると、テスト戦略も動かないわけにはいきません。新しい機能が増えた、という話だけではない。品質の定義そのものに、多くのQA組織がまだ列を用意していない次元が育ちつつあります。<strong>モデルが生み出す「出力」の品質</strong>です。テキスト、画像、音声、動画。そして法務サマリーや診療メモのような、特定領域の中身。こうした出力の良し悪しは、長らくモデルを作る側、つまりAI/MLの研究者の領分でした。QAが見てきたのはユーザーフロー、安定性、パフォーマンス、セキュリティ。でも、いまQAを率いているなら、この線引きはどんどん守りにくくなります。結局のところ、ビジネスが売っているのは出力そのものなので。</p>'
+                        + '<p>では、どう測るか。私は問題を<strong>二種類の「失敗」</strong>に分けて考えるようにしています。そのほうが、ずっと見通しがいい。</p>'
+                        + FIG1.replace('CAP1', '<figcaption>ゴールデンデータセットとLLM採点役は、想定済みの回帰を捕まえる。書き出していなかった失敗はすり抜けて、最前線の手法に回る。</figcaption>')
+                        + '<h2>すでに分かっている失敗</h2>'
+                        + '<p>一つ目は、前もって書き出せる回帰。ある入力に対して「良い」状態が分かっていて、モデルがそれを出さなくなった日を捕まえたい。ここの定石は枯れていて、いま導入する価値があります。入力と参照解答を集めた<strong>ゴールデンデータセット</strong>を用意して、モデルを走らせ、突き合わせる。出力がオープンエンドで完全一致のチェックが効かないなら、もう一つのモデルに採点させる。いわゆる<strong>LLM-as-a-judge</strong>。Evidently AIに分かりやすい解説があります（リンクは末尾に）。</p>'
+                        + '<p>ちゃんと効きます。ただ、正直な注意点が一つ。採点役そのものがモデルで、クセを持っています。長い回答を好みがち。ペアワイズなら先に出したほうを贔屓しがち。ときには自分と同じ系統のモデルに甘い点をつける。だからchain-of-thoughtを使い、アンカーになる例をいくつか置き、実際に採点したデータでチューニングする。出荷状態のまま信じない。採点役もまた「テストが要るテスト」。そう思っておくくらいでちょうどいい。</p>'
+                        + '<p>ゴールデンデータセットがくれるのは、ベースラインと回帰の警報。できないのは、そもそも書き出す発想すらなかった失敗を見つけることです。</p>'
+                        + '<h2>まだ想像できていない失敗</h2>'
+                        + '<p>これが未解決の問題で、面白い動きが起きているのもここです。注目している方向が二つ。競合ではなく、補い合う関係です。</p>'
+                        + '<p>一つ目は<strong>メタモルフィックテスト</strong>。この領域でいちばん過小評価されているアイデアだと思っています。確かな出力を主張する代わりに、入力と出力の「関係」を主張する。質問を言い換えても分類は変わらないはず。無関係な一文を足しても答えは同じはず。入力を翻訳しても感情の向きは残るはず。正解が何かは言わない。既知のやり方で入力を揺さぶったとき、出力がどう振る舞うべきか。それだけを言う。生成系でいちばん厄介なところ、つまり「比べる唯一の正解がない」を、これはきれいに回避します。METALのようなフレームワークなら、こうした関係をテンプレートから何百本も生成できる。しかも、良い関係を設計する作業は、テスターがもともと得意なエッジケース思考そのもの。このリストでいちばんQAらしい手法でもあります。</p>'
+                        + '<p>二つ目は、慎重に話したい方向です。盛りやすいので。発想はこう。検証対象を攻撃する専門の<strong>敵対モデル</strong>を作り、失敗を引き起こすプロンプトやエッジケースを探し、当たった手を残して、回を重ねるごとに鋭くしていく。これは絵空事ではありません。AutoRedTeamerがまさにそれで、著者の言うlifelong attack integrationで、実行をまたいで攻撃の引き出しをためていく。ただ、私の正直な見立て。いまのこの系統は、ほぼ安全性とセキュリティの話です。ジェイルブレイク、有害・偏った出力、プロンプトインジェクション。モデルの壊し方を見つけるのは抜群にうまい。でも、<strong>モデルが正しいと「認証する」方法では、まだない</strong>。だからロードマップには載せます。賭ける価値のある方向として。出力品質の確定した未来としてではなく。以前の私の書き方がQAというよりレッドチームに聞こえたなら、それがサインです。そして、この区別は大事です。</p>'
+                        + '<h2>オフライン評価だけでは足りない</h2>'
+                        + '<p>マトリクスが飲み込むべきものが、もう一つ。ここまでは全部、リリース前に回すオフライン評価です。でもモデルはドリフトするし、入力もドリフトする。ユーザーは、データセットが想像もしなかったことを平気でやる。だから同じチームが<strong>ランタイムの層</strong>を足し始めています。入力と出力をその場で見るガードレール。漏れたPII、有害なコンテンツ、壊れたフォーマット。そして拒否率、レイテンシ、回答のドリフトといった本番のシグナルを見張るオブザーバビリティ。オフライン評価が教えてくれるのは「先週の火曜は良かった」。ランタイムが教えてくれるのは「いまも良いのか」。</p>'
+                        + '<h2>QAを率いるなら、これが意味すること</h2>'
+                        + '<p>どれも、いまあるマトリクスを捨てる話ではありません。ユーザーフローは相変わらず壊れるし、システムも倒れる。セキュリティはむしろ前より重い。変わるのは、新しい行が増えること。既知回帰のeval、メタモルフィック関係、敵対的プロービング、そして本番のガードレール。完成した台本を持っている人は、まだいないと思います。持っていると言う人がいたら、私はちょっと疑います。</p>'
+                        + FIG2.replace('CAP2', '<figcaption>あなたが知っているQAに、モデル出力のための新しいチェックが加わる。</figcaption>')
+                        + '<blockquote><p>モデルの出力がどう評価されるのか。それをモデルチームに丸投げして目をそらすのではなく、いまから自分で学び始めるQAリーダー。品質という言葉が「緑のユーザーフロー」より大きな意味を持つようになったとき、その言葉を握り続けるのは、たぶんその人たちです。</p></blockquote>'
+                        + '<h2>CT-AIシラバスとの位置関係</h2>'
+                        + '<p>これ、私が勝手に作った枠組みに聞こえるかもしれません。でも、ほとんどはすでにISTQBの<strong>Certified Tester AI Testing（CT-AI）シラバス</strong>に入っています。この分野で「標準」にいちばん近いもの。CT-AIはテストをMLのライフサイクル全体に広げます。データテスト（バイアス、代表性、ラベルの正しさ）、モデルテスト（敵対的、メタモルフィック、A/B、バックトゥバック、ドリフト）、性能指標（precision、recall、F1、混同行列）、ニューロンやレイヤーのカバレッジ、生成モデルへのレッドチーム、そしてデプロイ時のシャドー／カナリアテスト。共通言語が欲しいなら、まずはここから。</p>'
+                        + '<p>私がシラバスの先へ押したいのは、敵対的の部分です。CT-AIはレッドチームを、ほぼ手作業で一回きりの活動として扱います。この記事の賭けは、それが攻撃をためて、自分のドメインで時間とともに鋭くなる検証モデルへ育つ、というもの。これはまだどのシラバスにもありません。次の章になるかもしれないし、ならないかもしれない。どちらにせよ、ベースラインは最低限の前提。面白い勝負は、その先にあります。</p>'
+                        + FIG3.replace('CAP3', '<figcaption>CT-AIシラバスが共通のベースライン。その先が、QAがこれから押していける場所。</figcaption>')
+                        + '<h2>ここからは、あなたへ</h2>'
+                        + '<p>答えはまだ持っていません。なので、いま抱えている問いで締めます。</p>'
+                        + '<ul><li>この層のうち、どれがすでにあなたのテスト計画に入っていて、どれがまだ「モデルチームの仕事」のままですか。</li><li>QAとデータサイエンスチームの線引きは、本当はどこにあるべきでしょう。</li><li>自己強化する敵対的検証モデルは、本物の方向でしょうか。それとも、私が一つの研究トレンドを読みすぎているだけ。</li><li>あなたの製品が出荷しているのがモデルの出力なら、その品質はいま、組織図の上で誰のものですか。</li></ul>'
+                        + '<p>意見があれば、ぜひ聞かせてください。</p>'
+                        + REFS
+                        + tags("タグ", ["QA戦略", "AIテスト", "LLM評価"])
+                        + back("記事一覧へ戻る")
+                },
+                zh: {
+                    metaTitle: "An Li - 當 test matrix 必須涵蓋 AI 模型",
+                    metaDesc: "Golden dataset 抓得到你描述得出的 regression；真正難的，是你壓根沒寫下來的那種失敗。一個 QA 的視角，聊聊怎麼測模型的輸出。",
+                    title: "當 test matrix 必須涵蓋 AI 模型",
+                    date: "2026 年 5 月",
+                    by: "作者",
+                    body:
+                        '<p class="lead">我做這行這麼多年，test matrix 一直是個很穩的東西。把產品的關鍵路徑、要支援的平台、業務真正在意的風險盤一盤，再從這裡往外鋪覆蓋率。策略跟著產品走，產品跟著業務走。這就是這份工作的樣子，而且老實說，很多年都沒怎麼變。</p>'
+                        + '<p>但它現在開始變了。</p>'
+                        + '<p>當公司真的把預算和路線圖押在 AI 上，測試策略就不可能不跟著動。重點不只是多了幾個新功能要測。品質的定義本身，正在長出一個大多數 QA 團隊還沒有欄位的維度：<strong>模型「產出」的品質</strong>。文字、圖片、聲音、影片，還有越來越多塞在特定專業領域裡的東西，像一份法律摘要、一則臨床紀錄。這些東西到底好不好，過去一直是做模型的 AI/ML 科學家自己在顧；QA 顧的是使用者流程、穩定性、效能、安全。但你今天如果是帶 QA 的人，這條界線會越來越難守。因為說到底，公司現在賣的就是那個產出本身。</p>'
+                        + '<p>那到底要怎麼測？我自己的習慣，是把問題拆成<strong>兩種「失敗」</strong>來看，這樣清楚很多。</p>'
+                        + FIG1.replace('CAP1', '<figcaption>golden dataset 加上一個 LLM 裁判，接得住你描述得出的 regression；你沒寫下來的失敗會溜過去，落到前沿那幾招手上。</figcaption>')
+                        + '<h2>你早就知道的那種失敗</h2>'
+                        + '<p>第一種，是你事先講得出來的 regression。你心裡清楚某個輸入「對」的樣子長怎樣，你想抓的，是哪天模型突然不給你那個答案了。這一塊的標準做法很成熟，現在就值得做：準備一份 <strong>golden dataset</strong>，裡面是輸入配上參考答案，跑模型、然後比對。如果輸出是開放式的、根本沒辦法做完全一致比對，那就再拉一個模型來打分，也就是現在大家在講的 <strong>LLM-as-a-judge</strong>。Evidently AI 有一篇蠻清楚的教學（連結放文末）。</p>'
+                        + '<p>這招有效，但有句老實話得先講：那個當裁判的模型，本身也是模型，一樣有它的偏好。它通常偏愛比較長的答案，兩兩比較時容易偏袒排前面那個，有時候甚至會對自家同門的模型手下留情。所以你得搭 chain-of-thought、放幾個錨定範例，再拿真的打過分的資料去校準它，不能開箱就信。把裁判當成「一個自己也需要被測的測試」，大概就是這種心態。</p>'
+                        + '<p>golden dataset 給你的，是一條基準線、一個 regression 的警報器。但它有件事做不到：它找不出那些你壓根沒想到要寫下來的失敗。</p>'
+                        + '<h2>你還沒想到的那種失敗</h2>'
+                        + '<p>這才是真正的難題，也是現在最好玩的地方。有兩個方向我會盯著看，而且它們是互補的，不是二選一。</p>'
+                        + '<p>第一個是 <strong>metamorphic testing（蛻變測試）</strong>，我覺得是這整個領域裡最被低估的一招。你不去斷言「正確答案是什麼」，而是去斷言「輸入和輸出之間的關係」。問句換個說法，分類不該變；塞一句不相干的話進去，答案應該一樣；把輸入翻成別的語言，情緒判斷應該還在。你不是在講答案，你是在講：當我用一種已知的方式去動輸入時，輸出該有什麼反應。這剛好閃過測生成式系統最麻煩的點：它根本沒有唯一正解可以對。像 METAL 這種框架，可以從模板一口氣生出好幾百條這種關係。而且它其實是這份清單裡最貼近 QA 本行的一招，因為想出好的蛻變關係，本來就是測試人員最在行的那種邊界思考。</p>'
+                        + '<p>第二個方向我想講得保守一點，因為它太容易被講過頭。概念是這樣：養一個<strong>對抗式模型</strong>，專門去攻擊你要測的模型，專挑會讓它出包的 prompt 跟邊界案例，而且把打中的招數留下來，讓它越打越準。這是真的，不是空談。像 AutoRedTeamer 就是這樣做，用作者說的 lifelong attack integration，跨好幾輪一直把攻擊招式累積起來。但我老實的判讀是：這條線目前幾乎都長在「安全」那邊，越獄、有毒或帶偏見的輸出、prompt injection 那些。它非常會找出「怎麼弄壞一個模型」，可是它<strong>還不是一個能「證明模型是對的」的方法</strong>。所以我會把它放進路線圖，當成一個值得賭的方向，而不是輸出品質的標準答案。如果你覺得這套講法聽起來比較像紅隊、不太像 QA，沒錯，而且這個差別很重要。</p>'
+                        + '<h2>光靠離線評估不夠</h2>'
+                        + '<p>還有一件事，test matrix 也得一起吸收進來。上面講的全部都是離線評估，發布前跑的。但模型會漂、輸入會漂，使用者更會做出你資料集從來沒想過的事。所以同一批團隊現在會再補一層 <strong>runtime</strong>:guardrails 在線上即時擋輸入和輸出，像外洩的 PII、有毒內容、壞掉的格式那些；observability 則盯著拒答率、延遲、答案漂移這些線上訊號。離線評估告訴你的是「模型上禮拜二很好」；runtime 這層告訴你的是「它現在到底還好不好」。</p>'
+                        + '<h2>如果你在帶 QA，這代表什麼</h2>'
+                        + '<p>上面這些，沒有一樣是要你把現有那套 test matrix 丟掉。使用者流程照樣會壞、系統照樣會倒，而安全只會比以前更重要。真正變的是，會多冒出一批新的項目：已知 regression 的 eval、metamorphic 關係、對抗式探測，還有線上的 guardrails。我不覺得現在有誰手上握著一本寫完的劇本；真有人說他有，我反而會多留個心眼。</p>'
+                        + FIG2.replace('CAP2', '<figcaption>你熟悉的那套 QA，再擴充上一組專門測模型輸出的新檢查。</figcaption>')
+                        + '<blockquote><p>與其把這塊丟給模型團隊、自己別過頭去，不如現在就去搞懂：模型的輸出到底是怎麼被評估的。因為當「品質」不再只是「一條綠色的使用者流程」，真正還握得住這個詞的，會是那些現在就先動手去懂的 QA 主管。</p></blockquote>'
+                        + '<h2>這套東西，跟 CT-AI 考綱對得起來嗎</h2>'
+                        + '<p>如果你覺得這像我自己掰出來的框架，其實不是。上面講的大部分，早就寫在 ISTQB 的 <strong>Certified Tester AI Testing（CT-AI）考綱</strong>裡了，那大概是這個領域目前最接近「標準」的東西。CT-AI 把測試攤在整個 ML 生命週期上：資料測試（偏誤、代表性、標籤正確性）、模型測試（對抗式、metamorphic、A/B、back-to-back、drift）、效能指標（precision、recall、F1、混淆矩陣）、neuron 與 layer 覆蓋率、對生成式模型的紅隊，還有部署期的 shadow／canary 測試。你想要一套共同語言，從這裡拿就對了。</p>'
+                        + '<p>我會想往考綱之外推的，是對抗式那塊。CT-AI 把紅隊當成一個幾乎全手動、一次性的活動；而這篇押的賭注是：它會長成一個會累積攻擊、在你的領域裡越打越準的驗證模型。這目前還沒寫進任何考綱。它可能是下一章，也可能根本走不通。但不管怎樣，基準線只是入場門票，真正好玩的仗都在那條邊界上。</p>'
+                        + FIG3.replace('CAP3', '<figcaption>CT-AI 考綱是共同的基準線；延伸的部分，才是 QA 接下來可以往前推的地方。</figcaption>')
+                        + '<h2>換你了</h2>'
+                        + '<p>這題我也沒有定論，所以用幾個我自己還在想的問題收尾：</p>'
+                        + '<ul><li>這些層裡，哪些已經在你的測試計畫裡，哪些還被歸在「那是模型團隊的事」？</li><li>QA 跟資料科學團隊之間的那條線，到底該畫在哪？</li><li>「會自我強化的對抗式驗證模型」是真方向，還是我把單一研究趨勢讀過頭了？</li><li>如果你的產品賣的就是模型輸出，那它的品質，今天在組織圖上是誰的？</li></ul>'
+                        + '<p>你有想法的話，我很想聽聽看。</p>'
+                        + REFS
+                        + tags("標籤", ["QA 策略", "AI 測試", "LLM 評估"])
+                        + back("返回文章列表")
+                }
+            };
+
+            function labelRefs(lang) {
+                var el = document.getElementById("refsLabel");
+                if (!el) return;
+                el.textContent = lang === "ja" ? "参考" : (lang === "zh" ? "參考資料" : "References");
+            }
+            function render(lang) {
+                var a = ART[lang] || ART.en;
+                document.title = a.metaTitle;
+                var md = document.querySelector('meta[name="description"]');
+                if (md) md.setAttribute("content", a.metaDesc);
+                document.getElementById("artTitle").textContent = a.title;
+                document.getElementById("artDate").textContent = a.date;
+                document.getElementById("artBy").textContent = a.by;
+                document.getElementById("artBody").innerHTML = a.body;
+                labelRefs(lang);
+            }
+            function current() {
+                return (window.I18nRuntime && window.I18nRuntime.getLang) ? window.I18nRuntime.getLang() : "en";
+            }
+            function boot() { render(current()); }
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", boot);
+            } else { boot(); }
+            window.addEventListener("i18n:change", function (e) { render(e.detail.lang); });
+        })();
+        </script>
+
+        <script src="../js/jquery-3.6.4.js"></script>
+        <script src="../js/plugins.js"></script>
+        <script src="../js/main.js"></script>
+
+</body>
+
+</html>

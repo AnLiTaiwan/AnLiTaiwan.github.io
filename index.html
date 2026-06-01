@@ -196,6 +196,7 @@
                     <li><a class="smoothscroll" href="#about" data-i18n="nav.about">About</a></li>
                     <li><a class="smoothscroll" href="#experience" data-i18n="nav.experience">Experience</a></li>
                     <li><a class="smoothscroll" href="#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a class="smoothscroll" href="#writing" data-i18n="nav.writing">Writing</a></li>
                     <li><a class="smoothscroll" href="#contact" data-i18n="nav.contact">Contact</a></li>
                 </ul>
             </nav>
@@ -281,6 +282,18 @@
             </div>
         </section>
 
+        <!-- writing -->
+        <section id="writing" class="s-projects target-section">
+            <div class="row about-content about-content--timeline">
+                <div class="col-full text-center">
+                    <h3 data-i18n="writing.title">Writing</h3>
+                </div>
+                <div class="col-full">
+                    <div id="writingList" class="timeline"></div>
+                </div>
+            </div>
+        </section>
+
         <!-- contact -->
         <section id="contact" class="s-contact target-section">
             <div class="overlay"></div>
@@ -360,8 +373,11 @@
         <div id="preloader"><div id="loader"></div></div>
 
         <style>
-            #experienceList, #projectsList { max-width: 860px; margin: 3.6rem auto 0; }
+            #experienceList, #projectsList, #writingList { max-width: 860px; margin: 3.6rem auto 0; }
             #projectsList .timeline__block { min-height: 9rem; }
+            #writingList .timeline__block a { color: inherit; }
+            #writingList .timeline__block a:hover h3 { text-decoration: underline; }
+            #writingList .timeline__timeframe { opacity: .7; }
         </style>
 
         <script src="js/i18n-data.js"></script>
@@ -435,9 +451,27 @@
                 return { setWords };
             }
 
+            function renderWriting(dict) {
+                const list = document.getElementById("writingList");
+                if (!list || !dict.writing) return;
+                list.innerHTML = dict.writing.items.map(p => `
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <a href="${escapeHTML(p.url)}">
+                            <div class="timeline__header">
+                                <p class="timeline__timeframe">${escapeHTML(p.date)}</p>
+                                <h3>${escapeHTML(p.title)}</h3>
+                            </div>
+                            <div class="timeline__desc">
+                                <p>${escapeHTML(p.desc)}</p>
+                            </div>
+                        </a>
+                    </div>`).join("");
+            }
             function renderAll(dict) {
                 renderExperience(dict);
                 renderProjects(dict);
+                renderWriting(dict);
                 if (window.__heroTyper) {
                     window.__heroTyper.setWords(dict.hero.roles);
                 }

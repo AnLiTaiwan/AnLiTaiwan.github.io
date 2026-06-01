@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 360" role="img" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" aria-label="Model output passes through a golden-dataset filter: known regressions are caught, unknown failures slip through to metamorphic, adversarial, and runtime methods">
+  <rect width="840" height="360" fill="#ffffff"/>
+
+  <!-- A: model output -->
+  <rect x="24" y="140" width="150" height="80" rx="12" fill="#eef2f8" stroke="#13283f" stroke-opacity="0.35"/>
+  <text x="99" y="172" text-anchor="middle" font-size="16" font-weight="600" fill="#13283f">Model output</text>
+  <text x="99" y="196" text-anchor="middle" font-size="12" fill="#5b6b80">text · image · audio</text>
+
+  <!-- arrow A -> filter -->
+  <line x1="174" y1="180" x2="234" y2="180" stroke="#13283f" stroke-opacity="0.5" stroke-width="2"/>
+  <polygon points="234,180 224,175 224,185" fill="#13283f" fill-opacity="0.6"/>
+
+  <!-- Filter -->
+  <rect x="240" y="128" width="206" height="104" rx="12" fill="#eaf3ff" stroke="#3a6ea5"/>
+  <text x="343" y="166" text-anchor="middle" font-size="15" font-weight="700" fill="#1f3a5f">Golden dataset</text>
+  <text x="343" y="188" text-anchor="middle" font-size="13" fill="#3a6ea5">+ LLM-as-a-judge</text>
+  <text x="343" y="210" text-anchor="middle" font-size="11" fill="#7286a0">the regression alarm</text>
+
+  <!-- caught branch (down, green) -->
+  <line x1="343" y1="232" x2="343" y2="276" stroke="#1f9d6b" stroke-width="2"/>
+  <polygon points="343,288 338,276 348,276" fill="#1f9d6b"/>
+  <rect x="246" y="288" width="194" height="56" rx="10" fill="#e7f6ef" stroke="#1f9d6b"/>
+  <text x="343" y="312" text-anchor="middle" font-size="14" font-weight="600" fill="#15734e">Known regressions</text>
+  <text x="343" y="332" text-anchor="middle" font-size="12" fill="#1f9d6b">caught &#10003;</text>
+
+  <!-- slip-through branch (right, amber) -->
+  <line x1="446" y1="180" x2="506" y2="180" stroke="#d98a2b" stroke-width="2" stroke-dasharray="6 5"/>
+  <polygon points="518,180 506,175 506,185" fill="#d98a2b"/>
+  <rect x="520" y="140" width="120" height="80" rx="12" fill="#fff4e6" stroke="#d98a2b" stroke-dasharray="6 5"/>
+  <text x="580" y="172" text-anchor="middle" font-size="14" font-weight="700" fill="#a85f12">Unknown</text>
+  <text x="580" y="194" text-anchor="middle" font-size="14" font-weight="700" fill="#a85f12">failures</text>
+
+  <!-- to frontier methods -->
+  <line x1="640" y1="180" x2="676" y2="180" stroke="#7a4fd0" stroke-width="2"/>
+  <polygon points="688,180 676,175 676,185" fill="#7a4fd0"/>
+  <rect x="690" y="116" width="128" height="128" rx="12" fill="#f3eeff" stroke="#7a4fd0"/>
+  <text x="754" y="142" text-anchor="middle" font-size="12" font-weight="700" fill="#5b34a8">the frontier</text>
+  <text x="754" y="170" text-anchor="middle" font-size="13" fill="#3d2a6b">Metamorphic</text>
+  <text x="754" y="192" text-anchor="middle" font-size="13" fill="#3d2a6b">Adversarial</text>
+  <text x="754" y="214" text-anchor="middle" font-size="13" fill="#3d2a6b">Runtime</text>
+
+  <!-- captions for branches -->
+  <text x="470" y="158" font-size="11" fill="#a85f12" font-style="italic">slip through</text>
+</svg>
