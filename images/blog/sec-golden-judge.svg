@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" role="img" font-family="Montserrat,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" aria-label="A golden dataset of inputs with reference answers runs through the model under test; an LLM-as-a-judge grades open-ended output. But the judge is itself a model with biases (prefers longer answers, position bias, self-preference), so it must be managed with chain-of-thought prompts, anchored examples, and tuning against graded data.">
+  <defs>
+    <linearGradient id="sb-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"></stop><stop offset="1" stop-color="#f7f9fc"></stop></linearGradient>
+    <linearGradient id="sb-blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0f6ff"></stop><stop offset="1" stop-color="#dcebfc"></stop></linearGradient>
+    <linearGradient id="sb-neutral" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6f8fc"></stop><stop offset="1" stop-color="#eef2f8"></stop></linearGradient>
+    <linearGradient id="sb-amber" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8ee"></stop><stop offset="1" stop-color="#ffefd6"></stop></linearGradient>
+    <filter id="sb-sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#13283f" flood-opacity="0.12"></feDropShadow></filter>
+    <filter id="sb-soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#13283f" flood-opacity="0.10"></feDropShadow></filter>
+    <marker id="sb-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#48607c"></path></marker>
+    <marker id="sb-arr-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#d98a2b"></path></marker>
+  </defs>
+  <rect width="880" height="400" fill="url(#sb-bg)"></rect>
+
+  
+  <text x="28" y="36" font-size="12" font-weight="700" fill="#3a6ea5" letter-spacing="0.6">THE REGRESSION ALARM</text>
+
+  <g filter="url(#sb-sh)"><rect x="28" y="52" width="192" height="84" rx="14" fill="url(#sb-neutral)" stroke="#cdd8e6"></rect></g>
+  <rect x="28" y="52" width="5" height="84" rx="2.5" fill="#48607c"></rect>
+  <text x="124" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#13283f">Golden dataset</text>
+  <text x="124" y="108" text-anchor="middle" font-size="11.5" fill="#5b6b80">inputs + reference</text>
+  <text x="124" y="124" text-anchor="middle" font-size="11.5" fill="#5b6b80">answers</text>
+
+  <line x1="222" y1="94" x2="256" y2="94" stroke="#48607c" stroke-width="2.5" marker-end="url(#sb-arr)"></line>
+
+  <g filter="url(#sb-sh)"><rect x="258" y="52" width="150" height="84" rx="14" fill="url(#sb-neutral)" stroke="#cdd8e6"></rect></g>
+  <text x="333" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#13283f">Model</text>
+  <text x="333" y="112" text-anchor="middle" font-size="11.5" fill="#5b6b80">under test</text>
+
+  <line x1="410" y1="94" x2="444" y2="94" stroke="#48607c" stroke-width="2.5" marker-end="url(#sb-arr)"></line>
+
+  <g filter="url(#sb-sh)"><rect x="446" y="52" width="180" height="84" rx="14" fill="url(#sb-blue)" stroke="#3a6ea5"></rect></g>
+  <text x="536" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#1f3a5f">LLM-as-a-judge</text>
+  <text x="536" y="106" text-anchor="middle" font-size="11.5" fill="#3a6ea5">grades open-ended</text>
+  <text x="536" y="122" text-anchor="middle" font-size="11.5" fill="#3a6ea5">output vs reference</text>
+
+  <line x1="626" y1="94" x2="660" y2="94" stroke="#48607c" stroke-width="2.5" marker-end="url(#sb-arr)"></line>
+  <g filter="url(#sb-sh)"><rect x="662" y="60" width="190" height="68" rx="14" fill="#ecf9f2" stroke="#1f9d6b"></rect></g>
+  <text x="757" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#15734e">pass / fail score</text>
+  <text x="757" y="110" text-anchor="middle" font-size="11" fill="#1f9d6b">regression caught ✓</text>
+
+  
+  <line x1="536" y1="136" x2="536" y2="168" stroke="#d98a2b" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#sb-arr-a)"></line>
+  <g filter="url(#sb-sh)"><rect x="28" y="172" width="824" height="200" rx="16" fill="url(#sb-amber)" stroke="#d98a2b"></rect></g>
+  <circle cx="56" cy="202" r="13" fill="#d98a2b"></circle>
+  <text x="56" y="207" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">!</text>
+  <text x="80" y="207" font-size="15" font-weight="700" fill="#a85f12">The judge is a model too — treat it as a test that also needs testing.</text>
+
+  
+  <text x="48" y="246" font-size="11.5" font-weight="700" fill="#a85f12" letter-spacing="0.5">KNOWN BIASES</text>
+  <g font-size="12.5" font-weight="600" fill="#8a5512">
+    <g filter="url(#sb-soft)"><rect x="48" y="258" width="380" height="36" rx="9" fill="#fff"></rect></g><text x="66" y="281">Prefers longer answers</text>
+    <g filter="url(#sb-soft)"><rect x="48" y="300" width="380" height="36" rx="9" fill="#fff"></rect></g><text x="66" y="323">Position bias — favours the first option</text>
+    <g filter="url(#sb-soft)"><rect x="48" y="342" width="380" height="20" rx="9" fill="none"></rect></g><text x="66" y="357" fill="#a85f12">Self-preference — kind to its own family</text>
+  </g>
+
+  
+  <text x="468" y="246" font-size="11.5" font-weight="700" fill="#15734e" letter-spacing="0.5">HOW YOU MANAGE IT</text>
+  <g font-size="12.5" font-weight="600" fill="#15734e">
+    <g filter="url(#sb-soft)"><rect x="468" y="258" width="364" height="36" rx="9" fill="#eafaf1"></rect></g><text x="486" y="281">Chain-of-thought prompts</text>
+    <g filter="url(#sb-soft)"><rect x="468" y="300" width="364" height="36" rx="9" fill="#eafaf1"></rect></g><text x="486" y="323">A few anchored examples</text>
+    <g filter="url(#sb-soft)"><rect x="468" y="342" width="364" height="20" rx="9" fill="none"></rect></g><text x="486" y="357">Tune against real graded data</text>
+  </g>
+</svg>
