@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1b2d"/>
+      <stop offset="0.45" stop-color="#13283f"/>
+      <stop offset="1" stop-color="#1c1230"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- matrix motif: known (check) fading to unknown (?) -->
+  <g transform="translate(760,150)" font-family="Menlo,Consolas,monospace" font-size="26" text-anchor="middle" opacity="0.9">
+    <g transform="translate(0,0)">
+      <rect x="0"   y="0" width="56" height="56" rx="9" fill="#1f9d6b" fill-opacity="0.16" stroke="#1f9d6b" stroke-opacity="0.5"/><text x="28" y="38" fill="#46d39a">&#10003;</text>
+      <rect x="70"  y="0" width="56" height="56" rx="9" fill="#1f9d6b" fill-opacity="0.12" stroke="#1f9d6b" stroke-opacity="0.42"/><text x="98" y="38" fill="#46d39a" fill-opacity="0.8">&#10003;</text>
+      <rect x="140" y="0" width="56" height="56" rx="9" fill="#5b8cff" fill-opacity="0.08" stroke="#5b8cff" stroke-opacity="0.35"/><text x="168" y="38" fill="#9db8ff" fill-opacity="0.7">&#10003;</text>
+      <rect x="210" y="0" width="56" height="56" rx="9" fill="none" stroke="#b07cff" stroke-opacity="0.4" stroke-dasharray="5 6"/><text x="238" y="40" fill="#caa9ff" fill-opacity="0.65">?</text>
+      <rect x="280" y="0" width="56" height="56" rx="9" fill="none" stroke="#d98a2b" stroke-opacity="0.38" stroke-dasharray="5 6"/><text x="308" y="40" fill="#f0b25e" fill-opacity="0.6">?</text>
+    </g>
+    <g transform="translate(0,70)">
+      <rect x="0"   y="0" width="56" height="56" rx="9" fill="#1f9d6b" fill-opacity="0.12" stroke="#1f9d6b" stroke-opacity="0.42"/><text x="28" y="38" fill="#46d39a" fill-opacity="0.8">&#10003;</text>
+      <rect x="70"  y="0" width="56" height="56" rx="9" fill="#5b8cff" fill-opacity="0.08" stroke="#5b8cff" stroke-opacity="0.35"/><text x="98" y="38" fill="#9db8ff" fill-opacity="0.7">&#10003;</text>
+      <rect x="140" y="0" width="56" height="56" rx="9" fill="none" stroke="#b07cff" stroke-opacity="0.4" stroke-dasharray="5 6"/><text x="168" y="40" fill="#caa9ff" fill-opacity="0.65">?</text>
+      <rect x="210" y="0" width="56" height="56" rx="9" fill="none" stroke="#d98a2b" stroke-opacity="0.38" stroke-dasharray="5 6"/><text x="238" y="40" fill="#f0b25e" fill-opacity="0.6">?</text>
+      <rect x="280" y="0" width="56" height="56" rx="9" fill="none" stroke="#d98a2b" stroke-opacity="0.28" stroke-dasharray="5 6"/><text x="308" y="40" fill="#f0b25e" fill-opacity="0.45">?</text>
+    </g>
+    <g transform="translate(0,140)">
+      <rect x="0"   y="0" width="56" height="56" rx="9" fill="#5b8cff" fill-opacity="0.08" stroke="#5b8cff" stroke-opacity="0.35"/><text x="28" y="38" fill="#9db8ff" fill-opacity="0.7">&#10003;</text>
+      <rect x="70"  y="0" width="56" height="56" rx="9" fill="none" stroke="#b07cff" stroke-opacity="0.4" stroke-dasharray="5 6"/><text x="98" y="40" fill="#caa9ff" fill-opacity="0.65">?</text>
+      <rect x="140" y="0" width="56" height="56" rx="9" fill="none" stroke="#d98a2b" stroke-opacity="0.38" stroke-dasharray="5 6"/><text x="168" y="40" fill="#f0b25e" fill-opacity="0.6">?</text>
+      <rect x="210" y="0" width="56" height="56" rx="9" fill="none" stroke="#d98a2b" stroke-opacity="0.28" stroke-dasharray="5 6"/><text x="238" y="40" fill="#f0b25e" fill-opacity="0.45">?</text>
+    </g>
+  </g>
+
+  <!-- title -->
+  <text x="80" y="250" font-size="62" font-weight="800" fill="#ffffff">
+    <tspan x="80" dy="0">When the test matrix</tspan>
+    <tspan x="80" dy="78">has to cover the AI model</tspan>
+  </text>
+
+  <!-- subtitle -->
+  <text x="82" y="430" font-size="25" fill="#9fb2c9">Golden datasets · metamorphic testing · adversarial red teaming · the CT-AI baseline</text>
+
+  <!-- branding -->
+  <rect x="80" y="520" width="44" height="44" rx="10" fill="#5b8cff" fill-opacity="0.15" stroke="#5b8cff" stroke-opacity="0.5"/>
+  <text x="102" y="550" text-anchor="middle" font-size="22" font-weight="800" fill="#9db8ff">A</text>
+  <text x="140" y="540" font-size="24" font-weight="700" fill="#ffffff">an-li.tw</text>
+  <text x="140" y="566" font-size="17" fill="#7e90a6">An Li · QA &amp; AI testing</text>
+</svg>
