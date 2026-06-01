@@ -289,7 +289,7 @@
                     <h3 data-i18n="writing.title">Writing</h3>
                 </div>
                 <div class="col-full">
-                    <div id="writingList" class="timeline"></div>
+                    <div id="writingList" class="blog-list wr-grid"></div>
                 </div>
             </div>
         </section>
@@ -373,14 +373,18 @@
         <div id="preloader"><div id="loader"></div></div>
 
         <style>
-            #experienceList, #projectsList, #writingList { max-width: 860px; margin: 3.6rem auto 0; }
+            #experienceList, #projectsList { max-width: 860px; margin: 3.6rem auto 0; }
             #projectsList .timeline__block { min-height: 9rem; }
-            #writingList .timeline__block a { color: inherit; }
-            #writingList .timeline__block a:hover h3 { text-decoration: underline; }
-            #writingList .timeline__timeframe { opacity: .7; }
+            /* Writing section reuses the old blog-list style as a card grid with preview images */
+            #writingList.wr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 5rem 4rem; max-width: 1040px; margin: 4rem auto 0; text-align: left; }
+            #writingList.wr-grid article { margin: 0; padding: 0; }
+            .wr-thumb { display: block; overflow: hidden; border-radius: 10px; box-shadow: 0 10px 30px rgba(13, 27, 45, 0.12); }
+            .wr-thumb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; transition: transform .45s ease; }
+            .wr-card:hover .wr-thumb img { transform: scale(1.045); }
+            #writingList .wr-card .blog-date { margin-top: 2rem; }
         </style>
 
-        <script src="js/i18n-data.js"></script>
+        <script src="js/i18n-data.js?v=2"></script>
 
         <script>
         (function () {
@@ -455,18 +459,13 @@
                 const list = document.getElementById("writingList");
                 if (!list || !dict.writing) return;
                 list.innerHTML = dict.writing.items.map(p => `
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <a href="${escapeHTML(p.url)}">
-                            <div class="timeline__header">
-                                <p class="timeline__timeframe">${escapeHTML(p.date)}</p>
-                                <h3>${escapeHTML(p.title)}</h3>
-                            </div>
-                            <div class="timeline__desc">
-                                <p>${escapeHTML(p.desc)}</p>
-                            </div>
-                        </a>
-                    </div>`).join("");
+                    <article class="wr-card">
+                        ${p.image ? `<a class="wr-thumb" href="${escapeHTML(p.url)}"><img src="${escapeHTML(p.image)}" alt="${escapeHTML(p.title)}" loading="lazy"></a>` : ""}
+                        <div class="blog-date"><a href="${escapeHTML(p.url)}">${escapeHTML(p.date)}</a></div>
+                        <h2 class="h01"><a href="${escapeHTML(p.url)}">${escapeHTML(p.title)}</a></h2>
+                        <p>${escapeHTML(p.desc)}</p>
+                        ${p.cat ? `<div class="blog-cat"><a href="${escapeHTML(p.url)}">${escapeHTML(p.cat)}</a></div>` : ""}
+                    </article>`).join("");
             }
             function renderAll(dict) {
                 renderExperience(dict);
