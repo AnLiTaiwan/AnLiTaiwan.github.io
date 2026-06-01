@@ -138,6 +138,54 @@
 
     </article>
 
+        <!-- contact / send a message (same EmailJS setup as the homepage) -->
+        <section id="contact" class="s-contact target-section">
+            <div class="overlay"></div>
+            <div class="row narrow section-intro">
+                <div class="col-full">
+                    <h3 data-i18n="contact.eyebrow">Contact</h3>
+                    <h1 data-i18n="contact.title">Say Hello.</h1>
+                    <p class="lead" data-i18n="contact.lead"></p>
+                </div>
+            </div>
+
+            <div class="row contact__main">
+                <div class="col-eight tab-full contact__form">
+                    <form name="contactForm" id="contactForm" method="post" action="">
+                        <fieldset>
+                            <div class="form-field">
+                                <input name="contactName" type="text" id="contactName" data-i18n-placeholder="contact.name" placeholder="Name" minlength="2" required class="full-width">
+                            </div>
+                            <div class="form-field">
+                                <input name="contactEmail" type="email" id="contactEmail" data-i18n-placeholder="contact.email" placeholder="Email" required class="full-width">
+                            </div>
+                            <div class="form-field">
+                                <input name="contactSubject" type="text" id="contactSubject" data-i18n-placeholder="contact.subject" placeholder="Subject" class="full-width">
+                            </div>
+                            <div class="form-field">
+                                <textarea name="contactMessage" id="contactMessage" data-i18n-placeholder="contact.message" placeholder="Message" rows="10" cols="50" required class="full-width"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <button class="full-width btn--primary" type="submit" id="submitEmail" data-i18n="contact.submit">Send Message</button>
+                                <div class="submit-loader">
+                                    <div class="text-loader" data-i18n="contact.sending">Sending...</div>
+                                    <div class="s-loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div class="message-warning" data-i18n="contact.errorMsg">Something went wrong. Please try again.</div>
+                    <div class="message-success" data-i18n="contact.successMsg">Your message was sent, thank you!</div>
+                </div>
+                <div class="col-four tab-full contact__infos">
+                    <h4 class="h06" data-i18n="contact.infoEmail">Email</h4>
+                    <p data-i18n="contact.emailAddr">hello@an-li.tw</p>
+                    <h4 class="h06" data-i18n="contact.infoLoc">Location</h4>
+                    <p data-i18n="contact.locAddr">Tokyo, Japan</p>
+                </div>
+            </div>
+        </section>
+
         <footer>
             <div class="row">
                 <div class="col-full">
@@ -352,6 +400,8 @@
         <script src="../js/jquery-3.6.4.js"></script>
         <script src="../js/plugins.js"></script>
         <script src="../js/main.js"></script>
+        <script src="../js/email.min-2.3.2.js"></script>
+        <script src="../js/sendEmail.js"></script>
 
 </body>
 
